@@ -6,7 +6,7 @@ void CHookManager::Register(const std::string& FuncName, const std::string& Hook
                             const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook)
 {
 	char funcNameChar[255];
-	strcpy(funcNameChar, FuncName.c_str());
+	strcpy_s(funcNameChar, sizeof(funcNameChar), FuncName.c_str());
 
 	// Create pair to insert
 	tHookPair hookPair = std::make_pair(HookName, FuncHook);
@@ -21,7 +21,7 @@ void CHookManager::Register(const std::string& FuncName, const std::string& Hook
 		hooks.emplace(FuncName, newMap);
 	}
 
-	Logging::LogD("[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"\n", this->debugName.c_str(),
+	LOG(HOOKS, "[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"", this->debugName.c_str(),
 	              hookPair.first.c_str(), FuncName.c_str());
 }
 
@@ -30,7 +30,7 @@ bool CHookManager::Remove(const std::string& FuncName, const std::string& HookNa
 	auto iHooks = hooks.find(FuncName);
 	if (iHooks == hooks.end() || iHooks->second.find(HookName) == iHooks->second.end())
 	{
-		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->debugName.c_str(),
+		LOG(HOOKS, "[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"", this->debugName.c_str(),
 		              HookName.c_str(), FuncName.c_str());
 		return false;
 	}

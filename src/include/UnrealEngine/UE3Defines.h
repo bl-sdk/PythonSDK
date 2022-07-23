@@ -154,7 +154,7 @@ public:
 			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
 		else
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1);
-		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
+		LOG(INTERNAL, "Made FName; Index: %d, Number: %d, Name: %s", Index, Number, GetName());
 	}
 
 	FName(const std::string& FindName, int number)
