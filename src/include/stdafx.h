@@ -53,6 +53,7 @@ namespace UnrealSDK
 }
 
 
+#include <loguru.hpp>
 #include "logging.h"
 
 #include "TypeMap.h"

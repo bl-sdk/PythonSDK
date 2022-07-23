@@ -2,22 +2,33 @@
 
 #ifndef LOGGING_H
 #define LOGGING_H
-#include <string>
+
+#include <loguru.hpp>
 
 namespace Logging
 {
-	void LogIgnoreUE(const char* fmt, ...);
+	enum SDKVerbosity : loguru::Verbosity {
+		ERROR = loguru::Verbosity_ERROR,
+		WARNING = loguru::Verbosity_WARNING,
+		INFO = loguru::Verbosity_INFO,
+		MAX = loguru::Verbosity_MAX,
+		// Loguru lets us use 1-9 as extra debugging levels.
+		// Deliberately only going to use even values so python can use the levels inbetween
+		CONSOLE = 2,    // Catch all for messages in console - i.e. python stdout, user input
+		MISC = 4,       // Catch all for misc info which we want to log, but only to the file
+		HOOKS = 6,      // Messages about hooked functions
+		INTERNAL = 8,   // Lowest level internal debug logging
+	};
 
-	void Log(const char* Formatted, int Length = 0);
-	void LogW(wchar_t*, int);
-	void LogPy(std::string formatted);
-	void LogF(const char* szFmt, ...);
-	void LogD(const char* szFmt, ...);
-	void SetLoggingLevel(const char* NewLevel);
-	void InitializeExtern();
-	void InitializeFile(const std::wstring& fileName);
-	void PrintLogHeader();
-	void Cleanup();
+	void Initalize(void);
+	void InitalizeExternal(void);
+	void Cleanup(void);
+
+	void SetConsoleVerbosity(SDKVerbosity verbosity);
+	void SetFileVerbosity(SDKVerbosity verbosity);
 }
+
+// Can't use LOG_F with our custom levels, so a shortcut for most cases
+#define LOG(verbosity, ...) VLOG_F(Logging::SDKVerbosity:: ## verbosity, __VA_ARGS__)
 
 #endif

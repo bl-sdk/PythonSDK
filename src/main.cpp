@@ -22,7 +22,11 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 	SetExecutableFolder();
 	Settings::Initialize(exeBaseFolder);
-	Logging::InitializeFile(Settings::GetLogFilePath());
+
+	Logging::Initalize();
+#ifdef _DEBUG
+	Logging::InitalizeExternal();
+#endif
 
 	Logging::LogF("======= Unreal Engine Python Loader =======\n");
 	try {

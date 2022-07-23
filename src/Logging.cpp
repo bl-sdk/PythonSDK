@@ -1,223 +1,123 @@
-#include <Windows.h>
-#include <stdio.h>
 #include "stdafx.h"
-#include "Logging.h"
-#include "Util.h"
-#include "Exceptions.h"
 
 namespace Logging
 {
-	HANDLE gLogFile = nullptr;
-	bool gLogToExternalConsole = true;
-	bool gLogToFile = true;
-	bool gLogToGameConsole = false;
+	constexpr auto LOG_EXECUTABLE_NAME = "UnrealSDK";
+	constexpr auto LOG_FILE_NAME = "unrealsdk.log";
 
-	void LogToFile(const char* Buff, const int Len)
+	constexpr auto CONSOLE_LOG_CALLBACK_NAME = "console";
+
+	constexpr auto DEFAULT_FILE_VERBOSITY = SDKVerbosity::MISC;
+
+	static HANDLE externalConsoleHandle = NULL;
+	static auto consoleVerbosity = SDKVerbosity::CONSOLE;
+
+	static void LogToConsole(void* user_data, const loguru::Message& message);
+	static const char* LogLevelToName(loguru::Verbosity verbosity);
+
+	void Initalize(void)
 	{
-		if (gLogFile != INVALID_HANDLE_VALUE)
-		{
-			DWORD bytesWritten = 0;
+		loguru::g_preamble_uptime = false;
+		loguru::g_stderr_verbosity = loguru::Verbosity_OFF;
+		loguru::set_verbosity_to_name_callback(LogLevelToName);
 
-			std::string f = Buff;
-			if (f.find("\n", 0) == std::string::npos) {
-				f += "\n";
+		loguru::add_file(LOG_FILE_NAME, loguru::Truncate, DEFAULT_FILE_VERBOSITY);
+
+		// Take max verbosity and filter it in our callback instead
+		loguru::add_callback(CONSOLE_LOG_CALLBACK_NAME, LogToConsole, nullptr, loguru::Verbosity_MAX);
+
+		int fakeArgc = 1;
+		char* fakeExeName = (char*)LOG_EXECUTABLE_NAME;
+		char* fakeArgv[] = { fakeExeName, nullptr };
+
+		loguru::Options options = {};
+		options.verbosity_flag = nullptr;
+
+		loguru::init(fakeArgc, fakeArgv, options);
+	}
+
+	void InitalizeExternal(void)
+	{
+		if (AllocConsole()) {
+			externalConsoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+			if (!externalConsoleHandle) {
+				LOG(ERROR, "Failed to get handle to external console!");
 			}
-			const char* outc = f.c_str();
-			int Length = strlen(outc);
-
-			WriteFile(gLogFile, outc, Length, &bytesWritten, nullptr);
+		} else {
+			LOG(ERROR, "Failed to initalize external console!");
 		}
 	}
 
-	void LogWinConsole(const char* Buff, const int Len)
+	void Cleanup(void)
 	{
-		const HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
-		DWORD bytesWritten = 0;
-
-		std::string f = Buff;
-		if (f.find("\n", 0) == std::string::npos) {
-			f += "\n";
+		loguru::shutdown();
+		if (externalConsoleHandle) {
+			CloseHandle(externalConsoleHandle);
+			externalConsoleHandle = NULL;
 		}
-		const char* outc = f.c_str();
-		int Length = strlen(outc);
-		WriteFile(output, f.c_str(), Length, &bytesWritten, nullptr);
-
 	}
 
-	void LogIgnoreUE(const char* fmt, ...) {
-
-		va_list args;
-		va_start(args, fmt);
-		std::string formatted = Util::FormatInternal(fmt, args);
-		va_end(args);
-
-		std::string out = formatted + "\n";
-		const char* outc = out.c_str();
-		int Length = strlen(outc);
-
-		if (gLogToExternalConsole) LogWinConsole(outc, Length);
-		if (gLogToFile) LogToFile(outc, Length);
+	void SetConsoleVerbosity(SDKVerbosity level) {
+		consoleVerbosity = level;
 	}
 
-	void Log(const char* Formatted, int Length)
+	void SetFileVerbosity(SDKVerbosity level) {
+		loguru::remove_callback(LOG_FILE_NAME);
+		loguru::add_file(LOG_FILE_NAME, loguru::Append, level);
+	}
+
+	static const char* LogLevelToName(loguru::Verbosity verbosity)
 	{
-		std::string out = Formatted;
+		switch (verbosity) {
+		    case SDKVerbosity::CONSOLE:
+				return "CON";
+			case SDKVerbosity::MISC:
+				return "MISC";
+			case SDKVerbosity::HOOKS:
+				return "HOOK";
+			case SDKVerbosity::INTERNAL:
+				return "INT";
+			default:
+				return nullptr;
+		}
+	}
 
-		// UE4 Logging doesn't actually want a line break
-		#ifndef UE4	
-		if (Formatted[strlen(Formatted) - 1] != '\n') 
-			out += "\n";
-		#endif
+	static void LogToConsole(void* user_data, const loguru::Message& message)
+	{
+		if (message.verbosity > consoleVerbosity) {
+			return;
+		}
 
-		const char* outc = out.c_str();
+		if (externalConsoleHandle) {
+			std::string fullMessage = message.preamble;
+			fullMessage += message.indentation;
+			fullMessage += message.prefix;
+			fullMessage += message.message;
+			fullMessage += "\n";
+			WriteFile(externalConsoleHandle, fullMessage.c_str(), fullMessage.size(), nullptr, nullptr);
+		}
 
-		if (Length == 0) Length = strlen(outc);
-
-		if (gLogToExternalConsole) LogWinConsole(outc, Length);
-
-		if (gLogToFile) LogToFile(outc, Length);
-
-		if (UnrealSDK::gameConsole != nullptr)
+		if (UnrealSDK::gameConsole)
 		{
-			// It seems that Unreal will automatically put a newline on the end of a 
+			std::string shortenedMessage = message.prefix;
+			shortenedMessage += message.message;
+			shortenedMessage += "\n";
+			std::wstring wideMessage = Util::Widen(shortenedMessage);
+
+			// It seems that Unreal will automatically put a newline on the end of a
 			// console output, but if there's already a \n at the end, then it won't
-			// add this \n onto the end. So if we're printing just a \n by itself, 
+			// add this \n onto the end. So if we're printing just a \n by itself,
 			// just don't do anything.
-			if (!(Length == 1))
+			if (wideMessage.size() > 1)
 			{
-				std::wstring wfmt = Util::Widen(outc);
-				const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
-				UnrealSDK::DoInjectedCallNext();
-
-				#ifdef UE4
+#ifdef UE4
 				if (UnrealSDK::gameConsole->Scrollback.Data != NULL) {
-					UnrealSDK::gameConsole->OutputTextCpp((wchar_t*)wfmt.c_str());
+					UnrealSDK::gameConsole->OutputTextCpp((wchar_t*)wideMessage.c_str());
 				}
-				#else
-				UnrealSDK::gameConsole->OutputText(FString(wfmt.c_str()));
-				#endif
-
-				if (doInjectedNext) UnrealSDK::DoInjectedCallNext();
-			}
-		}
-	}
-
-	void LogW(wchar_t* Formatted, const signed int Length)
-	{
-		char* output = (char *)calloc(Length + 1, sizeof(char));
-		size_t ret;
-		wcstombs_s(&ret, output, Length, Formatted, Length);
-		Log(output, 0);
-	}
-
-	void LogPy(std::string formatted)
-	{
-		Log(formatted.c_str(), 0);
-	}
-
-	void LogF(const char* fmt, ...)
-	{
-		va_list args;
-		va_start(args, fmt);
-		std::string formatted = Util::FormatInternal(fmt, args);
-		va_end(args);
-
-		Log(formatted.c_str(), formatted.length());
-	}
-
-	enum LogLevel
-	{
-		DEBUG,
-		INFO,
-		WARNING,
-		EXCEPTION,
-		CRITICAL
-	};
-
-	LogLevel Level = WARNING;
-
-	void LogD(const char* fmt, ...)
-	{
-		if (Level == DEBUG)
-		{
-			va_list args;
-			va_start(args, fmt);
-			std::string formatted = "[DEBUG] " + Util::FormatInternal(fmt, args);
-			va_end(args);
-
-			Log(formatted.c_str(), formatted.length());
-		}
-	}
-
-	void SetLoggingLevel(const char* NewLevel)
-	{
-		std::string str = NewLevel;
-		std::transform(str.begin(), str.end(), str.begin(), toupper);
-		if (str == "DEBUG")
-		{
-			Level = DEBUG;
-		}
-		else if (str == "INFO")
-		{
-			Level = INFO;
-		}
-		else if (str == "WARNING")
-		{
-			Level = WARNING;
-		}
-		else if (str == "EXCEPTION")
-		{
-			Level = EXCEPTION;
-		}
-		else if (str == "CRITICAL")
-		{
-			Level = CRITICAL;
-		}
-		else
-		{
-			LogF("Unknown logging level '%s'\n", NewLevel);
-		}
-	}
-
-	void InitializeExtern()
-	{
-		BOOL result = AllocConsole();
-		if (result)
-		{
-			gLogToExternalConsole = true;
-		}
-	}
-
-	// Everything else can fail, but InitializeFile must work.
-	void InitializeFile(const std::wstring& fileName)
-	{
-		gLogFile = CreateFile(fileName.c_str(), GENERIC_WRITE, FILE_SHARE_READ, nullptr, CREATE_ALWAYS,
-		                     FILE_ATTRIBUTE_NORMAL, nullptr);
-		if (gLogFile == INVALID_HANDLE_VALUE)
-		{
-			std::string errMsg = Util::Format("Failed to initialize log file (INVALID_HANDLE_VALUE, LastError = %d)",
-			                                  GetLastError());
-			throw FatalSDKException(1000, errMsg);
-		}
-
-		gLogToFile = true;
-	}
-
-	void PrintLogHeader()
-	{
-#ifndef UE4
-		LogF("======== UnrealEngine PythonSDK Loaded (Version %d) ========\n", UnrealSDK::EngineVersion);
 #else
-		LogF("======== UnrealEngine PythonSDK Loaded (Version %s) ========\n", UnrealSDK::EngineBuild);
+				UnrealSDK::gameConsole->OutputText(FString(wideMessage.c_str()));
 #endif
-	}
-
-	void Cleanup()
-	{
-		if (gLogFile != INVALID_HANDLE_VALUE)
-		{
-			FlushFileBuffers(gLogFile);
-			CloseHandle(gLogFile);
+			}
 		}
 	}
 }
