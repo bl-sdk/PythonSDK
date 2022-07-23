@@ -361,7 +361,6 @@ void CPythonInterface::InitializeState()
 	try
 	{
 		py::initialize_interpreter();
-		py::module_::import("unrealsdk");
 		m_mainNamespace = py::module_::import("__main__");
 	}
 	catch (std::exception e)
@@ -405,9 +404,15 @@ PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 	SetPaths();
+	LOG(INFO, "[Python] Version: %d.%d.%d", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
+
 	try
 	{
+		py::module_::import("unrealsdk");
 		mainModule = py::module_::import("Mods");
+
+		// Also make these accessable on console
+		DoString("import unrealsdk, Mods");
 	}
 	catch (std::exception e)
 	{
@@ -423,11 +428,6 @@ PythonStatus CPythonInterface::InitializeModules()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
-	const char* fmt = "import sys;sys.path.append(r'%s\\')";
-	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
-	char* buffer = (char *)malloc(needed);
-	sprintf_s(buffer, needed, fmt, m_PythonPath.c_str());
-	DoString(buffer);
 }
 
 int CPythonInterface::DoFile(const char* filename)
