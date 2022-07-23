@@ -49,13 +49,13 @@ struct FString : public TArray<wchar_t>
 	{
 	};
 
-	FString(wchar_t* Other)
+	FString(const wchar_t* Other)
 	{
 		this->Max = this->Count = Other ? (wcslen(Other) + 1) : 0;
 		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
 
 		if (this->Count && this->Data != 0)
-			wcscpy(this->Data, Other);
+			wcscpy_s(this->Data, this->Max, Other);
 	};
 
 	FString(const char* Other)
@@ -64,17 +64,18 @@ struct FString : public TArray<wchar_t>
 		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
 
 		if (this->Count)
-			mbstowcs(this->Data, Other, this->Count);
+		{
+			size_t ret;
+			mbstowcs_s(&ret, this->Data, this->Max, Other, this->Count);
+		}
 	};
 
 
-	char* AsString()
+	const wchar_t* AsString()
 	{
 		if (this->Data == nullptr || this->Count == 0)
-			return (char*)"";
-		char* output = (char*)calloc(this->Count + 1, sizeof(char));
-		wcstombs(output, this->Data, this->Count);
-		return output;
+			return L"";
+		return this->Data;
 	}
 
 	~FString()

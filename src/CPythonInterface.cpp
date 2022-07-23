@@ -7,68 +7,44 @@
 #include <cstdlib>
 #include <sstream>
 
-
-bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
-{
+bool VerifyPythonFunction(py::object funcHook) {
 	PyObject* obj = funcHook.ptr();
-	if (!obj)
-	{
-		LOG(ERROR, "[Error] Object passed to hook is null");
+	if (!obj) {
+		LOG(ERROR, "Object passed to hook is null!");
 		return false;
 	}
-	if (!PyFunction_Check(obj))
-	{
-		LOG(ERROR, "[Error] Object passed to hook is not a function");
+	if (!PyFunction_Check(obj)) {
+		LOG(ERROR, "Object passed to hook is not a function!");
 		return false;
 	}
-	PyObject* Annotations = PyFunction_GetAnnotations(obj);
-	if (!Annotations || !PyDict_Check(Annotations))
-	{
-		LOG(ERROR, "[Error] Function passed to hook does not contain annotations");
+	PyCodeObject* code = (PyCodeObject*)PyFunction_GetCode(obj);
+	if (!code) {
+		LOG(ERROR, "Unable to retrive code from object passed to hook!");
 		return false;
 	}
-	// Python dicts aren't ordered, but we need to assume this dict is to verify the function args
-	PyObject* Keys = PyDict_Keys(Annotations);
-	PyObject* Values = PyDict_Values(Annotations);
-	if (!PyList_Check(Keys) || !PyList_Check(Values))
-	{
-		LOG(ERROR, "[Error] Function passed to hook does not contain annotations");
+	if (code->co_argcount != 3) {
+		LOG(ERROR, "Function passed to hook must have exactly 3 arguments!");
 		return false;
-	}
-	for (int x = 0; x < PyList_GET_SIZE(Keys) - 1; x++)
-	{
-		PyObject* Key = PyList_GET_ITEM(Keys, x);
-		const char* KeyString = PyUnicode_AsUTF8AndSize(Key, nullptr);
-		if (strcmp(KeyString, expectedKeys[x]))
-		{
-			LOG(ERROR, "[Error] Got unexpected argument '%s'. Expected '%s'.", KeyString, expectedKeys[x]);
-			return false;
-		}
 	}
 	return true;
 }
 
-void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook)
-{
-	static const char* params[] = {"caller", "function", "params"};
-	if (VerifyPythonFunction(funcHook, params))
-		UnrealSDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params)
-			{
-				try
-				{
-					py::object py_caller = cast(caller, py::return_value_policy::reference);
-					py::object py_function = cast(function, py::return_value_policy::reference);
-					py::object py_params = cast(params, py::return_value_policy::reference);
-					py::object ret = funcHook(py_caller, py_function, py_params);
-					return ret.cast<bool>();
-				}
-				catch (std::exception e)
-				{
-					LOG(ERROR, e.what());
-				}
-				return true;
-			}
-		);
+void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
+	if (!VerifyPythonFunction(funcHook)) {
+		return;
+	}
+	UnrealSDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params) {
+		try {
+			py::object py_caller = cast(caller, py::return_value_policy::reference);
+			py::object py_function = cast(function, py::return_value_policy::reference);
+			py::object py_params = cast(params, py::return_value_policy::reference);
+			py::object ret = funcHook(py_caller, py_function, py_params);
+			return ret.cast<bool>();
+		} catch (std::exception e) {
+			LOG(ERROR, e.what());
+		}
+		return true;
+	});
 }
 
 #ifdef UE4 // Console command handling
@@ -76,7 +52,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 bool RegisterConsoleCommand(const std::string& ConsoleCommand, py::object funcHook) {
 	// Function Verification
 	static const char* params[] = { "command"};
-	if (!VerifyPythonFunction(funcHook, params)) { return false; }
+	if (!VerifyPythonFunction(funcHook)) { return false; }
 	return UnrealSDK::RegisterConsoleCommand(ConsoleCommand, [funcHook](std::string& command)
 		{
 			try
@@ -282,7 +258,7 @@ void AddToConsoleLog(UConsole* console, FString input)
 {
 
 	int prev = (console->HistoryTop - 1) % 16;
-	if (!console->History[prev].Data || strcmp(input.AsString(), console->History[prev].AsString()))
+	if (!console->History[prev].Data || wcscmp(input.AsString(), console->History[prev].AsString()))
 	{
 		console->PurgeCommandFromHistory(input);
 		console->History[console->HistoryTop] = input;
@@ -298,22 +274,24 @@ void AddToConsoleLog(UConsole* console, FString input)
 #ifndef UE4
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-
 	FString* command = ((FHelper *)params->base)->GetStrProperty(
-		(UProperty *)params->structType->FindChildByName(FName("command")));
-
-	char* input = command->AsString();
-	if (strncmp("py ", input, 3) == 0)
+		(UProperty *)params->structType->FindChildByName(FName("command")),
+		0
+	);
+	const wchar_t* input = command->AsString();
+	if (wcsncmp(L"py ", input, 3) == 0)
 	{
+		const char* narrow = Util::Narrow(input).c_str();
 		AddToConsoleLog((UConsole*)caller, *command);
-		LOG(CONSOLE, "\n>>> %s <<<", input);
-		UnrealSDK::Python->DoString(input + 3);
+		LOG(CONSOLE, ">>> %s <<<", narrow);
+		UnrealSDK::Python->DoString(narrow + 3);
 	}
-	else if (strncmp("pyexec ", input, 7) == 0)
+	else if (wcsncmp(L"pyexec ", input, 7) == 0)
 	{
+		const char* narrow = Util::Narrow(input).c_str();
 		AddToConsoleLog((UConsole*)caller, *command);
-		LOG(CONSOLE, "\n>>> %s <<<", input);
-		UnrealSDK::Python->DoFile(input + 7);
+		LOG(CONSOLE, ">>> %s <<<", narrow);
+		UnrealSDK::Python->DoFile(narrow + 7);
 	}
 	else {
 		((UConsole*)caller)->ConsoleCommand(*command);
@@ -361,7 +339,6 @@ void CPythonInterface::InitializeState()
 	try
 	{
 		py::initialize_interpreter();
-		py::module_::import("unrealsdk");
 		m_mainNamespace = py::module_::import("__main__");
 	}
 	catch (std::exception e)
@@ -405,9 +382,15 @@ PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 	SetPaths();
+	LOG(INFO, "[Python] Version: %d.%d.%d", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
+
 	try
 	{
+		py::module_::import("unrealsdk");
 		mainModule = py::module_::import("Mods");
+
+		// Also make these accessable on console
+		DoString("import unrealsdk, Mods");
 	}
 	catch (std::exception e)
 	{
@@ -423,11 +406,6 @@ PythonStatus CPythonInterface::InitializeModules()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
-	const char* fmt = "import sys;sys.path.append(r'%s\\')";
-	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
-	char* buffer = (char *)malloc(needed);
-	sprintf_s(buffer, needed, fmt, m_PythonPath.c_str());
-	DoString(buffer);
 }
 
 int CPythonInterface::DoFile(const char* filename)
