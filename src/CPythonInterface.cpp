@@ -100,7 +100,7 @@ void RemoveConsoleCommand(const std::string& ConsoleCommand) {
 #endif
 
 static void ValidateLogLevel(int level) {
-	if (level > Logging::SDKVerbosity::MAX || level < Logging::SDKVerbosity::ERROR) {
+	if (level < Logging::SDKVerbosity::MIN || level > Logging::SDKVerbosity::MAX) {
 		throw py::value_error("Log level out of range");
 	}
 }
