@@ -1,0 +1,119 @@
+﻿{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "_base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}"
+    },
+    {
+      "name": "_msvc",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      }
+    },
+    {
+      "name": "_x86",
+      "hidden": true,
+      "architecture": {
+        "value": "Win32",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "SDK_ARCH": "x86"
+      }
+    },
+    {
+      "name": "_x64",
+      "hidden": true,
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "SDK_ARCH": "x64"
+      }
+    },
+    {
+      "name": "_ue3",
+      "hidden": true,
+      "cacheVariables": {
+        "SDK_UE_VERSION": "UE3"
+      }
+    },
+    {
+      "name": "_ue4",
+      "hidden": true,
+      "cacheVariables": {
+        "SDK_UE_VERSION": "UE4"
+      }
+    },
+    {
+      "name": "_debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "_release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "msvc-ue3-x86-debug",
+      "displayName": "UE3 x86 Debug",
+      "inherits": [
+        "_base",
+        "_msvc",
+        "_ue3",
+        "_x86",
+        "_debug"
+      ]
+    },
+    {
+      "name": "msvc-ue3-x86-release",
+      "displayName": "UE3 x86 Release",
+      "inherits": [
+        "_base",
+        "_msvc",
+        "_ue3",
+        "_x86",
+        "_release"
+      ]
+    },
+    {
+      "name": "msvc-ue4-x64-debug",
+      "displayName": "UE4 x64 Debug",
+      "inherits": [
+        "_base",
+        "_msvc",
+        "_ue4",
+        "_x64",
+        "_debug"
+      ]
+    },
+    {
+      "name": "msvc-ue4-x64-release",
+      "displayName": "UE4 x64 Release",
+      "inherits": [
+        "_base",
+        "_msvc",
+        "_ue4",
+        "_x64",
+        "_release"
+      ]
+    }
+  ]
+}
