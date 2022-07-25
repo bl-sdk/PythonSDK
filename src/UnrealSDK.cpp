@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "MinHook.h"
 #include "CSigScan.h"
 #include "Exceptions.h"
 #include "Signatures.h"

@@ -40,6 +40,8 @@
 
 #include "UnrealSDK.h"
 
+#include "MinHook.h"
+
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
 

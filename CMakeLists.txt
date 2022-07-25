@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.13)
+﻿cmake_minimum_required (VERSION 3.20)
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
    include("${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
@@ -16,16 +16,28 @@ endif()
 execute_process(COMMAND ${Python_EXECUTABLE} -c "import sys;print('Using Python ' + sys.version)")
 
 # Source Files
-set(include_dirs "src/include" "libs/loguru" "libs/pybind11/include")
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS "src/*.c" "src/*.cpp")
+
+set(include_dirs "src/include" "libs/loguru" "libs/minhook/include" "libs/pybind11/include")
 foreach(dirname ${include_dirs})
-	file(GLOB_RECURSE dir_include_files CONFIGURE_DEPENDS "${dirname}/*.h??")
+	file(GLOB_RECURSE dir_include_files CONFIGURE_DEPENDS "${dirname}/*.h" "${dirname}/*.hpp")
 	list(APPEND include_files ${dir_include_files})
 endforeach()
 
-file(GLOB_RECURSE sources CONFIGURE_DEPENDS "src/*.cpp")
-list(APPEND sources "libs/loguru/loguru.cpp")
+file(GLOB_RECURSE minhook_sources CONFIGURE_DEPENDS "libs/minhook/src/*.c")
+if(SDK_ARCH EQUAL "x86")
+	list(REMOVE_ITEM minhook_sources "${CMAKE_CURRENT_SOURCE_DIR}/libs/minhook/src/hde/hde64.c")
+else()
+	list(REMOVE_ITEM minhook_sources "${CMAKE_CURRENT_SOURCE_DIR}/libs/minhook/src/hde/hde32.c")
+endif()
+SET_SOURCE_FILES_PROPERTIES(${minhook_sources} PROPERTIES LANGUAGE CXX)
 
-add_library(unrealsdk SHARED ${sources} ${include_files})
+add_library(unrealsdk SHARED
+	${sources}
+	${include_files}
+	"libs/loguru/loguru.cpp"
+	${minhook_sources}
+)
 
 target_include_directories(unrealsdk PUBLIC ${include_dirs} ${Python_INCLUDE_DIRS})
 target_link_directories(unrealsdk PUBLIC ${Python_LIBRARY_DIRS})
