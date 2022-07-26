@@ -1,0 +1,11 @@
+# This file can be used to customize the used python installation. While FindPython works decently,
+#  it doesn't consider architecture, and you may want to force a different version.
+# If this file exists (as the non template, gitignore'd version), it will be included near the top
+#  of the main CMakeLists.txt, before FindPython is run.
+
+# Example implmentation
+
+if(SDK_ARCH EQUAL "x86")
+	set(Python_FIND_STRATEGY LOCATION)
+	set(Python_ROOT_DIR "C:/Users/apple1417/AppData/Local/Programs/Python/Python37-32/")
+endif()

@@ -1,0 +1,20 @@
+REM This script is run after a build completes, intended for advanced customization of install dir.
+REM On Windows, it must be renamed to `postbuild.bat`, and thus should be a batch file. On other
+REM  platforms, it should just be called `postbuild`, and can be any executable program.
+REM If the script exists, it will be called with 4 arguments: The path to the built target and the
+REM  build's UE version, architecture, and type (`DEBUG` or `RELEASE`).
+
+REM Example (batch) implementation:
+
+@echo off
+
+set "target=%~1"
+set "ue_version=%~2"
+set "architecture=%~3"
+set "build_type=%~4"
+
+if /i "%ue_version%" == "UE4" (
+    if "%architecture%" == "x64" (
+        copy /Y "%target%" "C:\Program Files (x86)\Steam\steamapps\common\Borderlands 3\OakGame\Binaries\Win64\Plugins\PythonSDK.dll"
+    )
+)
