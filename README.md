@@ -16,12 +16,13 @@ To get started developing:
 
 1. Clone the repo (including submodules).
    ```
-   git clone https://github.com/bl-sdk/PythonSDK.git
-   cd PythonSDK
-   git submodule update --init
+   git clone --recursive https://github.com/bl-sdk/PythonSDK.git
    ```
 
 2. Install Python for your platform, and make sure to install the dev headers.
+
+   NOTE: installing the Python debug libraries may cause linker issues, see
+   [pybind#3403](https://github.com/pybind/pybind11/issues/3403).
 
 3. Choose a preset, and run CMake. Most IDEs will have some form of CMake intergration, or you can
    run the commands manually.
