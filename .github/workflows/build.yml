@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches: ["bl3"]
+  pull_request:
+    branches: ["bl3"]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: ["msvc-ue4-x64-release"]
+        python_version: ["3.10"]
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Setup Python (32bit)
+      if: contains(matrix.preset, 'x86')
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python_version }}
+        architecture: x86
+
+    - name: Setup Python (64bit)
+      if: contains(matrix.preset, 'x64')
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python_version }}
+        architecture: x64
+
+    - name: Configure CMake
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: cmake . --preset ${{ matrix.preset }} -DPython_EXECUTABLE="${{ env.pythonLocation }}\python.exe"
+
+    - name: Build
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: cmake --build out\build\${{ matrix.preset }}

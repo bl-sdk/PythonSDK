@@ -3,6 +3,7 @@
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
    include("${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
 endif()
+set(ignore_me "${SDK_ARCH}")  # Suppress the unused warning if needed
 
 project("unrealsdk")
 
