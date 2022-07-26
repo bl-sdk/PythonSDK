@@ -16,32 +16,25 @@ if(NOT Python_FOUND)
 endif()
 execute_process(COMMAND ${Python_EXECUTABLE} -c "import sys;print('Using Python ' + sys.version)")
 
+add_subdirectory(libs/minhook)
+add_subdirectory(libs/pybind11)
+
 # Source Files
-file(GLOB_RECURSE sources CONFIGURE_DEPENDS "src/*.c" "src/*.cpp")
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS "src/*.c" "src/*.cpp" "src/*.h" "src/*.hpp")
 
-set(include_dirs "src/include" "libs/loguru" "libs/minhook/include" "libs/pybind11/include")
-foreach(dirname ${include_dirs})
-	file(GLOB_RECURSE dir_include_files CONFIGURE_DEPENDS "${dirname}/*.h" "${dirname}/*.hpp")
-	list(APPEND include_files ${dir_include_files})
-endforeach()
-
-file(GLOB_RECURSE minhook_sources CONFIGURE_DEPENDS "libs/minhook/src/*.c")
-if(SDK_ARCH EQUAL "x86")
-	list(REMOVE_ITEM minhook_sources "${CMAKE_CURRENT_SOURCE_DIR}/libs/minhook/src/hde/hde64.c")
-else()
-	list(REMOVE_ITEM minhook_sources "${CMAKE_CURRENT_SOURCE_DIR}/libs/minhook/src/hde/hde32.c")
-endif()
-SET_SOURCE_FILES_PROPERTIES(${minhook_sources} PROPERTIES LANGUAGE CXX)
-
+# Can't use pybind11_add_module cause Visual Studio won't let you debug it
 add_library(unrealsdk SHARED
 	${sources}
-	${include_files}
+	"libs/loguru/loguru.hpp"
 	"libs/loguru/loguru.cpp"
-	${minhook_sources}
 )
+target_include_directories(unrealsdk PUBLIC "src/include" "libs/loguru")
 
-target_include_directories(unrealsdk PUBLIC ${include_dirs} ${Python_INCLUDE_DIRS})
-target_link_directories(unrealsdk PUBLIC ${Python_LIBRARY_DIRS})
+target_link_libraries(unrealsdk PUBLIC minhook pybind11::embed pybind11::lto)
+if(MSVC)
+	target_link_libraries(unrealsdk PUBLIC pybind11::windows_extras)
+endif()
+
 
 target_compile_definitions(unrealsdk PUBLIC ${SDK_UE_VERSION})
 # CMake by default defines NDEBUG in release, we also want the opposite
@@ -56,7 +49,7 @@ endif()
 target_precompile_headers(unrealsdk PUBLIC "src/stdafx.cpp")
 
 if(MSVC)
-	# Try enable Edit and Continue. Doesn't like to work much ¯\_(ツ)_/¯ .
+	# Enable Edit and Continue.
 	string(REPLACE "/Zi" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
 	string(REPLACE "/Zi" "" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 	string(REPLACE "/Zi" "" CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
@@ -64,11 +57,9 @@ if(MSVC)
 
 	target_compile_options(unrealsdk PUBLIC "$<$<CONFIG:DEBUG>:/ZI>")
 	target_link_options(unrealsdk PUBLIC "/INCREMENTAL")
-
-	# Need this for now, may be able to remove later
-	target_compile_options(unrealsdk PUBLIC "/bigobj")
 endif()
 
+# Postbuild
 set(POSTBUILD_SCRIPT "postbuild")
 if(CMAKE_HOST_WIN32)
 	set(POSTBUILD_SCRIPT "${POSTBUILD_SCRIPT}.bat")
