@@ -354,9 +354,12 @@ namespace UnrealSDK
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		LOG(MISC, "[Internal] GetDefaultObject = 0x%p", pGetDefaultObject);
 
+#ifndef UE4
+		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
+		LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
+#else
 		// TODO: Add these sigs
-		// pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
-		// LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
+#endif
 
 		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
