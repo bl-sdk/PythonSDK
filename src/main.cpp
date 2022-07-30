@@ -24,9 +24,6 @@ DWORD WINAPI Start(LPVOID lpParam)
 	Settings::Initialize(exeBaseFolder);
 
 	Logging::Initalize();
-#ifdef _DEBUG
-	Logging::InitalizeExternal();
-#endif
 
 	LOG(INFO, "======= Unreal Engine Python Loader =======");
 	try {

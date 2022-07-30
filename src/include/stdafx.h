@@ -31,12 +31,14 @@
 
 #include <windows.h>
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
 #include <ShlObj.h>
 #include <string>
 #include <map>
 #include <regex>
 #include <typeinfo>
+#include <charconv>
 
 #include "UnrealSDK.h"
 
