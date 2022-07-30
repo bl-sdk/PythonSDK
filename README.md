@@ -11,6 +11,15 @@ An UnrealEngine Plugin enabling using Python to write plugins that interact dire
 - Borderlands: The Pre-Sequel
 - Tiny Tina’s Assault on Dragon Keep: A Wonderlands One-shot Adventure
 
+# Enviroment Variables
+A few enviroment variables affect how the SDK behaves.
+
+Enviroment Variable           | Usage
+:-----------------------------|:------
+`UNREALSDK_EXTERNAL_CONSOLE`  | If defined, creates an external console window mirroring what is written to the game's console. Always enabled in debug builds.
+`UNREALSDK_CONSOLE_LOG_LEVEL` | Changes the default console logging level. May use either the level names or their numerical values.
+`UNREALSDK_FILE_LOG_LEVEL`    | Changes the default file logging level. May use either the level names or their numerical values.
+
 # Developing
 To get started developing:
 

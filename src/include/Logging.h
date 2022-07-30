@@ -47,11 +47,6 @@ namespace Logging
 	void Cleanup(void);
 
 	/**
-	 * @brief Initalizes an external console, which all console messages are duplicated to.
-	 */
-	void InitalizeExternal(void);
-
-	/**
 	 * @brief Set the verbosity level of console.
 	 *
 	 * @param verbosity The new verbosity level.
