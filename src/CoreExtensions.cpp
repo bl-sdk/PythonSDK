@@ -1052,7 +1052,7 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 
 	auto flags = func->FunctionFlags;
 	func->FunctionFlags |= 0x400;
-	UnrealSDK::pProcessEvent(obj, func, params);
+	UnrealSDK::ProcessEvent(obj, func, params);
 	func->FunctionFlags = flags;
 
 	LOG(INTERNAL, "Called ProcessEvent");
