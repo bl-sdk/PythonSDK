@@ -9,6 +9,7 @@
 #include "Settings.h"
 #include "Exports.h"
 #include "gamedefines.h"
+#include "AntiDebug.h"
 
 #include <fstream>
 
@@ -385,6 +386,9 @@ namespace UnrealSDK
 		LogAllCalls(false);
 
 		MH_Initialize();
+#ifndef UE4
+		HookAntiDebug();
+#endif
 
 		if (pProcessEvent != nullptr) {
 			// Detour UObject::ProcessEvent()
