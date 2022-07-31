@@ -9,6 +9,7 @@
 #include "Settings.h"
 #include "Exports.h"
 #include "gamedefines.h"
+#include "AntiDebug.h"
 
 #include <fstream>
 
@@ -63,7 +64,45 @@ namespace UnrealSDK
 
 	CSigScan scanner = nullptr;
 
-	void __fastcall hkProcessEvent(UObject* caller, UFunction* Function, void* Params)
+	void ProcessEvent(UObject* caller, UFunction* Function, void* Params, void* Result) {
+#ifndef UE4
+		pProcessEvent(caller, Function, Params, nullptr);
+#else
+		pProcessEvent(caller, Function, Params);
+#endif
+	}
+
+#ifndef UE4
+	void __fastcall hkProcessEvent(UObject* caller, DWORD dummy, UFunction* Function, void* Params, void* Result)
+	{
+		if (gInjectedCallNext)
+		{
+			gInjectedCallNext = false;
+			oProcessEvent(caller, Function, Params, Result);
+			return;
+		}
+
+		std::string functionName = Function->GetObjectName();
+		if (logAllCalls)
+		{
+			std::string callerName = caller->GetFullName();
+
+			LOG(HOOKS, "===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s", callerName.c_str(), functionName.c_str());
+		}
+
+		if (gHookManager->HasHook(caller, Function))
+		{
+			auto fParams = FStruct{ Function, Params };
+			if (!gHookManager->ProcessHooks(functionName, caller, Function, &fParams)) {
+				// The engine hook manager told us not to pass this function to the engine
+				return;
+			}
+		}
+
+		oProcessEvent(caller, Function, Params, Result);
+	}
+#else
+	void __stdcall hkProcessEvent(UObject* caller, UFunction* Function, void* Params)
 	{
 		if (gInjectedCallNext)
 		{
@@ -91,6 +130,7 @@ namespace UnrealSDK
 
 		oProcessEvent(caller, Function, Params);
 	}
+#endif
 
 	void LogOutParams(FFrame* Stack)
 	{
@@ -314,9 +354,12 @@ namespace UnrealSDK
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		LOG(MISC, "[Internal] GetDefaultObject = 0x%p", pGetDefaultObject);
 
+#ifndef UE4
+		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
+		LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
+#else
 		// TODO: Add these sigs
-		// pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
-		// LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
+#endif
 
 		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
@@ -346,6 +389,9 @@ namespace UnrealSDK
 		LogAllCalls(false);
 
 		MH_Initialize();
+#ifndef UE4
+		HookAntiDebug();
+#endif
 
 		if (pProcessEvent != nullptr) {
 			// Detour UObject::ProcessEvent()

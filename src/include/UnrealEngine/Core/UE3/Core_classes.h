@@ -80,17 +80,6 @@ public:
 	void SetArrayProperty(class UProperty* Prop, int idx, const py::object& Val);
 };
 
-template<typename Fn>
-inline Fn GetVFunction(const void* instance, std::size_t index)
-{
-	auto vtable = *reinterpret_cast<const void***>(const_cast<void*>(instance));
-	__debugbreak();
-	return reinterpret_cast<Fn>(vtable[index]);
-}
-
-
-
-
 // 0x003C
 class UObject : FHelper
 {
@@ -465,17 +454,74 @@ public:
 	static bool Not_PreBool(bool A);
 	// Virtual Functions
 
-	inline void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent)
-	{
-		return GetVFunction<void(*)(UObject *, FPropertyChangedEvent * PropertyChangedEvent)>(this, 19)(this, PropertyChangedEvent);
-	}
-
-	inline void ProcessEvent(class UFunction* function, void* parms)
-	{
-		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 67)(this, function, parms);
-	}
-
-	virtual void Dummy() {};
+	virtual void VirtualFunction00() {};																			// 0x005838A0 (0x00)
+	virtual void VirtualFunction01() {};																			// 0x005FC030 (0x04)
+	virtual void VirtualFunction02() {};																			// 0x005953C0 (0x08)
+	virtual void VirtualFunction03() {};																			// 0x00FBA130 (0x0C)
+	virtual void VirtualFunction04() {};																			// 0x01218070 (0x10)
+	virtual void VirtualFunction05() {};																			// 0x00F90510 (0x14)
+	virtual void VirtualFunction06() {};																			// 0x0073DA00 (0x18)
+	virtual void VirtualFunction07() {};																			// 0x0040C150 (0x1C)
+	virtual void VirtualFunction08() {};																			// 0x00BD3FF0 (0x20)
+	virtual void VirtualFunction09() {};																			// 0x0100ACD0 (0x24)
+	virtual void VirtualFunction10() {};																			// 0x005838A0 (0x28)
+	virtual void VirtualFunction11() {};																			// 0x008C0E10 (0x2C)
+	virtual void VirtualFunction12() {};																			// 0x00F64D40 (0x30)
+	virtual void VirtualFunction13() {};																			// 0x009A7490 (0x34)
+	virtual void VirtualFunction14() {};																			// 0x00271DD0 (0x38)
+	virtual void VirtualFunction15() {};																			// 0x0053CE50 (0x3C)
+	virtual void VirtualFunction16() {};																			// 0x00F90510 (0x40)
+	virtual void VirtualFunction17() {};																			// 0x00C6EB60 (0x44)
+	virtual void VirtualFunction18() {};																			// 0x009CBC30 (0x48)
+	virtual void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent) {};							// 0x00AEAFA0 (0x4C)
+	virtual void VirtualFunction20() {};																			// 0x00A28430 (0x50)
+	virtual void VirtualFunction21() {};																			// 0x00601380 (0x54)
+	virtual void VirtualFunction22() {};																			// 0x0048AE50 (0x58)
+	virtual void VirtualFunction23() {};																			// 0x005F68F0 (0x5C)
+	virtual void VirtualFunction24() {};																			// 0x00F90510 (0x60)
+	virtual void VirtualFunction25() {};																			// 0x00F90510 (0x64)
+	virtual void VirtualFunction26() {};																			// 0x006B8E90 (0x68)
+	virtual void VirtualFunction27() {};																			// 0x0048AE50 (0x6C)
+	virtual void VirtualFunction28() {};																			// 0x005F68F0 (0x70)
+	virtual void VirtualFunction29() {};																			// 0x0048AE50 (0x74)
+	virtual void VirtualFunction30() {};																			// 0x005F68F0 (0x78)
+	virtual void VirtualFunction31() {};																			// 0x00C611D0 (0x7C)
+	virtual void VirtualFunction32() {};																			// 0x0041D5C0 (0x80)
+	virtual void VirtualFunction33() {};																			// 0x0108A6C0 (0x84)
+	virtual void VirtualFunction34() {};																			// 0x00F90510 (0x88)
+	virtual void VirtualFunction35() {};																			// 0x009F3B90 (0x8C)
+	virtual void VirtualFunction36() {};																			// 0x00ADAF50 (0x90)
+	virtual void VirtualFunction37() {};																			// 0x0080C1C0 (0x94)
+	virtual void VirtualFunction38() {};																			// 0x00BFA410 (0x98)
+	virtual void VirtualFunction39() {};																			// 0x0048D800 (0x9C)
+	virtual void VirtualFunction40() {};																			// 0x00186780 (0xA0)
+	virtual void VirtualFunction41() {};																			// 0x00556B50 (0xA4)
+	virtual void VirtualFunction42() {};																			// 0x00186780 (0xA8)
+	virtual void VirtualFunction43() {};																			// 0x00EA93F0 (0xAC)
+	virtual void VirtualFunction44() {};																			// 0x00EA93F0 (0xB0)
+	virtual void VirtualFunction45() {};																			// 0x00F90510 (0xB4)
+	virtual void VirtualFunction46() {};																			// 0x00186780 (0xB8)
+	virtual void VirtualFunction47() {};																			// 0x0094CB90 (0xBC)
+	virtual void VirtualFunction48() {};																			// 0x00BC6F40 (0xC0)
+	virtual void VirtualFunction49() {};																			// 0x00525190 (0xC4)
+	virtual void VirtualFunction50() {};																			// 0x00B01BC0 (0xC8)
+	virtual void VirtualFunction51() {};																			// 0x01218070 (0xCC)
+	virtual void VirtualFunction52() {};																			// 0x01218070 (0xD0)
+	virtual void VirtualFunction53() {};																			// 0x00EA93F0 (0xD4)
+	virtual void VirtualFunction54() {};																			// 0x00FA4230 (0xD8)
+	virtual void VirtualFunction55() {};																			// 0x0020B6A0 (0xDC)
+	virtual void VirtualFunction56() {};																			// 0x00F883C0 (0xE0)
+	virtual void VirtualFunction57() {};																			// 0x00186780 (0xE4)
+	virtual void VirtualFunction58() {};																			// 0x00D28B70 (0xE8)
+	virtual void VirtualFunction59() {};																			// 0x00D57990 (0xEC)
+	virtual void VirtualFunction60() {};																			// 0x00676A60 (0xF0)
+	virtual void VirtualFunction61() {};																			// 0x00186780 (0xF4)
+	virtual void VirtualFunction62() {};																			// 0x00B05370 (0xF8)
+	virtual void VirtualFunction63() {};																			// 0x00896B70 (0xFC)
+	virtual void VirtualFunction64() {};																			// 0x0028AA90 (0x100)
+	virtual void VirtualFunction65() {};																			// 0x00EE7430 (0x104)
+	virtual void VirtualFunction66() {};																			// 0x00592990 (0x108)
+	virtual void ProcessEvent(class UFunction* pFunction, void* params, void* pResult = NULL) {};					// 0x00F757C0 (0x10C)
 };
 
 struct FScriptDelegate

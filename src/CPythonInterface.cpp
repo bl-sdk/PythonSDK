@@ -281,7 +281,8 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 	const wchar_t* input = command->AsString();
 	if (wcsncmp(L"py ", input, 3) == 0)
 	{
-		const char* narrow = Util::Narrow(input).c_str();
+		auto z = Util::Narrow(input);
+		const char* narrow = z.c_str();
 		AddToConsoleLog((UConsole*)caller, *command);
 		LOG(CONSOLE, ">>> %s <<<", narrow);
 		UnrealSDK::Python->DoString(narrow + 3);

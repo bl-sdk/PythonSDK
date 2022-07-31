@@ -27,7 +27,11 @@ struct FStruct;
 
 namespace UnrealSDK
 {
-	typedef void (__thiscall *tProcessEvent)(UObject*, UFunction*, void*);
+#ifndef UE4
+	typedef void(__thiscall* tProcessEvent)(UObject*, UFunction*, void*, void*);
+#else
+	typedef void(__thiscall* tProcessEvent)(UObject*, UFunction*, void*);
+#endif
 	typedef int (tUnrealEH)(unsigned int, struct _EXCEPTION_POINTERS*);
 	typedef void (__thiscall *tCallFunction)(UObject*, FFrame&, void*, UFunction*);
 	typedef void (__thiscall *tFrameStep)(FFrame*, UObject*, void*);
@@ -71,6 +75,7 @@ namespace UnrealSDK
 	extern bool gInjectedCallNext;
 	extern UConsole* gameConsole;
 	extern bool gCallPostEdit;
+	extern tProcessEvent oProcessEvent;
 
 #ifdef UE4
 	extern tStaticExec pStaticExec;
@@ -97,6 +102,7 @@ namespace UnrealSDK
 
 	extern CSigScan scanner;
 
+	void ProcessEvent(UObject* caller, UFunction* Function, void* Params, void* Result = nullptr);
 	void LogAllCalls(bool Enabled);
 	void DoInjectedCallNext();
 	void Initialize();

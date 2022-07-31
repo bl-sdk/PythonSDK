@@ -1,11 +1,12 @@
 ﻿cmake_minimum_required (VERSION 3.20)
 
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
-   include("${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
-endif()
 set(ignore_me "${SDK_ARCH}")  # Suppress the unused warning if needed
 
 project("unrealsdk")
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
+   include("${CMAKE_CURRENT_SOURCE_DIR}/user-python.cmake")
+endif()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)

@@ -105,9 +105,9 @@ public:
 	static const auto NAME_WIDE_MASK = 0x1;
 	static const auto NAME_INDEX_SHIFT = 1;
 
+	char UnknownData00[0x08];
 	int32_t Index;
-	char UnknownData00[0x04];
-	FNameEntry* HashNext;
+	char UnknownData01[0x04];
 	union
 	{
 		char AnsiName[1024];
