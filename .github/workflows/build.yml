@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        preset: ["msvc-ue4-x64-release"]
+        preset: ["msvc-ue4-x64-release", "msvc-ue3-x86-release"]
         python_version: ["3.10"]
 
     steps:
@@ -23,8 +23,17 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Setup MSVC
-      uses: ilammy/msvc-dev-cmd@v1
+    - name: Setup MSVC (32bit)
+      if: contains(matrix.preset, 'x86')
+      uses: TheMrMilchmann/setup-msvc-dev@v2
+      with:
+        arch: x86
+
+    - name: Setup MSVC (64bit)
+      if: contains(matrix.preset, 'x64')
+      uses: TheMrMilchmann/setup-msvc-dev@v2
+      with:
+        arch: x64
 
     - name: Setup Python (32bit)
       if: contains(matrix.preset, 'x86')
