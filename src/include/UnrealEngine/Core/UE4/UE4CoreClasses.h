@@ -23,6 +23,12 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 
+template<typename T>
+struct prop_info {
+	typedef T type;
+	static inline const char* class_name;
+};
+
 struct FHelper {
 public:
 	struct FStruct GetStructProperty(class UProperty* Prop, int idx);
@@ -80,20 +86,56 @@ public:
 
 	void SetProperty(class UProperty* Prop, const py::object& val);
 
+	template <typename T>
+	typename prop_info<T>::type ReadProperty(T*, int);
 };
 
 
 // Class CoreUObject.Object
 // 0x0028
-class UObject : FHelper
-{
-public:
+class UObject {
+   private:
+	/**
+	 * @brief Dummy function which creates a vftable, to offset the remaining fields correctly.
+	 */
+	virtual void Dummy(){};
+
+   public:
 	int32_t                                            ObjectFlags;                                              // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            InternalIndex;                                            // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UClass* Class;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	FName                                              Name;                                                     // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UObject* Outer;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 
+	/**
+	 * @brief Gets a property on the object.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename prop_info<T>::type GetPropertyTEMPLATE(const std::string& name) {
+		return reinterpret_cast<FHelper*>(this)->ReadProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Gets a property of an object as a fixed-size array.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return A vector of the property's values.
+	 */
+	template <typename T>
+	std::vector<typename prop_info<T>::type> GetFixedArrayProperty(const std::string& name) {
+		auto prop = this->Class->FindAndValidateProperty<T>(name);
+		std::vector<typename prop_info<T>::type> vec(prop->ArrayDim);
+		for (size_t i = 0; i < prop->ArrayDim; i++) {
+			vec[i] = reinterpret_cast<FHelper*>(this)->ReadProperty<T>(prop, i);
+		}
+		return vec;
+	}
 
 	static inline FChunkedFixedUObjectArray* GObjects()
 	{
@@ -180,7 +222,6 @@ public:
 
 	void SetProperty(std::string& PropName, const py::object& Val);
 
-	virtual void Dummy() {};
 	static class UObject* FindObject(const class FString& ObjectName, class UClass* ObjectClass);
 
 	void ExecuteUbergraph(int EntryPoint);
@@ -283,8 +324,7 @@ public:
 		return ptr;
 	}
 
-
-	UObject* FindChildByName(FName InName) const
+	UField* FindChildByName(FName InName) const
 	{
 		const UStruct* thisField = this;
 		while (thisField)
@@ -296,6 +336,19 @@ public:
 		}
 
 		return NULL;
+	}
+
+	template <typename T>
+	T* FindAndValidateProperty(const std::string& name) {
+		auto prop = this->FindChildByName(FName(name));
+		if (prop == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (prop->Class->Name != FName(prop_info<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+		return reinterpret_cast<T*>(prop);
 	}
 };
 
@@ -309,6 +362,36 @@ public:
 		LOG(INTERNAL, "Creating FStruct of type '%s' from %p", s->GetObjectName().c_str(), b);
 		structType = s;
 		base = b;
+	}
+
+	/**
+	 * @brief Gets a property on the object.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename prop_info<T>::type GetPropertyTEMPLATE(const std::string& name) {
+		return reinterpret_cast<FHelper*>(this->base)
+			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Gets a property of an object as a fixed-size array.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return A vector of the property's values.
+	 */
+	template <typename T>
+	std::vector<typename prop_info<T>::type> GetFixedArrayProperty(const std::string& name) {
+		auto prop = this->structType->FindAndValidateProperty<T>(name);
+		std::vector<typename prop_info<T>::type> vec(prop->ArrayDim);
+		for (size_t i = 0; i < prop->ArrayDim; i++) {
+			vec[i] = reinterpret_cast<FHelper*>(this->base)->ReadProperty<T>(prop, i);
+		}
+		return vec;
 	}
 
 	pybind11::object GetProperty(const std::string& PropName) const;
@@ -541,21 +624,6 @@ public:
 		static auto ptr = UObject::FindClass("Class CoreUObject.Class");
 		return ptr;
 	}
-
-	UObject* FindChildByName(FName InName) const
-	{
-		const UStruct* thisField = this;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
-				if (Child->Name == InName)
-					return Child;
-			thisField = thisField->SuperField;
-		}
-
-		return NULL;
-	}
-
 
 	std::vector<UProperty*> GetProperties() const {
 		const auto size = sizeof(UClass);
@@ -1625,5 +1693,17 @@ typedef void(__thiscall* tFree)(void***, void*);
 #ifdef _MSC_VER
 #pragma pack(pop)
 #endif
+
+template<>
+struct prop_info<UStructProperty> {
+	typedef struct FStruct type;
+	static inline const char* class_name = "StructProperty";
+};
+
+template<>
+struct prop_info<UObjectProperty> {
+	typedef struct UObject* type;
+	static inline const char* class_name = "ObjectProperty";
+};
 
 #endif

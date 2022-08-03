@@ -463,7 +463,10 @@ namespace UnrealSDK
 
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
-		if (eng && gameConsole == nullptr && eng->GameViewport)  gameConsole = eng->GameViewport->ViewportConsole;
+		auto viewport = eng->GetPropertyTEMPLATE<UObjectProperty>("GameViewport");
+		if (eng && gameConsole == nullptr && viewport) {
+			gameConsole = (UConsole*)viewport->GetPropertyTEMPLATE<UObjectProperty>("ViewportConsole");
+		}
 
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
