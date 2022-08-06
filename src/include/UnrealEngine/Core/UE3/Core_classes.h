@@ -14,6 +14,7 @@
 #endif
 
 #include "UnrealEngine/Core/UE3/Core_structs.h"
+#include "PropertyHelper.h"
 
 /*
 # ========================================================================================= #
@@ -44,44 +45,8 @@
 # ========================================================================================= #
 */
 
-struct FHelper {
-public:
-	void* GetPropertyAddress(class UProperty* Prop, int idx);
-	py::object GetProperty(class UProperty* Prop);
-
-	struct FStruct GetStructProperty(class UProperty *Prop, int idx);
-	struct FString* GetStrProperty(class UProperty *Prop, int idx);
-	class UObject* GetObjectProperty(class UProperty *Prop, int idx);
-	class UComponent* GetComponentProperty(class UProperty *Prop, int idx);
-	class UClass* GetClassProperty(class UProperty *Prop, int idx);
-	struct FName* GetNameProperty(class UProperty *Prop, int idx);
-	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop, int idx);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop, int idx);
-	float GetFloatProperty(class UProperty *Prop, int idx);
-	int GetIntProperty(class UProperty *Prop, int idx);
-	unsigned char GetByteProperty(class UProperty *Prop, int idx);
-	bool GetBoolProperty(class UProperty *Prop, int idx);
-	struct FArray GetArrayProperty(class UProperty *Prop, int idx);
-
-	void SetProperty(class UProperty* Prop, const py::object& Val);
-
-	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetClassProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetNameProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetIntProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetByteProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetBoolProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetArrayProperty(class UProperty* Prop, int idx, const py::object& Val);
-};
-
 // 0x003C
-class UObject : FHelper
+class UObject
 {
 public:
 	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
@@ -120,8 +85,50 @@ public:
 	static UClass* StaticClass();
 	static std::vector<UObject*> FindAll(char* InStr, bool IncludeSubclasses);
 
-	py::object GetProperty(std::string PropName);
-	void SetProperty(std::string& PropName, const py::object& Val);
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this)->WriteProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
@@ -688,6 +695,27 @@ public:
 
 		return NULL;
 	}
+
+	/**
+	 * @brief Finds a child property, and validates that it's of the expected type.
+	 * @note Throws exceptions if the child is not found of of an invalid type.
+	 *
+	 * @tparam T The expected property type.
+	 * @param name The name of the property.
+	 * @return The found property object.
+	 */
+	template <typename T>
+	T* FindAndValidateProperty(const std::string& name) {
+		auto prop = this->FindChildByName(FName(name));
+		if (prop == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (prop->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+		return reinterpret_cast<T*>(prop);
+	}
 };
 
 // 0x001C (0x00A8 - 0x008C)
@@ -1015,10 +1043,10 @@ struct FFunction
 	UFunction *func;
 
 private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
 
 public:
-	py::object GetReturn(FHelper* params);
+	py::object GetReturn(PropertyHelper* params);
 	py::object Call(py::args args, py::kwargs kwargs);
 };
 
@@ -1062,17 +1090,60 @@ struct FStruct
 		base = b;
 	}
 
-	pybind11::object GetProperty(const std::string& PropName) const;
-	void SetProperty(std::string& PropName, py::object value) const;
+
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
 	py::str Repr() const;
 };
 
 struct FArray {
-	TArray <char> *arr;
-	UProperty *type;
+	TArray<uint8_t>* arr;
+	UProperty* type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char>* array, UProperty* s);
+	FArray(TArray<uint8_t>* array, UProperty* s);
 
 	py::object GetItem(unsigned int i) const;
 	void SetItem(unsigned int I, py::object Obj) const;

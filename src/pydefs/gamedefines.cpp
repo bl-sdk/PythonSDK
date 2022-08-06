@@ -58,10 +58,12 @@ void Export_pystes_gamedefines(py::module_ &m)
 #endif
 		;
 
+#ifdef UE4
 	py::class_< FSoftObject<UObject> >(m, "FSoftObject")
 		.def_readwrite("object", &FSoftObject<UObject>::object)
 		.def_readwrite("asset_path", &FSoftObject<UObject>::asset_path);
 
 	py::class_< FSoftObject<UClass>, FSoftObject<UObject> >(m, "FSoftClass")
 		.def_readwrite("object", &FSoftObject<UClass>::object);
+#endif
 }

@@ -274,10 +274,8 @@ void AddToConsoleLog(UConsole* console, FString input)
 #ifndef UE4
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-	FString* command = ((FHelper *)params->base)->GetStrProperty(
-		(UProperty *)params->structType->FindChildByName(FName("command")),
-		0
-	);
+	FString* command = params->GetProperty<UStrProperty>("command");
+
 	const wchar_t* input = command->AsString();
 	if (wcsncmp(L"py ", input, 3) == 0)
 	{

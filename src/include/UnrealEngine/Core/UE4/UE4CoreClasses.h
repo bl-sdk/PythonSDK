@@ -341,7 +341,7 @@ public:
 	template <typename T>
 	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
 		return reinterpret_cast<PropertyHelper*>(this->base)
-			->WriteProperty<T>(this->Class->FindAndValidateProperty<T>(name), 0, val);
+			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0, val);
 	}
 
 	/**
