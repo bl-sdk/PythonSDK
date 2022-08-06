@@ -10,10 +10,10 @@ struct UProperty;
 struct UStructProperty;
 struct UStrProperty;
 struct UObjectProperty;
-struct UClassProperty;
 #ifdef UE3
 struct UComponentProperty;
 #endif
+struct UClassProperty;
 struct UNameProperty;
 struct UIntProperty;
 struct UInterfaceProperty;
@@ -22,6 +22,7 @@ struct UDelegateProperty;
 struct UByteProperty;
 struct UBoolProperty;
 struct UArrayProperty;
+#ifdef UE4
 struct UTextProperty;
 struct UWeakObjectProperty;
 struct USoftObjectProperty;
@@ -34,53 +35,60 @@ struct UInt64Property;
 struct UInt16Property;
 struct UDoubleProperty;
 
-template<typename T>
+template <typename T>
 struct FSoftObject;
+#endif
 
 #pragma endregion
 
-
-template<typename T>
+/**
+ * @brief Helper struct storing info about unreal properties.
+ *
+ * @tparam T The property's class.
+ */
+template <typename T>
 struct PropInfo {
+	/// The type of the property's value.
 	typedef T type;
+	/// The UE name of the property class - generally just without the `U`.
 	static inline const char* class_name;
 };
 
 #pragma region PropInfo defines
 
-template<>
+template <>
 struct PropInfo<UStructProperty> {
 	typedef struct FStruct type;
 	static inline const char* class_name = "StructProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UStrProperty> {
 	typedef struct FString* type;
 	static inline const char* class_name = "StrProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UObjectProperty> {
 	typedef struct UObject* type;
 	static inline const char* class_name = "ObjectProperty";
 };
 
 #ifdef UE3
-template<>
+template <>
 struct PropInfo<UComponentProperty> {
 	typedef struct UComponent* type;
 	static inline const char* class_name = "ComponentProperty";
 };
 #endif
 
-template<>
+template <>
 struct PropInfo<UClassProperty> {
 	typedef struct UClass* type;
 	static inline const char* class_name = "ClassProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UNameProperty> {
 	typedef struct FName* type;
 	static inline const char* class_name = "NameProperty";
@@ -88,7 +96,7 @@ struct PropInfo<UNameProperty> {
 
 // TODO: UMapProperty
 
-template<>
+template <>
 struct PropInfo<UIntProperty> {
 	typedef int32_t type;
 	static inline const char* class_name = "IntProperty";
@@ -96,13 +104,13 @@ struct PropInfo<UIntProperty> {
 
 // TODO: IntAttributeProperty
 
-template<>
+template <>
 struct PropInfo<UInterfaceProperty> {
 	typedef struct FScriptInterface* type;
 	static inline const char* class_name = "InterfaceProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UFloatProperty> {
 	typedef float_t type;
 	static inline const char* class_name = "FloatProperty";
@@ -110,13 +118,13 @@ struct PropInfo<UFloatProperty> {
 
 // TODO: FloatAttributeProperty
 
-template<>
+template <>
 struct PropInfo<UDelegateProperty> {
 	typedef struct FScriptDelegate* type;
 	static inline const char* class_name = "DelegateProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UByteProperty> {
 	typedef uint8_t type;
 	static inline const char* class_name = "ByteProperty";
@@ -124,20 +132,20 @@ struct PropInfo<UByteProperty> {
 
 // TODO: ByteAttributeProperty
 
-template<>
+template <>
 struct PropInfo<UBoolProperty> {
 	typedef bool type;
 	static inline const char* class_name = "BoolProperty";
 };
 
-template<>
+template <>
 struct PropInfo<UArrayProperty> {
 	typedef struct FArray type;
 	static inline const char* class_name = "ArrayProperty";
 };
 
 #ifdef UE4
-template<>
+template <>
 struct PropInfo<UTextProperty> {
 	typedef std::wstring type;
 	static inline const char* class_name = "TextProperty";
@@ -147,21 +155,21 @@ struct PropInfo<UTextProperty> {
 
 // TODO: UObjectPropertyBase??
 
-template<>
+template <>
 struct PropInfo<UWeakObjectProperty> {
-	typedef UObject* type;
+	typedef struct UObject* type;
 	static inline const char* class_name = "WeakObjectProperty";
 };
 
-template<>
+template <>
 struct PropInfo<USoftObjectProperty> {
-	typedef struct FSoftObject<UObject> type;
+	typedef struct FSoftObject<struct UObject> type;
 	static inline const char* class_name = "SoftObjectProperty";
 };
 
-template<>
+template <>
 struct PropInfo<USoftClassProperty> {
-	typedef struct FSoftObject<UClass> type;
+	typedef struct FSoftObject<struct UClass> type;
 	static inline const char* class_name = "SoftClassProperty";
 };
 
@@ -169,43 +177,43 @@ struct PropInfo<USoftClassProperty> {
 
 // TODO: UNumericProperty??
 
-template<>
+template <>
 struct PropInfo<UUInt64Property> {
 	typedef uint64_t type;
 	static inline const char* class_name = "UInt64Property";
 };
 
-template<>
+template <>
 struct PropInfo<UUInt32Property> {
 	typedef uint32_t type;
 	static inline const char* class_name = "UInt32Property";
 };
 
-template<>
+template <>
 struct PropInfo<UUInt16Property> {
 	typedef uint16_t type;
 	static inline const char* class_name = "UInt16Property";
 };
 
-template<>
+template <>
 struct PropInfo<UInt8Property> {
 	typedef int8_t type;
 	static inline const char* class_name = "Int8Property";
 };
 
-template<>
+template <>
 struct PropInfo<UInt64Property> {
 	typedef int64_t type;
 	static inline const char* class_name = "Int64Property";
 };
 
-template<>
+template <>
 struct PropInfo<UInt16Property> {
 	typedef int16_t type;
 	static inline const char* class_name = "Int16Property";
 };
 
-template<>
+template <>
 struct PropInfo<UDoubleProperty> {
 	typedef double_t type;
 	static inline const char* class_name = "DoubleProperty";
@@ -219,7 +227,7 @@ struct PropInfo<UDoubleProperty> {
 #pragma endregion
 
 struct PropertyHelper {
-private:
+   private:
 	/**
 	 * @brief Gets the address a property is stored at.
 	 *
@@ -228,7 +236,8 @@ private:
 	 * @return A pointer to the location the property is stored
 	 */
 	void* GetPropertyAddress(UProperty* prop, size_t idx);
-public:
+
+   public:
 	/**
 	 * @brief Reads a property off the object.
 	 *
@@ -254,6 +263,43 @@ public:
 			vec[i] = this->ReadProperty<T>(prop, i);
 		}
 		return vec;
+	}
+
+	/**
+	 * @brief Writes a value to an object property.
+	 *
+	 * @tparam T The property type.
+	 * @param prop The property object to lookup.
+	 * @param idx The fixed array index to write to.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void WriteProperty(T* prop, size_t idx, typename PropInfo<T>::type val);
+
+	/**
+	 * @brief Writes a fixed-sized array worth of values to an object property.
+	 *
+	 * @tparam T The property type.
+	 * @param prop The property object to lookup.
+	 * @param arr The array of values to write.
+	 */
+	template <typename T>
+	void WriteFixedArrayProperty(T* prop, std::vector<typename PropInfo<T>::type> arr) {
+		auto size = arr.size();
+		if (size > (size_t)prop->ArrayDim) {
+			throw std::length_error(
+				Util::Format("Sequence is too long, %s supports max of %d values!", Prop->GetName(),
+							 Prop->ArrayDim));
+		}
+
+		for (size_t i = 0; i < size; i++) {
+			this->WriteProperty(prop, i, arr[i]);
+		}
+
+		typename PropInfo<T>::type defaultVal{};
+		for (size_t i = size; i < (size_t)Prop->ArrayDim; i++) {
+			this->WriteProperty(prop, i, defaultVal);
+		}
 	}
 };
 

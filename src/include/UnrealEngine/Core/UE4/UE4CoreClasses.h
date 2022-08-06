@@ -256,6 +256,14 @@ public:
 		return NULL;
 	}
 
+	/**
+	 * @brief Finds a child property, and validates that it's of the expected type.
+	 * @note Throws exceptions if the child is not found of of an invalid type.
+	 *
+	 * @tparam T The expected property type.
+	 * @param name The name of the property.
+	 * @return The found property object.
+	 */
 	template <typename T>
 	T* FindAndValidateProperty(const std::string& name) {
 		auto prop = this->FindChildByName(FName(name));
