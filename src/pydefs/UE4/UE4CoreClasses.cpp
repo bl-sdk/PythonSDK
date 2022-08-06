@@ -31,8 +31,8 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def("GetObjectName", &UObject::GetObjectName)
 		.def("DumpObject", &UObject::DumpObject)
 		.def("__repr__", &UObject::GetFullName)
-		.def("__getattr__", &UObject::GetProperty, py::return_value_policy::reference)
-		.def("__setattr__", &UObject::SetProperty, py::return_value_policy::reference)
+		.def("__getattr__", &UObject::GetPyProperty, py::return_value_policy::reference)
+		.def("__setattr__", &UObject::SetPyProperty, py::return_value_policy::reference)
 		.def("GetAddress", [](UObject* self) { return (int)self; });
 
 	py::class_< UTextBuffer, UObject >(m, "UTextBuffer");
@@ -63,7 +63,6 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def("GetReturnType", &UFunction::GetReturnType, py::return_value_policy::reference);
 
 	py::class_< FFunction >(m, "FFunction")
-		.def("__getattr__", [](FFunction self, std::string& in) { return self.func->GetProperty(in); }, py::return_value_policy::reference)
 		.def("__call__", &FFunction::Call, py::return_value_policy::reference)
 		.def_readwrite("obj", &FFunction::obj, py::return_value_policy::reference)
 		.def_readwrite("func", &FFunction::func, py::return_value_policy::reference);
@@ -151,14 +150,14 @@ void Export_pystes_Core_classes(py::module_& m)
 
 	py::class_< FStruct >(m, "FStruct")
 		.def(py::init<UStruct*, void*>())
-		.def("__getattr__", &FStruct::GetProperty, py::return_value_policy::reference)
-		.def("__setattr__", &FStruct::SetProperty, py::return_value_policy::reference)
+		.def("__getattr__", &FStruct::GetPyProperty, py::return_value_policy::reference)
+		.def("__setattr__", &FStruct::SetPyProperty, py::return_value_policy::reference)
 		.def("__repr__", &FStruct::Repr)
 		.def_readwrite("structType", &FStruct::structType, py::return_value_policy::reference)
 		.def("GetBase", [](FStruct* self) { return (int)self->base; });
 
 	py::class_< FArray >(m, "FArray")
-		.def(py::init<TArray <char>*, UProperty*>())
+		.def(py::init<TArray<uint8_t>*, UProperty*>())
 		.def("__getitem__", &FArray::GetItem, py::return_value_policy::reference)
 		.def("__setitem__", &FArray::SetItem, py::return_value_policy::reference)
 		.def("__iter__", &FArray::Iter, py::return_value_policy::reference)

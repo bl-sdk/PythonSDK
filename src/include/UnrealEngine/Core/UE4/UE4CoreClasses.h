@@ -50,10 +50,40 @@ class UObject {
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename PropInfo<T>::type GetPropertyTEMPLATE(const std::string& name) {
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
 		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
 			this->Class->FindAndValidateProperty<T>(name), 0);
 	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this)->WriteProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
 
 	static inline FChunkedFixedUObjectArray* GObjects()
 	{
@@ -74,8 +104,6 @@ class UObject {
 	static std::vector<UObject*> FindObjectsRegex(const std::string& RegexString);
 	static std::vector<UObject*> FindObjectsContaining(const std::string& StringLookup);
 	static UClass* FindClass(const char* ClassName, const bool Lookup = false);
-
-	pybind11::object GetProperty(std::string PropName);
 
 	struct FFunction GetFunction(std::string& PropName);
 
@@ -137,8 +165,6 @@ class UObject {
 		return nullptr;
 	}
 	void DumpObject();
-
-	void SetProperty(std::string& PropName, const py::object& Val);
 
 	static class UObject* FindObject(const class FString& ObjectName, class UClass* ObjectClass);
 
@@ -299,13 +325,41 @@ public:
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename PropInfo<T>::type GetPropertyTEMPLATE(const std::string& name) {
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
 		return reinterpret_cast<PropertyHelper*>(this->base)
 			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
 	}
 
-	pybind11::object GetProperty(const std::string& PropName) const;
-	void SetProperty(std::string& PropName, py::object value) const;
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->WriteProperty<T>(this->Class->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
 	py::str Repr() const;
 };
 

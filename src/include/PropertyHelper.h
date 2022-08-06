@@ -4,6 +4,8 @@
 
 #include <stdafx.h>
 
+namespace py = pybind11;
+
 #pragma region Forward declarations
 
 struct UProperty;
@@ -227,7 +229,7 @@ struct PropInfo<UDoubleProperty> {
 #pragma endregion
 
 struct PropertyHelper {
-   private:
+   public:
 	/**
 	 * @brief Gets the address a property is stored at.
 	 *
@@ -237,7 +239,6 @@ struct PropertyHelper {
 	 */
 	void* GetPropertyAddress(UProperty* prop, size_t idx);
 
-   public:
 	/**
 	 * @brief Reads a property off the object.
 	 *
@@ -248,22 +249,6 @@ struct PropertyHelper {
 	 */
 	template <typename T>
 	typename PropInfo<T>::type ReadProperty(T* prop, size_t idx);
-
-	/**
-	 * @brief Reads a property off the object as a fixed-size array.
-	 *
-	 * @tparam T The property type.
-	 * @param prop The property object to lookup.
-	 * @return A vector of the property's values.
-	 */
-	template <typename T>
-	std::vector<typename PropInfo<T>::type> ReadFixedArrayProperty(T* prop) {
-		std::vector<typename PropInfo<T>::type> vec(prop->ArrayDim);
-		for (size_t i = 0; i < prop->ArrayDim; i++) {
-			vec[i] = this->ReadProperty<T>(prop, i);
-		}
-		return vec;
-	}
 
 	/**
 	 * @brief Writes a value to an object property.
@@ -277,30 +262,20 @@ struct PropertyHelper {
 	void WriteProperty(T* prop, size_t idx, typename PropInfo<T>::type val);
 
 	/**
-	 * @brief Writes a fixed-sized array worth of values to an object property.
+	 * @brief Gets the python value for a property on the object.
 	 *
-	 * @tparam T The property type.
-	 * @param prop The property object to lookup.
-	 * @param arr The array of values to write.
+	 * @param prop The property to get.
+	 * @return The property's value.
 	 */
-	template <typename T>
-	void WriteFixedArrayProperty(T* prop, std::vector<typename PropInfo<T>::type> arr) {
-		auto size = arr.size();
-		if (size > (size_t)prop->ArrayDim) {
-			throw std::length_error(
-				Util::Format("Sequence is too long, %s supports max of %d values!", Prop->GetName(),
-							 Prop->ArrayDim));
-		}
+	py::object GetPyProperty(UProperty* prop);
 
-		for (size_t i = 0; i < size; i++) {
-			this->WriteProperty(prop, i, arr[i]);
-		}
-
-		typename PropInfo<T>::type defaultVal{};
-		for (size_t i = size; i < (size_t)Prop->ArrayDim; i++) {
-			this->WriteProperty(prop, i, defaultVal);
-		}
-	}
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param prop The property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(UProperty* prop, py::object val);
 };
 
 #endif /* PROPERTY_HELPER_H */
