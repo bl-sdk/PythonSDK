@@ -8,6 +8,7 @@
 #pragma pack(push, 0x4)
 #endif
 
+#include "PropertyHelper.h"
 #include "pydef.h"
 #include "UE4CoreStructs.h"
 #include "UnrealEngine/UE4Defines.h"
@@ -22,73 +23,6 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 	// __debugbreak();
 	return reinterpret_cast<Fn>(vtable[index]);
 }
-
-template<typename T>
-struct prop_info {
-	typedef T type;
-	static inline const char* class_name;
-};
-
-struct FHelper {
-public:
-	struct FStruct GetStructProperty(class UProperty* Prop, int idx);
-	class FString* GetStrProperty(class UProperty* Prop, int idx);
-	class UObject* GetObjectProperty(class UProperty* Prop, int idx);
-	class UClass* GetClassProperty(class UProperty* Prop, int idx);
-	struct FName* GetNameProperty(class UProperty* Prop, int idx);
-	class UComponent* GetComponentProperty(UProperty* Prop, int idx);
-
-	int GetIntProperty(class UProperty* Prop, int idx);
-
-	class FScriptInterface* GetInterfaceProperty(class UProperty* Prop, int idx);
-	float GetFloatProperty(class UProperty* Prop, int idx);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty* Prop, int idx);
-	unsigned char GetByteProperty(class UProperty* Prop, int idx);
-	bool GetBoolProperty(class UProperty* Prop, int idx);
-	void* GetPropertyAddress(class UProperty* Prop, int idx);
-	struct FArray GetArrayProperty(class UProperty* Prop, int idx);
-	py::object GetProperty(class UProperty* Prop);
-
-#ifdef UE4
-	py::object GetMapProperty(class UProperty* Prop, int idx);
-	class UObject* GetWeakObjectProperty(class UProperty* Prop, int idx);
-
-	py::object GetSetProperty(class UProperty* Prop, int idx);
-	const wchar_t* GetTextProperty(class UProperty* Prop, int idx);
-	py::object GetSoftClassProperty(class UProperty* Prop, int idx);
-	py::object GetSoftObjectProperty(class UProperty* Prop, int idx);
-	py::object GetEnumProperty(class UProperty* Prop, int idx);
-
-	void SetEnumProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetTextProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetSoftObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetWeakObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt16Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt32Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt64Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt64Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt16Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt8Property(class UProperty* Prop, int idx, const py::object& Val);
-#endif
-
-	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetClassProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetNameProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetIntProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetByteProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetBoolProperty(class UProperty* boolProp, int idx, const py::object& Val);
-	void SetArrayProperty(class UProperty* boolProp, int idx, const py::object& Val);
-
-	void SetProperty(class UProperty* Prop, const py::object& val);
-
-	template <typename T>
-	typename prop_info<T>::type ReadProperty(T*, int);
-};
 
 
 // Class CoreUObject.Object
@@ -109,32 +43,16 @@ class UObject {
 
 	/**
 	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
 	 *
 	 * @tparam T The property type.
 	 * @param name The name of the property to get.
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename prop_info<T>::type GetPropertyTEMPLATE(const std::string& name) {
-		return reinterpret_cast<FHelper*>(this)->ReadProperty<T>(
+	typename PropInfo<T>::type GetPropertyTEMPLATE(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
 			this->Class->FindAndValidateProperty<T>(name), 0);
-	}
-
-	/**
-	 * @brief Gets a property of an object as a fixed-size array.
-	 *
-	 * @tparam T The property type.
-	 * @param name The name of the property to get.
-	 * @return A vector of the property's values.
-	 */
-	template <typename T>
-	std::vector<typename prop_info<T>::type> GetFixedArrayProperty(const std::string& name) {
-		auto prop = this->Class->FindAndValidateProperty<T>(name);
-		std::vector<typename prop_info<T>::type> vec(prop->ArrayDim);
-		for (size_t i = 0; i < prop->ArrayDim; i++) {
-			vec[i] = reinterpret_cast<FHelper*>(this)->ReadProperty<T>(prop, i);
-		}
-		return vec;
 	}
 
 	static inline FChunkedFixedUObjectArray* GObjects()
@@ -238,10 +156,10 @@ struct FFunction
 	UFunction* func;
 
 private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
 
 public:
-	py::object GetReturn(FHelper* params);
+	py::object GetReturn(PropertyHelper* params);
 	py::object Call(py::args args, py::kwargs kwargs);
 };
 
@@ -344,7 +262,7 @@ public:
 		if (prop == nullptr) {
 			throw std::invalid_argument("Couldn't find property");
 		}
-		if (prop->Class->Name != FName(prop_info<T>::class_name)) {
+		if (prop->Class->Name != FName(PropInfo<T>::class_name)) {
 			throw std::invalid_argument("Property was of invalid type " +
 										(std::string)prop->Class->Name);
 		}
@@ -366,32 +284,16 @@ public:
 
 	/**
 	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
 	 *
 	 * @tparam T The property type.
 	 * @param name The name of the property to get.
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename prop_info<T>::type GetPropertyTEMPLATE(const std::string& name) {
-		return reinterpret_cast<FHelper*>(this->base)
+	typename PropInfo<T>::type GetPropertyTEMPLATE(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
 			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
-	}
-
-	/**
-	 * @brief Gets a property of an object as a fixed-size array.
-	 *
-	 * @tparam T The property type.
-	 * @param name The name of the property to get.
-	 * @return A vector of the property's values.
-	 */
-	template <typename T>
-	std::vector<typename prop_info<T>::type> GetFixedArrayProperty(const std::string& name) {
-		auto prop = this->structType->FindAndValidateProperty<T>(name);
-		std::vector<typename prop_info<T>::type> vec(prop->ArrayDim);
-		for (size_t i = 0; i < prop->ArrayDim; i++) {
-			vec[i] = reinterpret_cast<FHelper*>(this->base)->ReadProperty<T>(prop, i);
-		}
-		return vec;
 	}
 
 	pybind11::object GetProperty(const std::string& PropName) const;
@@ -400,11 +302,11 @@ public:
 };
 
 struct FArray {
-	TArray <char>* arr;
+	TArray<uint8_t>* arr;
 	UProperty* type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char>* array, UProperty* s);
+	FArray(TArray<uint8_t>* array, UProperty* s);
 
 	py::object GetItem(unsigned int i) const;
 	void SetItem(unsigned int I, py::object Obj) const;
@@ -415,6 +317,12 @@ struct FArray {
 	py::object Next();
 	py::str Repr();
 	int Length();
+};
+
+template<typename T>
+struct FSoftObject {
+	T* object;
+	std::string asset_path;
 };
 
 // Class CoreUObject.Interface
@@ -1693,17 +1601,5 @@ typedef void(__thiscall* tFree)(void***, void*);
 #ifdef _MSC_VER
 #pragma pack(pop)
 #endif
-
-template<>
-struct prop_info<UStructProperty> {
-	typedef struct FStruct type;
-	static inline const char* class_name = "StructProperty";
-};
-
-template<>
-struct prop_info<UObjectProperty> {
-	typedef struct UObject* type;
-	static inline const char* class_name = "ObjectProperty";
-};
 
 #endif
