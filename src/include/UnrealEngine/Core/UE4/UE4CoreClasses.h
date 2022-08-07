@@ -514,31 +514,8 @@ public:
 		FunctionName = func;
 	}
 
-	/* An FScriptDelegate won't be bound if:
-		- Object is nullptr
-		- Object doesn't have a function by the name of `FunctionName`
-	*/
-	inline bool IsBound() const {
-		if (FunctionName.IsValid()) {
-			UObject* objPtr = Object.Get();
-			if (objPtr != nullptr) {
-				std::string funcName = std::string(FunctionName.GetName());
-				return py::cast<struct FFunction>(objPtr->GetPyProperty(funcName)).func != nullptr;
-			}
-		}
-		return false;
-	}
-	/* Return a string representation of the given FScriptDelegate */
-	inline std::string ToString() const {
-		if (IsBound()) {
-			UObject* objPtr = Object.Get();
-			std::string funcName = std::string(FunctionName.GetName());
-			std::string fullName = py::cast<struct FFunction>(objPtr->GetPyProperty(funcName)).func->GetFullName();
-			return fullName; // Get the function and then return the full name
-		}
-
-		return "<UNBOUND>"; // Return "<UNBOUND>" if the FScriptDelegate isn't actually bound to anything
-	};
+	bool IsBound() const;
+	std::string ToString() const;
 };
 
 

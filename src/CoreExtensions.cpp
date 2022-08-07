@@ -424,3 +424,31 @@ py::str FArray::Repr() {
 int FArray::Length() {
 	return arr->Count;
 }
+
+#ifdef UE4
+/* An FScriptDelegate won't be bound if:
+	- Object is nullptr
+	- Object doesn't have a function by the name of `FunctionName`
+*/
+bool FScriptDelegate::IsBound() const {
+	if (FunctionName.IsValid()) {
+		UObject* objPtr = Object.Get();
+		if (objPtr != nullptr) {
+			std::string funcName = std::string(FunctionName.GetName());
+			return objPtr->GetProperty<UFunction>(funcName).func != nullptr;
+		}
+	}
+	return false;
+}
+/* Return a string representation of the given FScriptDelegate */
+std::string FScriptDelegate::ToString() const {
+	if (IsBound()) {
+		UObject* objPtr = Object.Get();
+		std::string funcName = std::string(FunctionName.GetName());
+		std::string fullName = objPtr->GetProperty<UFunction>(funcName).func->GetFullName();
+		return fullName; // Get the function and then return the full name
+	}
+
+	return "<UNBOUND>"; // Return "<UNBOUND>" if the FScriptDelegate isn't actually bound to anything
+};
+#endif

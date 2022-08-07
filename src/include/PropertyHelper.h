@@ -36,6 +36,7 @@ struct UInt8Property;
 struct UInt64Property;
 struct UInt16Property;
 struct UDoubleProperty;
+struct UFunction;
 
 template <typename T>
 struct FSoftObject;
