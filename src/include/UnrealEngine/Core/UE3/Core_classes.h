@@ -129,10 +129,6 @@ public:
 	 */
 	void SetPyProperty(const std::string& name, py::object val);
 
-	struct FFunction GetFunction(std::string& PropName);
-	//struct FScriptArray GetArrayProperty(std::string& PropName);
-	//struct FScriptMap GetMapProperty(std::string& PropName);
-
 	bool IsRelevantForDebugging(class UObject* Source);
 	class UObject* GetGlobalDebugTarget();
 	void SetGlobalDebugTarget(class UObject* Target);

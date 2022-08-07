@@ -425,6 +425,13 @@ py::object UObject::GetPyProperty(const std::string& name) {
 		throw py::attribute_error("Could not find property '" + name + "'!");
 	}
 
+	// Functions only make sense in the context of being bound to an object, so check for them here
+	auto class_name = (std::string)prop->Class->Name;
+	if (class_name == PropInfo<UFunction>::class_name) {
+		return py::cast(reinterpret_cast<PropertyHelper*>(this)->ReadProperty<UFunction>(
+			reinterpret_cast<UFunction*>(prop), 0));
+	}
+
 	return reinterpret_cast<PropertyHelper*>(this)->GetPyProperty(prop);
 }
 
@@ -434,7 +441,7 @@ py::object FStruct::GetPyProperty(const std::string& name) {
 		throw py::attribute_error("Could not find property '" + name + "'!");
 	}
 
-	return reinterpret_cast<PropertyHelper*>(this)->GetPyProperty(prop);
+	return reinterpret_cast<PropertyHelper*>(this->base)->GetPyProperty(prop);
 }
 
 void UObject::SetPyProperty(const std::string& name, py::object val) {
@@ -452,5 +459,5 @@ void FStruct::SetPyProperty(const std::string& name, py::object val) {
 		throw py::attribute_error("Could not find property '" + name + "'!");
 	}
 
-	reinterpret_cast<PropertyHelper*>(this)->SetPyProperty(prop, val);
+	reinterpret_cast<PropertyHelper*>(this->base)->SetPyProperty(prop, val);
 }

@@ -226,6 +226,12 @@ struct PropInfo<UDoubleProperty> {
 // TODO: UEnumProperty
 #endif
 
+template <>
+struct PropInfo<UFunction> {
+	typedef struct FFunction type;
+	static inline const char* class_name = "Function";
+};
+
 #pragma endregion
 
 struct PropertyHelper {

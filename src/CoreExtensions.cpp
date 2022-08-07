@@ -260,14 +260,6 @@ std::vector<UObject*> UObject::FindAll(char* InStr, bool IncludeSubclasses)
 
 // FFunction =======================================================================
 
-/* Get the given function (PropName) on the UObject, FFunction.func will be null if the function can't be found */
-struct FFunction UObject::GetFunction(std::string& PropName)
-{
-	const auto obj = this->Class->FindChildByName(FName(PropName));
-	const auto function = reinterpret_cast<UFunction*>(obj);
-	return FFunction{ this, function };
-}
-
 void FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params)
 {
 	unsigned int currentIndex = 0;
@@ -313,8 +305,9 @@ py::object FFunction::GetReturn(PropertyHelper* params)
 
 py::object FFunction::Call(py::args args, py::kwargs kwargs)
 {
-	if (!obj || !func)
-		return py::none();
+	if (obj == nullptr || func == nullptr) {
+		throw std::exception("Tried to call unbound function");
+	}
 	LOG(INTERNAL, "FFunction::Call called %s.%s)", obj->GetFullName().c_str(), func->GetName());
 
 	char params[1000] = "";
@@ -363,8 +356,8 @@ py::str FStruct::Repr() const
 			}
 			output << Child->GetName() << ": "
 				   << py::repr(const_cast<FStruct*>(this)->GetPyProperty(Child->GetName()));
-			thisField = thisField->SuperField;
 		}
+		thisField = thisField->SuperField;
 	}
 	output << "}";
 	return output.str();

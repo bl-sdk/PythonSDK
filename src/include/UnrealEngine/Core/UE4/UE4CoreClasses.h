@@ -105,8 +105,6 @@ class UObject {
 	static std::vector<UObject*> FindObjectsContaining(const std::string& StringLookup);
 	static UClass* FindClass(const char* ClassName, const bool Lookup = false);
 
-	struct FFunction GetFunction(std::string& PropName);
-
 	template<typename T>
 	static T* GetObjectCasted(std::size_t index)
 	{
@@ -525,7 +523,7 @@ public:
 			UObject* objPtr = Object.Get();
 			if (objPtr != nullptr) {
 				std::string funcName = std::string(FunctionName.GetName());
-				return (objPtr->GetFunction(funcName).func != nullptr);
+				return py::cast<struct FFunction>(objPtr->GetPyProperty(funcName)).func != nullptr;
 			}
 		}
 		return false;
@@ -535,7 +533,7 @@ public:
 		if (IsBound()) {
 			UObject* objPtr = Object.Get();
 			std::string funcName = std::string(FunctionName.GetName());
-			std::string fullName = objPtr->GetFunction(funcName).func->GetFullName();
+			std::string fullName = py::cast<struct FFunction>(objPtr->GetPyProperty(funcName)).func->GetFullName();
 			return fullName; // Get the function and then return the full name
 		}
 

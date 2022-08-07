@@ -160,6 +160,15 @@ double_t PropertyHelper::ReadProperty(UDoubleProperty* prop, size_t idx) {
 }
 #endif
 
+template <>
+struct FFunction PropertyHelper::ReadProperty(UFunction* prop, size_t idx) {
+	if (idx != 0) {
+		throw std::out_of_range("Function arrays are not supported!");
+	}
+
+	return FFunction{ reinterpret_cast<UObject*>(this), reinterpret_cast<UFunction*>(prop) };
+}
+
 #pragma endregion
 
 #pragma region WriteProperty
@@ -319,6 +328,8 @@ template <>
 void PropertyHelper::WriteProperty(UDoubleProperty* prop, size_t idx, double_t val) {
 	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
 }
+
+// PropertyHelper::WriteProperty<UFunction>() deliberately not implemented
 #endif
 
 #pragma endregion
@@ -355,6 +366,7 @@ template int64_t PropertyHelper::ReadProperty(UInt64Property*, size_t);
 template int16_t PropertyHelper::ReadProperty(UInt16Property*, size_t);
 template double_t PropertyHelper::ReadProperty(UDoubleProperty*, size_t);
 #endif
+template struct FFunction PropertyHelper::ReadProperty(UFunction*, size_t);
 
 template void PropertyHelper::WriteProperty(UStructProperty*, size_t, struct FStruct);
 template void PropertyHelper::WriteProperty(UStrProperty*, size_t, struct FString*);
