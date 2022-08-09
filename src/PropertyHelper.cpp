@@ -175,63 +175,63 @@ struct FFunction PropertyHelper::ReadProperty(UFunction* prop, size_t idx) {
 
 template <>
 void PropertyHelper::WriteProperty(UStructProperty* prop, size_t idx, struct FStruct val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val.base, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val.base, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UStrProperty* prop, size_t idx, struct FString* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UObjectProperty* prop, size_t idx, struct UObject* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 #ifdef UE3
 template <>
 void PropertyHelper::WriteProperty(UComponentProperty* prop, size_t idx, struct UComponent* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 #endif
 
 template <>
 void PropertyHelper::WriteProperty(UClassProperty* prop, size_t idx, struct UClass* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UNameProperty* prop, size_t idx, struct FName* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UIntProperty* prop, size_t idx, int32_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UInterfaceProperty* prop,
 								   size_t idx,
 								   struct FScriptInterface* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UFloatProperty* prop, size_t idx, float_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UDelegateProperty* prop,
 								   size_t idx,
 								   struct FScriptDelegate* val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UByteProperty* prop, size_t idx, uint8_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
@@ -251,7 +251,7 @@ void PropertyHelper::WriteProperty(UBoolProperty* prop, size_t idx, bool val) {
 
 template <>
 void PropertyHelper::WriteProperty(UArrayProperty* prop, size_t idx, struct FArray val) {
-	memcpy(this->GetPropertyAddress(prop, idx), val.arr, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), val.arr, prop->ElementSize);
 }
 
 #if UE4
@@ -296,37 +296,37 @@ void PropertyHelper::WriteProperty(USoftClassProperty* prop,
 
 template <>
 void PropertyHelper::WriteProperty(UUInt64Property* prop, size_t idx, uint64_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UUInt32Property* prop, size_t idx, uint32_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UUInt16Property* prop, size_t idx, uint16_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UInt8Property* prop, size_t idx, int8_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UInt64Property* prop, size_t idx, int64_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UInt16Property* prop, size_t idx, int16_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 template <>
 void PropertyHelper::WriteProperty(UDoubleProperty* prop, size_t idx, double_t val) {
-	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ArrayDim);
+	memcpy(this->GetPropertyAddress(prop, idx), &val, prop->ElementSize);
 }
 
 // PropertyHelper::WriteProperty<UFunction>() deliberately not implemented
