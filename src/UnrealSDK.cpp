@@ -445,22 +445,34 @@ namespace UnrealSDK
 
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
-
-#ifndef UE4
-		// Set console key to Tilde if not already set
-		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
-		auto eng = static_cast<UEngine*>(gEngine);
-
-		if (gameConsole == nullptr && gEngine && static_cast<UEngine *>(gEngine)->GameViewport)
-			gameConsole = eng->GameViewport->ViewportConsole;
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
-			gameConsole->ConsoleKey = FName("Tilde");
-
-#else
 		if (gEngine == nullptr) {
 			LOG(ERROR, "gEngine was null when trying to set console key!");
 			goto SET_CONSOLE_KEY_DONE;
 		}
+
+		auto tilde = FName("Tilde");
+
+#ifndef UE4
+		// Set console key to Tilde if not already set
+		gameConsole = reinterpret_cast<UConsole*>(UObject::Find(
+			ObjectMap["ConsoleObjectType"].c_str(),
+									ObjectMap["ConsoleObjectName"].c_str()));
+		auto viewport = gEngine->GetProperty<UObjectProperty>("GameViewport");
+
+		if (gameConsole == nullptr && viewport) {
+			gameConsole = reinterpret_cast<UConsole*>(viewport->GetProperty<UObjectProperty>("ViewportConsole"));
+		}
+		if (gameConsole == nullptr) {
+			LOG(ERROR, "Couldn't find console!");
+			goto SET_CONSOLE_KEY_DONE;
+		}
+
+		auto consoleKey = *gameConsole->GetProperty<UNameProperty>("ConsoleKey");
+		if (consoleKey == FName("None") || consoleKey == FName("Undefine")) {
+			gameConsole->SetProperty<UNameProperty>("ConsoleKey", &tilde);
+		}
+
+#else
 
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
@@ -494,9 +506,6 @@ namespace UnrealSDK
 		gameConsole->SetProperty<UObjectProperty>("ConsoleTargetPlayer", main_player);
 		}
 
-		{
-		auto tilde = FName(std::string("Tilde"));
-
 		// This is probably a costly call to do, but its also kinda the best option imo
 		for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings", false)) {
 			obj->GetProperty<UStructProperty>("ConsoleKey").SetProperty<UNameProperty>("KeyName", &tilde);
@@ -506,7 +515,6 @@ namespace UnrealSDK
 			if (keysArray.arr->Count > 0) {
 				keysArray.arr->Count--;
 			}
-		}
 		}
 #endif
 
@@ -659,24 +667,18 @@ SET_CONSOLE_KEY_DONE:
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
 				UObject* Object = UObject::GObjects()->Get(i);
-				if (Object->GetPackageObject() == result)
-					#ifdef UE4
+				if (Object->GetPackageObject() == result) {
 					Object->ObjectFlags |= 0x4000;
-					#else
-					Object->ObjectFlags.A |= 0x4000;
-					#endif
+				}
 			}
 		}
 	};
 
 	void KeepAlive(UObject* Obj)
 	{
-		for (UObject* outer = Obj; outer; outer = outer->Outer)
-			#ifdef UE4
+		for (UObject* outer = Obj; outer; outer = outer->Outer) {
 			outer->ObjectFlags |= 0x4000;
-			#else
-			outer->ObjectFlags.A |= 0x4000;
-			#endif
+		}
 	}
 
 	#ifndef UE4

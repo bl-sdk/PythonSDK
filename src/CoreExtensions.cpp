@@ -5,7 +5,6 @@
 
 #ifndef UE4
 #include "UnrealEngine/Core/UE3/Core_classes.h"
-#include "UnrealEngine/Engine/UE3/Engine_classes.h"
 #else
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 #endif

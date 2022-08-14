@@ -37,23 +37,6 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def("__setattr__", &UObject::SetPyProperty, py::return_value_policy::reference)
 		.def("GetAddress", [](UObject *self) { return (int)self; })
 		;
-	py::class_< UTextBuffer, UObject >(m, "UTextBuffer")
-		;
-	py::class_< USubsystem, UObject >(m, "USubsystem")
-		.def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec, py::return_value_policy::reference)
-		;
-	py::class_< UPackageMap, UObject >(m, "UPackageMap")
-		;
-	py::class_< UObjectSerializer, UObject >(m, "UObjectSerializer")
-		;
-	py::class_< UObjectRedirector, UObject >(m, "UObjectRedirector")
-		;
-	py::class_< UMetaData, UObject >(m, "UMetaData")
-		;
-	py::class_< ULinker, UObject >(m, "ULinker")
-		;
-	py::class_< ULinkerSave, ULinker >(m, "ULinkerSave")
-		;
 	py::class_< UInterface, UObject >(m, "UInterface")
 		;
 	py::class_< UField, UObject >(m, "UField")
@@ -80,21 +63,7 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def_readwrite("obj", &FFunction::obj, py::return_value_policy::reference)
 		.def_readwrite("func", &FFunction::func, py::return_value_policy::reference)
 		;
-#ifdef UE4
-	py::class_< UProperty, UField >(m, "UProperty")
-		.def_readwrite("ArrayDim", &UProperty::ArrayDim)
-		.def_readwrite("ElementSize", &UProperty::ElementSize)
-		.def_readwrite("PropertyFlags", &UProperty::PropertyFlags)
-		.def_readwrite("RepIndex", &UProperty::RepIndex)
-		.def_readwrite("BlueprintReplicationCondition", &UProperty::BlueprintReplicationCondition)
-		.def_readwrite("Offset_Internal", &UProperty::Offset_Internal)
-		.def_readwrite("RepNotifyFunc", &UProperty::RepNotifyFunc)
-		.def_readwrite("PropertyLinkNext", &UProperty::PropertyLinkNext)
-		.def_readwrite("NextRef", &UProperty::NextRef)
-		.def_readwrite("DestructorLinkNext", &UProperty::DestructorLinkNext)
-		.def_readwrite("PostConstructLinkNext", &UProperty::PostConstructLinkNext)
-		;
-#else
+
 	py::class_< UProperty, UField >(m, "UProperty")
 		.def_readwrite("ArrayDim", &UProperty::ArrayDim)
 		.def_readwrite("ElementSize", &UProperty::ElementSize)
@@ -102,7 +71,7 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def_readwrite("PropertyLinkNext", &UProperty::PropertyLinkNext, py::return_value_policy::reference)
 		.def_readwrite("Offset_Internal", &UProperty::Offset_Internal)
 		;
-#endif
+
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
 		.def("GetStruct", &UStructProperty::GetStruct, py::return_value_policy::reference)
 		;
@@ -144,60 +113,11 @@ void Export_pystes_Core_classes(py::module_ &m)
 		;
 	py::class_< UConst, UField >(m, "UConst")
 		;
-	py::class_< UFactory, UObject >(m, "UFactory")
-		.def_property("bCreateNew", [](UFactory &self) {return self.bCreateNew; }, [](UFactory &self, bool value) {self.bCreateNew = value ? 1 : 0; })
-		.def_property("bEditAfterNew", [](UFactory &self) {return self.bEditAfterNew; }, [](UFactory &self, bool value) {self.bEditAfterNew = value ? 1 : 0; })
-		.def_property("bEditorImport", [](UFactory &self) {return self.bEditorImport; }, [](UFactory &self, bool value) {self.bEditorImport = value ? 1 : 0; })
-		.def_property("bText", [](UFactory &self) {return self.bText; }, [](UFactory &self, bool value) {self.bText = value ? 1 : 0; })
-		.def_readwrite("SupportedClass", &UFactory::SupportedClass, py::return_value_policy::reference)
-		.def_readwrite("ContextClass", &UFactory::ContextClass, py::return_value_policy::reference)
-		.def_readwrite("Description", &UFactory::Description, py::return_value_policy::reference)
-		.def_readwrite("Formats", &UFactory::Formats, py::return_value_policy::reference)
-		.def_readwrite("AutoPriority", &UFactory::AutoPriority)
-		.def_readwrite("ValidGameNames", &UFactory::ValidGameNames, py::return_value_policy::reference)
-		;
-	py::class_< UTextBufferFactory, UFactory >(m, "UTextBufferFactory")
-		;
-	py::class_< UExporter, UObject >(m, "UExporter")
-		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
-		.def_readwrite("FormatDescription", &UExporter::FormatDescription, py::return_value_policy::reference)
-		;
 	py::class_< UComponent, UObject >(m, "UComponent")
 		.def_readwrite("TemplateOwnerClass", &UComponent::TemplateOwnerClass, py::return_value_policy::reference)
 		.def_readwrite("TemplateName", &UComponent::TemplateName, py::return_value_policy::reference)
 		;
-	py::class_< UDistributionVector, UComponent >(m, "UDistributionVector")
-		.def_property("bCanBeBaked", [](UDistributionVector &self) {return self.bCanBeBaked; }, [](UDistributionVector &self, bool value) {self.bCanBeBaked = value ? 1 : 0; })
-		.def_property("bIsDirty", [](UDistributionVector &self) {return self.bIsDirty; }, [](UDistributionVector &self, bool value) {self.bIsDirty = value ? 1 : 0; })
-		.def_readwrite("VfTable_FCurveEdInterface", &UDistributionVector::VfTable_FCurveEdInterface, py::return_value_policy::reference)
-		.def("GetVectorValue", &UDistributionVector::GetVectorValue, py::return_value_policy::reference)
-		;
-	py::class_< UDistributionFloat, UComponent >(m, "UDistributionFloat")
-		.def_property("bCanBeBaked", [](UDistributionFloat &self) {return self.bCanBeBaked; }, [](UDistributionFloat &self, bool value) {self.bCanBeBaked = value ? 1 : 0; })
-		.def_property("bIsDirty", [](UDistributionFloat &self) {return self.bIsDirty; }, [](UDistributionFloat &self, bool value) {self.bIsDirty = value ? 1 : 0; })
-		.def_readwrite("VfTable_FCurveEdInterface", &UDistributionFloat::VfTable_FCurveEdInterface, py::return_value_policy::reference)
-		.def("GetFloatValue", &UDistributionFloat::GetFloatValue)
-		;
-	py::class_< UCommandlet, UObject >(m, "UCommandlet")
-		.def_property("IsServer", [](UCommandlet &self) {return self.IsServer; }, [](UCommandlet &self, bool value) {self.IsServer = value ? 1 : 0; })
-		.def_property("IsClient", [](UCommandlet &self) {return self.IsClient; }, [](UCommandlet &self, bool value) {self.IsClient = value ? 1 : 0; })
-		.def_property("IsEditor", [](UCommandlet &self) {return self.IsEditor; }, [](UCommandlet &self, bool value) {self.IsEditor = value ? 1 : 0; })
-		.def_property("LogToConsole", [](UCommandlet &self) {return self.LogToConsole; }, [](UCommandlet &self, bool value) {self.LogToConsole = value ? 1 : 0; })
-		.def_property("ShowErrorCount", [](UCommandlet &self) {return self.ShowErrorCount; }, [](UCommandlet &self, bool value) {self.ShowErrorCount = value ? 1 : 0; })
-		.def_readwrite("HelpDescription", &UCommandlet::HelpDescription, py::return_value_policy::reference)
-		.def_readwrite("HelpUsage", &UCommandlet::HelpUsage, py::return_value_policy::reference)
-		.def_readwrite("HelpWebLink", &UCommandlet::HelpWebLink, py::return_value_policy::reference)
-		.def_readwrite("HelpParamNames", &UCommandlet::HelpParamNames, py::return_value_policy::reference)
-		.def_readwrite("HelpParamDescriptions", &UCommandlet::HelpParamDescriptions, py::return_value_policy::reference)
-		.def("Main", &UCommandlet::Main)
-		;
-	py::class_< UHelpCommandlet, UCommandlet >(m, "UHelpCommandlet")
-		.def("Main", &UHelpCommandlet::Main)
-		;
-	py::class_< UAttributeModifier, UObject >(m, "UAttributeModifier")
-		.def_readwrite("Type", &UAttributeModifier::Type)
-		.def_readwrite("Value", &UAttributeModifier::Value)
-		;
+
 	py::class_< UState, UStruct >(m, "UState")
 		;
 	py::class_< UPackage, UObject >(m, "UPackage")
