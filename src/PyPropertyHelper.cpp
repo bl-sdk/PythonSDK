@@ -6,7 +6,6 @@
 #include "UnrealEngine/UE3Defines.h"
 #else
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
-#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #include "UnrealEngine/UE4Defines.h"
 #endif
 

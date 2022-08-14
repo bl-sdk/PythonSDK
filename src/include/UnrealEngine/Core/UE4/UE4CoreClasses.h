@@ -10,7 +10,6 @@
 
 #include "PropertyHelper.h"
 #include "pydef.h"
-#include "UE4CoreStructs.h"
 #include "UnrealEngine/UE4Defines.h"
 
 class UStruct;
@@ -121,8 +120,8 @@ class UObject {
 		return ptr;
 	}
 
-	inline void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent) {
-		return GetVFunction<void(*)(UObject*, FPropertyChangedEvent& PropertyChangedEvent)>(this, 28)(this, *PropertyChangedEvent);
+	inline void PostEditChangeProperty(uint8_t* PropertyChangedEvent) {
+		return GetVFunction<void(*)(UObject*, uint8_t& PropertyChangedEvent)>(this, 28)(this, *PropertyChangedEvent);
 	}
 
 	inline void ProcessEvent(class UFunction* function, void* parms)
@@ -169,10 +168,6 @@ class UObject {
 	void ExecuteUbergraph(int EntryPoint);
 };
 
-struct FPointer
-{
-	uintptr_t Dummy;
-};
 
 struct FFunction
 {
@@ -385,21 +380,6 @@ struct FSoftObject {
 	std::string asset_path;
 };
 
-// Class CoreUObject.Interface
-// 0x0000 (0x0028 - 0x0028)
-class UInterface : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.Interface");
-		return ptr;
-	}
-
-};
-
-
 // Class CoreUObject.Package
 // 0x0068 (0x0090 - 0x0028)
 class UPackage : public UObject
@@ -410,38 +390,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.Package");
-		return ptr;
-	}
-
-};
-
-
-
-// Class CoreUObject.GCObjectReferencer
-// 0x0038 (0x0060 - 0x0028)
-class UGCObjectReferencer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x38];                                      // 0x0028(0x0038) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.GCObjectReferencer");
-		return ptr;
-	}
-
-};
-
-// Class CoreUObject.TextBuffer
-// 0x0028 (0x0050 - 0x0028)
-class UTextBuffer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0028(0x0028) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.TextBuffer");
 		return ptr;
 	}
 
@@ -534,8 +482,8 @@ public:
 	uint32_t ClassUnique : 31;
 	uint32_t bCooked : 1;
 
-	EClassFlags ClassFlags;
-	EClassCastFlags ClassCastFlags;
+	uint32_t ClassFlags;
+	uint64_t ClassCastFlags;
 
 	UClass* ClassWithin;
 	UObject* ClassGeneratedBy;
@@ -547,17 +495,6 @@ public:
 	UClass* ClassDefaultObject;
 
 	unsigned char UnknownData01[0xB6];
-
-	/*
-	unsigned long		bCooked : 1;
-	FPointer			ClassAddReferencedObjects;
-	EClassCastFlags		ClassCastFlags;
-	FName				ClassConfigName;
-	FPointer			ClassConstructor;
-	UObject* ClassDefaultObject;
-	EClassFlags		ClassFlags;
-	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-	*/
 
 	UObject* CreateDefaultObject()
 	{
@@ -601,53 +538,6 @@ public:
 };
 
 
-// Class CoreUObject.DelegateFunction
-// 0x0000 (0x00B8 - 0x00B8)
-class UDelegateFunction : public UFunction
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.DelegateFunction");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.DynamicClass
-// 0x0068 (0x0268 - 0x0200)
-class UDynamicClass : public UClass
-{
-public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0200(0x0068) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.DynamicClass");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.PackageMap
-// 0x00B8 (0x00E0 - 0x0028)
-class UPackageMap : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xB8];                                      // 0x0028(0x00B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.PackageMap");
-		return ptr;
-	}
-
-};
-
-
 // Class CoreUObject.Enum
 // 0x0030 (0x0060 - 0x0030)
 class UEnum : public UField
@@ -682,10 +572,9 @@ class UProperty : public UField
 public:
 	int						ArrayDim;
 	int						ElementSize;
-	EPropertyFlags			PropertyFlags;
-	unsigned short			RepIndex;
-
-	ELifetimeCondition BlueprintReplicationCondition;
+	uint64_t			PropertyFlags;
+	uint16_t			RepIndex;
+	uint8_t				BlueprintReplicationCondition;
 
 	// In memory variables (generated during Link()).
 	int		Offset_Internal;
@@ -725,86 +614,6 @@ public:
 		return ptr;
 	}
 
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderClass
-// 0x01B8 (0x03B8 - 0x0200)
-class ULinkerPlaceholderClass : public UClass
-{
-public:
-	unsigned char                                      UnknownData00[0x1B8];                                     // 0x0200(0x01B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderClass");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderExportObject
-// 0x00C8 (0x00F0 - 0x0028)
-class ULinkerPlaceholderExportObject : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xC8];                                      // 0x0028(0x00C8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderExportObject");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderFunction
-// 0x01B8 (0x0270 - 0x00B8)
-class ULinkerPlaceholderFunction : public UFunction
-{
-public:
-	unsigned char                                      UnknownData00[0x1B8];                                     // 0x00B8(0x01B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderFunction");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.MetaData
-// 0x00F0 (0x0118 - 0x0028)
-class UMetaData : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xF0];                                      // 0x0028(0x00F0) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.MetaData");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.ObjectRedirector
-// 0x0008 (0x0030 - 0x0028)
-class UObjectRedirector : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.ObjectRedirector");
-		return ptr;
-	}
 
 };
 
@@ -1305,330 +1114,67 @@ public:
 };
 
 
-class UHandlerComponentFactory : public UObject
-{
-public:
+// Class Engine.Console
+// 0x0108 (0x0130 - 0x0028)
+class UConsole : public UObject {
+   public:
+	uint8_t _UnknownData00[0x10];
+	UObject* _ConsoleTargetPlayer;      // DO NOT USE - Use GetProperty instead
+	UObject* _DefaultTexture_Black;     // DO NOT USE - Use GetProperty instead
+	UObject* _DefaultTexture_White;     // DO NOT USE - Use GetProperty instead
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class PacketHandler.HandlerComponentFactory");
-		return ptr;
+	TArray<FString> Scrollback;
+	int SBHead;
+	int SBPos;
+
+	TArray<FString> _HistoryBuffer;     // DO NOT USE - Use GetProperty instead
+	uint8_t _UnknownData02[0xA0];
+
+	UObject* ConsoleSettings;
+
+	uint8_t _UnknownData03[0x10];
+
+	void OutputTextLine(const FString& Text) {
+		// TODO: Figure out why this is causing a buffer overflow after it reaches the max
+		// Possibly it happens because the FStrings aren't being deconstructed after being removed?
+
+		/*
+
+		// UE3 SDK is capable of calling this function through UE itself, UE4 isn't :/
+
+		// If we are full, delete the first line
+		if (Scrollback.Num() > ConsoleSettings->MaxScrollbackSize - 1)
+		{
+			Scrollback.RemoveAt(0, 1);
+			SBHead = Scrollback.Num() - 1;
+		}
+		else
+		{
+			SBHead += 1;
+		}
+
+		// Add the line
+		Scrollback.Add(Text);
+		*/
 	}
 
-};
+	void OutputTextCpp(wchar_t* text) {
+		if (wcsstr(text, L"\n")) {
+			std::wstring s = text;
+			// https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+			size_t last = 0;
+			size_t next = 0;
 
-
-// Class SlateCore.FontBulkData
-// 0x0098 (0x00C0 - 0x0028)
-class UFontBulkData : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x98];                                      // 0x0028(0x0098) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontBulkData");
-		return ptr;
+			while ((next = s.find(L"\n", last)) != std::string::npos) {
+				OutputTextLine(FString((wchar_t*)(s.substr(last, next - last).c_str())));
+				last = next + 1;
+			}
+			OutputTextLine(FString((wchar_t*)(s.substr(last).c_str())));
+		} else {
+			OutputTextLine(FString(text));
+		}
 	}
-
 };
-
-
-// Class SlateCore.FontFaceInterface
-// 0x0000 (0x0028 - 0x0028)
-class UFontFaceInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontFaceInterface");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.FontProviderInterface
-// 0x0000 (0x0028 - 0x0028)
-class UFontProviderInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontProviderInterface");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateTypes
-// 0x0000 (0x0028 - 0x0028)
-class USlateTypes : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateTypes");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleAsset
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleAsset : public UObject
-{
-public:
-	class USlateWidgetStyleContainerBase* CustomStyle;                                              // 0x0028(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleAsset");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleContainerBase
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleContainerBase : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerBase");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleContainerInterface
-// 0x0000 (0x0028 - 0x0028)
-class USlateWidgetStyleContainerInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerInterface");
-		return ptr;
-	}
-
-};
-
-
-class UInputCoreTypes : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class InputCore.InputCoreTypes");
-		return ptr;
-	}
-
-};
-
-class UButtonWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FButtonStyle                                ButtonStyle;                                              // 0x0030(0x0278) (Edit, BlueprintVisible)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ButtonWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.CheckBoxWidgetStyle
-// 0x0580 (0x05B0 - 0x0030)
-class UCheckBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x0030(0x0580) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.CheckBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ComboBoxWidgetStyle
-// 0x03D8 (0x0408 - 0x0030)
-class UComboBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FComboBoxStyle                              ComboBoxStyle;                                            // 0x0030(0x03D8) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ComboBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ComboButtonWidgetStyle
-// 0x03A0 (0x03D0 - 0x0030)
-class UComboButtonWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FComboButtonStyle                           ComboButtonStyle;                                         // 0x0030(0x03A0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ComboButtonWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.EditableTextBoxWidgetStyle
-// 0x07F0 (0x0820 - 0x0030)
-class UEditableTextBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FEditableTextBoxStyle                       EditableTextBoxStyle;                                     // 0x0030(0x07F0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.EditableTextBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.EditableTextWidgetStyle
-// 0x0218 (0x0248 - 0x0030)
-class UEditableTextWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FEditableTextStyle                          EditableTextStyle;                                        // 0x0030(0x0218) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.EditableTextWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ProgressWidgetStyle
-// 0x01A0 (0x01D0 - 0x0030)
-class UProgressWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FProgressBarStyle                           ProgressBarStyle;                                         // 0x0030(0x01A0) (Edit, BlueprintVisible)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ProgressWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ScrollBarWidgetStyle
-// 0x04D0 (0x0500 - 0x0030)
-class UScrollBarWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0030(0x04D0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ScrollBarWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ScrollBoxWidgetStyle
-// 0x0228 (0x0258 - 0x0030)
-class UScrollBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FScrollBoxStyle                             ScrollBoxStyle;                                           // 0x0030(0x0228) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ScrollBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.SlateSettings
-// 0x0008 (0x0030 - 0x0028)
-class USlateSettings : public UObject
-{
-public:
-	bool                                               bExplicitCanvasChildZOrder;                               // 0x0028(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.SlateSettings");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.SpinBoxWidgetStyle
-// 0x02E8 (0x0318 - 0x0030)
-class USpinBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FSpinBoxStyle                               SpinBoxStyle;                                             // 0x0030(0x02E8) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.SpinBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.TextBlockWidgetStyle
-// 0x01E0 (0x0210 - 0x0030)
-class UTextBlockWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FTextBlockStyle                             TextBlockStyle;                                           // 0x0030(0x01E0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.TextBlockWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
 
 typedef void* (__thiscall* tMalloc)(unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);

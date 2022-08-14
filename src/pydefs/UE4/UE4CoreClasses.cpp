@@ -35,12 +35,6 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def("__setattr__", &UObject::SetPyProperty, py::return_value_policy::reference)
 		.def("GetAddress", [](UObject* self) { return (int)self; });
 
-	py::class_< UTextBuffer, UObject >(m, "UTextBuffer");
-	py::class_< UPackageMap, UObject >(m, "UPackageMap");
-	py::class_< UObjectRedirector, UObject >(m, "UObjectRedirector");
-	py::class_< UMetaData, UObject >(m, "UMetaData");
-	py::class_< UInterface, UObject >(m, "UInterface");
-
 	py::class_< UField, UObject >(m, "UField")
 		.def_readwrite("Next", &UField::Next, py::return_value_policy::reference);
 
@@ -104,36 +98,6 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def_readwrite("CppType", &UEnum::CppType)
 		.def_readwrite("CppForm", &UEnum::CppForm);
 
-	py::class_< UExporter, UObject >(m, "UExporter")
-		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
-		.def_readwrite("FormatDescription", &UExporter::FormatDescription, py::return_value_policy::reference);
-
-	py::class_<UDistribution>(m, "UDistribution");
-
-	py::class_< UDistributionVector, UDistribution >(m, "UDistributionVector")
-		.def_property("bCanBeBaked", [](UDistributionVector& self) {return self.bCanBeBaked; }, [](UDistributionVector& self, bool value) {self.bCanBeBaked = value ? 1 : 0; })
-		.def_property("bIsDirty", [](UDistributionVector& self) {return self.bIsDirty; }, [](UDistributionVector& self, bool value) {self.bIsDirty = value ? 1 : 0; })
-		.def_property("bBakedDataSuccesfully", [](UDistributionVector& self) {return self.bBakedDataSuccesfully; }, [](UDistributionVector& self, bool value) {self.bBakedDataSuccesfully = value ? 1 : 0; });
-
-	py::class_< UDistributionFloat, UDistribution >(m, "UDistributionFloat")
-		.def_property("bCanBeBaked", [](UDistributionFloat& self) {return self.bCanBeBaked; }, [](UDistributionFloat& self, bool value) {self.bCanBeBaked = value ? 1 : 0; })
-		.def_property("bIsDirty", [](UDistributionFloat& self) {return self.bIsDirty; }, [](UDistributionFloat& self, bool value) {self.bIsDirty = value ? 1 : 0; })
-		.def_property("bBakedDataSuccesfully", [](UDistributionFloat& self) {return self.bBakedDataSuccesfully; }, [](UDistributionVector& self, bool value) { self.bBakedDataSuccesfully = value ? 1 : 0; });
-
-	py::class_< UCommandlet, UObject >(m, "UCommandlet")
-		.def_property("IsServer", [](UCommandlet& self) {return self.IsServer; }, [](UCommandlet& self, bool value) {self.IsServer = value ? 1 : 0; })
-		.def_property("IsClient", [](UCommandlet& self) {return self.IsClient; }, [](UCommandlet& self, bool value) {self.IsClient = value ? 1 : 0; })
-		.def_property("IsEditor", [](UCommandlet& self) {return self.IsEditor; }, [](UCommandlet& self, bool value) {self.IsEditor = value ? 1 : 0; })
-		.def_property("LogToConsole", [](UCommandlet& self) {return self.LogToConsole; }, [](UCommandlet& self, bool value) {self.LogToConsole = value ? 1 : 0; })
-		.def_property("ShowErrorCount", [](UCommandlet& self) {return self.ShowErrorCount; }, [](UCommandlet& self, bool value) {self.ShowErrorCount = value ? 1 : 0; })
-		.def_readwrite("HelpDescription", &UCommandlet::HelpDescription, py::return_value_policy::reference)
-		.def_readwrite("HelpUsage", &UCommandlet::HelpUsage, py::return_value_policy::reference)
-		.def_readwrite("HelpWebLink", &UCommandlet::HelpWebLink, py::return_value_policy::reference)
-		.def_readwrite("HelpParamNames", &UCommandlet::HelpParamNames, py::return_value_policy::reference)
-		.def_readwrite("HelpParamDescriptions", &UCommandlet::HelpParamDescriptions, py::return_value_policy::reference);
-		//.def("Main", &UCommandlet::Main);
-
-
 	py::class_< UPackage, UObject >(m, "UPackage");
 
 	py::class_< UClass, UStruct >(m, "UClass")
@@ -172,6 +136,12 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def("GetInterfacePointer", [](FScriptInterface* self) { return (int)self->InterfacePointer; })
 		.def_readwrite("ObjectPointer", &FScriptInterface::ObjectPointer)
 		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
+
+	py::class_< UConsole, UObject >(m, "UConsole")
+		.def_readwrite("Scrollback", &UConsole::Scrollback, py::return_value_policy::reference)
+		.def_readwrite("SBHead", &UConsole::SBHead, py::return_value_policy::reference)
+		.def_readwrite("SBPos", &UConsole::SBPos, py::return_value_policy::reference)
+		.def_readwrite("ConsoleSettings", &UConsole::ConsoleSettings, py::return_value_policy::reference);
 }
 
 #pragma warning(pop)

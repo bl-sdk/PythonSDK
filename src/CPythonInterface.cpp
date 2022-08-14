@@ -86,7 +86,6 @@ namespace py = pybind11;
 PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 {
 	Export_pystes_gamedefines(m);
-	Export_pystes_Core_structs(m);
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 

@@ -8,7 +8,6 @@
 #include "UnrealEngine/Engine/UE3/Engine_classes.h"
 #else
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
-#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #endif
 
 std::vector<UProperty*> UFunction::GetParameters() {
@@ -67,6 +66,25 @@ UObject* UObject::Load(const char* ClassName, const char* ObjectFullName)
 		return Load(classToLoad, ObjectFullName);
 	return nullptr;
 }
+
+#if UE4
+UObject* UObject::FindObject(const class FString& ObjectName, class UClass* ObjectClass) {
+	static UObject* fn = nullptr;
+	std::string obj;
+	std::wstring x;
+	x.append(Util::Widen(ObjectClass->GetName()));
+	x.append(L" ");
+
+	for (size_t i = 0; i < ObjectName.Count; ++i) {
+		auto z = (const wchar_t)ObjectName.Data[i];
+		x.push_back(z);
+	}
+
+	std::string objName = Util::Narrow(x);
+
+	return FindObject(objName);
+}
+#endif
 
 UObject* UObject::Find(UClass* Class, const char* ObjectFullName)
 {
@@ -187,7 +205,7 @@ UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
 		#ifdef UE4
 		else if (strncmp(c, "BlueprintGeneratedClass", 23) == 0)
-			UnrealSDK::ClassMap[object->GetName()] = static_cast<UBlueprintGeneratedClass*>(object);
+			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
 		#endif
 	}
 

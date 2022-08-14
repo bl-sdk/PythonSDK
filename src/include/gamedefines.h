@@ -11,7 +11,6 @@
 #include "logging.h"
 
 #ifdef UE4
-#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 #include "UnrealEngine/UE4Defines.h"
 #else

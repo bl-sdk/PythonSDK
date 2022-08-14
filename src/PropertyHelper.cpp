@@ -5,7 +5,6 @@
 #include "UnrealEngine/Engine/UE3/Engine_classes.h"
 #else
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
-#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #endif
 
 void* PropertyHelper::GetPropertyAddress(UProperty* prop, size_t idx) {
