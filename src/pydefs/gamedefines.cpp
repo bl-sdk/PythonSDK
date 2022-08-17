@@ -63,7 +63,8 @@ void Export_pystes_gamedefines(py::module_ &m)
 		.def_readwrite("object", &FSoftObject<UObject>::object)
 		.def_readwrite("asset_path", &FSoftObject<UObject>::asset_path);
 
-	py::class_< FSoftObject<UClass>, FSoftObject<UObject> >(m, "FSoftClass")
-		.def_readwrite("object", &FSoftObject<UClass>::object);
+	py::class_< FSoftObject<UClass> >(m, "FSoftClass")
+		.def_readwrite("object", &FSoftObject<UClass>::object)
+		.def_readwrite("asset_path", &FSoftObject<UClass>::asset_path);
 #endif
 }
