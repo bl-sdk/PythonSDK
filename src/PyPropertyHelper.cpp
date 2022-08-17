@@ -442,6 +442,13 @@ py::object FStruct::GetPyProperty(const std::string& name) {
 	return reinterpret_cast<PropertyHelper*>(this->base)->GetPyProperty(prop);
 }
 
+py::object FArray::GetPyItem(size_t idx) {
+	this->ValidateIndex(idx);
+	auto item =
+		reinterpret_cast<PropertyHelper*>(this->arr->Data)->GetPropertyAddress(this->type, idx);
+	return reinterpret_cast<PropertyHelper*>(item)->GetPyProperty(this->type);
+}
+
 void UObject::SetPyProperty(const std::string& name, py::object val) {
 	auto prop = static_cast<UProperty*>(this->Class->FindChildByName(FName(name)));
 	if (prop == nullptr) {
@@ -458,4 +465,11 @@ void FStruct::SetPyProperty(const std::string& name, py::object val) {
 	}
 
 	reinterpret_cast<PropertyHelper*>(this->base)->SetPyProperty(prop, val);
+}
+
+void FArray::SetPyItem(size_t idx, py::object val) {
+	this->ValidateIndex(idx);
+	auto item =
+		reinterpret_cast<PropertyHelper*>(this->arr->Data)->GetPropertyAddress(this->type, idx);
+	return reinterpret_cast<PropertyHelper*>(item)->SetPyProperty(this->type, val);
 }

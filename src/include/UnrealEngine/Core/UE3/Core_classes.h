@@ -607,20 +607,88 @@ struct FStruct
 };
 
 struct FArray {
+   private:
+	/**
+	 * @brief Validates that an array access is of the correct type.
+	 *
+	 * @tparam T The property type.
+	 */
+	template <typename T>
+	void ValidateType() {
+		if (this->type == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (this->type->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)this->type->Class->Name);
+		}
+	}
+
+	/**
+	 * @brief Validates that an array access is to a valid index.
+	 *
+	 * @param idx The index to check.
+	 */
+	void ValidateIndex(size_t idx);
+
+   public:
 	TArray<uint8_t>* arr;
 	UProperty* type;
 	unsigned int IterCounter;
 
 	FArray(TArray<uint8_t>* array, UProperty* s);
 
-	py::object GetItem(unsigned int i) const;
-	void SetItem(unsigned int I, py::object Obj) const;
-	long GetAddress() const;
+	intptr_t GetAddress() const;
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();
 	void Clear();
 	int Length();
+
+	/**
+	 * @brief Gets the item at the given index.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetItem(size_t idx) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		return reinterpret_cast<PropertyHelper*>(this->arr->Data)->ReadProperty<T>(this->type, idx);
+	}
+
+	/**
+	 * @brief Sets an item in the array.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to set the value at.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetItem(size_t idx, typename PropInfo<T>::type val) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		return reinterpret_cast<PropertyHelper*>(this->arr->Data)
+			->WriteProperty<T>(this->type, idx, val);
+	}
+
+	/**
+	 * @brief Gets the python value for an item in the array.
+	 *
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	py::object GetPyItem(size_t idx);
+
+	/**
+	 * @brief Sets an in the array from a python object.
+	 *
+	 * @param idx The index to set the value at.
+	 * @param val The value to set.
+	 */
+	void SetPyItem(size_t idx, py::object val);
 };
 
 // Class Engine.UIRoot

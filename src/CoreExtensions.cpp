@@ -387,29 +387,24 @@ FArray::FArray(TArray<uint8_t>* array, UProperty* s)
 	arr = array;
 	type = s;
 	IterCounter = 0;
-};
+}
 
-py::object FArray::GetItem(unsigned int i) const
-{
-	if (i >= arr->Count)
-		throw pybind11::index_error();
-	return ((PropertyHelper*)(arr->Data + type->ElementSize * (long)i))->GetPyProperty(type);
+void FArray::ValidateIndex(size_t idx) {
+	if (idx >= this->arr->Count) {
+		throw std::out_of_range("Index out of range");
+	}
+	if (this->type->ArrayDim != 1) {
+		throw std::runtime_error("Dynamic array property is static array - unsure how to handle!");
+	}
 }
 
 void FArray::Clear() {
 	arr->Empty();
 }
 
-void FArray::SetItem(unsigned int i, py::object Obj) const
+intptr_t FArray::GetAddress() const
 {
-	if (i >= arr->Count)
-		throw pybind11::index_error();
-	((PropertyHelper*)(arr->Data + type->ElementSize * (long)i))->SetPyProperty(type, std::move(Obj));
-}
-
-long FArray::GetAddress() const
-{
-	return (long)arr->Data;
+	return (intptr_t)arr->Data;
 }
 
 FArray* FArray::Iter()
@@ -422,7 +417,7 @@ py::object FArray::Next()
 {
 	if (IterCounter >= arr->Count)
 		throw pybind11::stop_iteration();
-	return GetItem(IterCounter++);
+	return GetPyItem(IterCounter++);
 }
 
 py::str FArray::Repr() {
@@ -432,7 +427,7 @@ py::str FArray::Repr() {
 		if (i > 0) {
 			output << ", ";
 		}
-		output << py::repr(GetItem(i));
+		output << py::repr(GetPyItem(i));
 	}
 	output << "]";
 	return output.str();

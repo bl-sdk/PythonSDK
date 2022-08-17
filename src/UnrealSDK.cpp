@@ -498,13 +498,11 @@ namespace UnrealSDK
 
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
-		{
-		auto players = viewport->GetProperty<UObjectProperty>("World")
-							->GetProperty<UObjectProperty>("OwningGameInstance")
-							->GetProperty<UArrayProperty>("LocalPlayers");
-		auto main_player = (*reinterpret_cast<struct TArray<struct UObject*>*>(players.arr))(0);
-		gameConsole->SetProperty<UObjectProperty>("ConsoleTargetPlayer", main_player);
-		}
+		gameConsole->SetProperty<UObjectProperty>(
+			"ConsoleTargetPlayer", viewport->GetProperty<UObjectProperty>("World")
+									   ->GetProperty<UObjectProperty>("OwningGameInstance")
+									   ->GetProperty<UArrayProperty>("LocalPlayers")
+									   .GetItem<UObjectProperty>(0));
 
 		// This is probably a costly call to do, but its also kinda the best option imo
 		for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings", false)) {
