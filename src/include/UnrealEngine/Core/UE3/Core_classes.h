@@ -512,10 +512,65 @@ struct FFunction
 
 private:
 	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
+	py::object GetReturn(PropertyHelper* params);
+
+	void CallWithParams(void* params);
+
+	template <typename T0, typename... Ts>
+	static void SetParam(void* params,
+						 UProperty* prop,
+						 typename PropInfo<T0>::type arg0,
+						 typename PropInfo<Ts>::type... args) {
+		while (prop != nullptr && (prop->PropertyFlags & 0x80) == 0) {  // Param
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+		if (prop == nullptr) {
+			throw std::runtime_error("Too many parameters to function call!");
+		}
+		if (prop->Class->Name != FName(PropInfo<T0>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+
+		reinterpret_cast<PropertyHelper*>(params)->WriteProperty<T0>(reinterpret_cast<T0*>(prop), 0,
+																	 arg0);
+		auto next = reinterpret_cast<UProperty*>(prop->Next);
+
+		if constexpr (sizeof...(Ts) > 0) {
+			this->SetParam<Ts...>(params, next, args...);
+		} else {
+			while (next != nullptr) {
+				if ((next->PropertyFlags & 0x180) != 0x80) {  // Param but not Optional
+					throw std::runtime_error("Too few parameters to function call!");
+				}
+				next = reinterpret_cast<UProperty*>(next->Next);
+			}
+		}
+	}
 
 public:
-	py::object GetReturn(PropertyHelper* params);
-	py::object Call(py::args args, py::kwargs kwargs);
+	py::object PyCall(py::args args, py::kwargs kwargs);
+
+	template <typename R, typename... Ts>
+	typename PropInfo<R>::type Call(typename PropInfo<Ts>::type... args) {
+		uint8_t params[1000];
+		memset(params, 0, sizeof(params));
+
+		UProperty* prop = reinterpret_cast<UProperty*>(this->func->Children);
+
+		this->SetParam<Ts...>(params, prop, args...);
+		this->CallWithParams(params);
+
+		if constexpr(!std::is_void<R>::value) {
+			while (prop != nullptr) {
+				if (prop->PropertyFlags & 0x400) {  // Return
+					return reinterpret_cast<PropertyHelper*>(params)->ReadProperty<R>(reinterpret_cast<R*>(prop), 0);
+				}
+				prop = reinterpret_cast<UProperty*>(prop->Next);
+			}
+			throw std::runtime_error("Couldn't find return param!");
+		}
+	}
 };
 
 struct FOutParmRec

@@ -177,9 +177,20 @@ struct FFunction
 private:
 	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
 
+	template <typename T>
+	UProperty* ValidateParam(UProperty* prop);
+
+	void CallTEMPLATESetParam(void* params, UProperty* prop);
+
+	template <typename T, typename ... Ts>
+	void CallTEMPLATESetParam(void* params, UProperty* prop, T firstArg, Ts... args);
+
 public:
 	py::object GetReturn(PropertyHelper* params);
 	py::object Call(py::args args, py::kwargs kwargs);
+
+	template <typename R, typename ... Ts>
+	typename PropInfo<R>::type CallTEMPLATE(Ts... args);
 };
 
 

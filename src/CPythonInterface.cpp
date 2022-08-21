@@ -292,7 +292,7 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 		UnrealSDK::Python->DoFile(narrow + 7);
 	}
 	else {
-		((UConsole*)caller)->ConsoleCommand(*command);
+		caller->GetProperty<UFunction>("ConsoleCommand")Call<void, UStrProperty>(command);
 	}
 	return false;
 }

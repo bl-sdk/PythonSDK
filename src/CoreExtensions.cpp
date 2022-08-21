@@ -320,7 +320,7 @@ py::object FFunction::GetReturn(PropertyHelper* params)
 	return py::none();
 }
 
-py::object FFunction::Call(py::args args, py::kwargs kwargs)
+py::object FFunction::PyCall(py::args args, py::kwargs kwargs)
 {
 	if (obj == nullptr || func == nullptr) {
 		throw std::exception("Tried to call unbound function");
@@ -332,18 +332,21 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 	GenerateParams(std::move(args), std::move(kwargs), (PropertyHelper*)params);
 	LOG(INTERNAL, "made params");
 
-	auto flags = func->FunctionFlags;
-	func->FunctionFlags |= 0x400;
-	UnrealSDK::ProcessEvent(obj, func, params);
-	func->FunctionFlags = flags;
+	this->CallWithParams(params);
 
-	LOG(INTERNAL, "Called ProcessEvent");
-
-	py::object ret = GetReturn((PropertyHelper*)params);
+	py::object ret = this->GetReturn((PropertyHelper*)params);
 	memset(params, 0, 1000);
 
-	LOG(INTERNAL, "ProcessEvent Succeeded!");
 	return ret;
+}
+
+void FFunction::CallWithParams(void* params) {
+	auto oldFlags = func->FunctionFlags;
+	func->FunctionFlags |= 0x400;
+	UnrealSDK::ProcessEvent(obj, func, params);
+	func->FunctionFlags = oldFlags;
+
+	LOG(INTERNAL, "Called ProcessEvent");
 }
 
 // FFrame =======================================================================
