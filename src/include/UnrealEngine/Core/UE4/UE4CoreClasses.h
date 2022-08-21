@@ -388,7 +388,6 @@ struct FArray {
 
 	FArray(TArray<uint8_t>* array, UProperty* s);
 
-	intptr_t GetAddress() const;
 	void Clear();
 	FArray* Iter();
 	py::object Next();

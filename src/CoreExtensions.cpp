@@ -402,11 +402,6 @@ void FArray::Clear() {
 	arr->Empty();
 }
 
-intptr_t FArray::GetAddress() const
-{
-	return (intptr_t)arr->Data;
-}
-
 FArray* FArray::Iter()
 {
 	IterCounter = 0;

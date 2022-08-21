@@ -35,7 +35,7 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def("__repr__", &UObject::GetFullName)
 		.def("__getattr__", &UObject::GetPyProperty, py::return_value_policy::reference)
 		.def("__setattr__", &UObject::SetPyProperty, py::return_value_policy::reference)
-		.def("GetAddress", [](UObject *self) { return (int)self; })
+		.def("GetAddress", [](UObject *self) { return (intptr_t)self; })
 		;
 	py::class_< UInterface, UObject >(m, "UInterface")
 		;
@@ -149,12 +149,11 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def("__next__", &FArray::Next, py::return_value_policy::reference)
 		.def("__repr__", &FArray::Repr)
 		.def("__len__", &FArray::Length)
-		.def("GetAddress", &FArray::GetAddress, py::return_value_policy::reference)
-		;
+		.def("GetDataAddress", [](FArray* self) { return (intptr_t)self->arr->Data; });
 
 	py::class_ < FScriptInterface >(m, "FScriptInterface")
 		.def(py::init<>())
-		.def("GetAddress", [](FScriptInterface *self) { return (int)&self; })
+		.def("GetAddress", [](FScriptInterface *self) { return (intptr_t)&self; })
 		.def("GetInterfacePointer", [](FScriptInterface *self) { return (int)self->InterfacePointer; })
 		.def_readwrite("ObjectPointer", &FScriptInterface::ObjectPointer)
 		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
