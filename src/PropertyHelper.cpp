@@ -7,6 +7,10 @@
 #endif
 
 void* PropertyHelper::GetPropertyAddress(UProperty* prop, size_t idx) {
+	if (idx > (prop->ArrayDim - 1)) {
+		throw std::out_of_range("Fixed array index out of range!");
+	}
+
 	return reinterpret_cast<uint8_t*>(this) + prop->Offset_Internal + (idx * prop->ElementSize);
 }
 

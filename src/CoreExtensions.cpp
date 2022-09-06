@@ -399,6 +399,9 @@ void FArray::ValidateIndex(size_t idx) {
 	if (this->type->ArrayDim != 1) {
 		throw std::runtime_error("Dynamic array property is static array - unsure how to handle!");
 	}
+	if (this->type->Offset_Internal != 0) {
+		throw std::runtime_error("Dynamic array property offset is non-zero - unsure how to handle!");
+	}
 }
 
 void FArray::Clear() {

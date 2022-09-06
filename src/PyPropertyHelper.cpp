@@ -444,8 +444,7 @@ py::object FStruct::GetPyProperty(const std::string& name) {
 
 py::object FArray::GetPyItem(size_t idx) {
 	this->ValidateIndex(idx);
-	auto item =
-		reinterpret_cast<PropertyHelper*>(this->arr->Data)->GetPropertyAddress(this->type, idx);
+	auto item = this->arr->Data + (idx * this->type->ElementSize);
 	return reinterpret_cast<PropertyHelper*>(item)->GetPyProperty(this->type);
 }
 
@@ -469,7 +468,6 @@ void FStruct::SetPyProperty(const std::string& name, py::object val) {
 
 void FArray::SetPyItem(size_t idx, py::object val) {
 	this->ValidateIndex(idx);
-	auto item =
-		reinterpret_cast<PropertyHelper*>(this->arr->Data)->GetPropertyAddress(this->type, idx);
+	auto item = this->arr->Data + (idx * this->type->ElementSize);
 	return reinterpret_cast<PropertyHelper*>(item)->SetPyProperty(this->type, val);
 }

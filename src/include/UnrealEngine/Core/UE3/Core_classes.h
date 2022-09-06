@@ -90,12 +90,13 @@ public:
 	 *
 	 * @tparam T The property type.
 	 * @param name The name of the property to get.
+	 * @param idx The index of the property to get, if it's a fixed array.
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename PropInfo<T>::type GetProperty(const std::string& name) {
+	typename PropInfo<T>::type GetProperty(const std::string& name, size_t idx = 0) {
 		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
-			this->Class->FindAndValidateProperty<T>(name), 0);
+			this->Class->FindAndValidateProperty<T>(name), idx);
 	}
 
 	/**
@@ -103,13 +104,14 @@ public:
 	 * @note Always sets the first index of fixed arrays.
 	 *
 	 * @tparam T The property type.
-	 * @param name The name of the property to get.
+	 * @param name The name of the property to set.
 	 * @param val The value to write.
+	 * @param idx The index of the property to set, if it's a fixed array.
 	 */
 	template <typename T>
-	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val, size_t idx = 0) {
 		return reinterpret_cast<PropertyHelper*>(this)->WriteProperty<T>(
-			this->Class->FindAndValidateProperty<T>(name), 0, val);
+			this->Class->FindAndValidateProperty<T>(name), idx, val);
 	}
 
 	/**
@@ -620,12 +622,13 @@ struct FStruct
 	 *
 	 * @tparam T The property type.
 	 * @param name The name of the property to get.
+	 * @param idx The index of the property to get, if it's a fixed array.
 	 * @return The property's value.
 	 */
 	template <typename T>
-	typename PropInfo<T>::type GetProperty(const std::string& name) {
+	typename PropInfo<T>::type GetProperty(const std::string& name, size_t idx = 0) {
 		return reinterpret_cast<PropertyHelper*>(this->base)
-			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
+			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), idx);
 	}
 
 	/**
@@ -633,13 +636,14 @@ struct FStruct
 	 * @note Always sets the first index of fixed arrays.
 	 *
 	 * @tparam T The property type.
-	 * @param name The name of the property to get.
+	 * @param name The name of the property to set.
 	 * @param val The value to write.
+	 * @param idx The index of the property to set, if it's a fixed array.
 	 */
 	template <typename T>
-	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val, size_t idx = 0) {
 		return reinterpret_cast<PropertyHelper*>(this->base)
-			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0, val);
+			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), idx, val);
 	}
 
 	/**
@@ -710,7 +714,8 @@ struct FArray {
 	typename PropInfo<T>::type GetItem(size_t idx) {
 		this->ValidateType<T>();
 		this->ValidateIndex(idx);
-		return reinterpret_cast<PropertyHelper*>(this->arr->Data)->ReadProperty<T>(this->type, idx);
+		auto item = this->arr->Data + (idx * this->type->ElementSize);
+		return reinterpret_cast<PropertyHelper*>(item)->ReadProperty<T>(reinterpret_cast<T*>(this->type), 0);
 	}
 
 	/**
@@ -724,8 +729,9 @@ struct FArray {
 	void SetItem(size_t idx, typename PropInfo<T>::type val) {
 		this->ValidateType<T>();
 		this->ValidateIndex(idx);
-		return reinterpret_cast<PropertyHelper*>(this->arr->Data)
-			->WriteProperty<T>(this->type, idx, val);
+		auto item = this->arr->Data + (idx * this->type->ElementSize);
+		return reinterpret_cast<PropertyHelper*>(item)
+			->WriteProperty<T>(reinterpret_cast<T*>(this->type), 0, val);
 	}
 
 	/**
