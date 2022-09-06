@@ -152,6 +152,7 @@ namespace Logging
 			WriteFile(externalConsoleHandle, fullMessage.c_str(), fullMessage.size(), nullptr, nullptr);
 		}
 
+#ifdef UE3
 		if (UnrealSDK::gameConsole)
 		{
 			std::string shortenedMessage = message.prefix;
@@ -165,14 +166,10 @@ namespace Logging
 			// just don't do anything.
 			if (wideMessage.size() > 1)
 			{
-#ifdef UE4
-				if (UnrealSDK::gameConsole->Scrollback.Data != NULL) {
-					UnrealSDK::gameConsole->OutputTextCpp((wchar_t*)wideMessage.c_str());
-				}
-#else
-				UnrealSDK::gameConsole->OutputText(FString(wideMessage.c_str()));
-#endif
+				FString msg(wideMessage.c_str());
+				UnrealSDK::gameConsole->GetProperty<UFunction>("OutputText").Call<void, UStrProperty>(&msg);
 			}
 		}
+#endif
 	}
 }

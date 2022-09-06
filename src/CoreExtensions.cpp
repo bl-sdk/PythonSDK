@@ -9,30 +9,6 @@
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 #endif
 
-std::vector<UProperty*> UFunction::GetParameters() {
-	std::vector<UProperty*> parms;
-	unsigned int currentIndex = 0;
-	for (UProperty* Child = (UProperty*)Children; Child; Child = (UProperty*)Child->Next)
-	{
-		if (!(Child->PropertyFlags & 0x80)) // Param
-			continue;
-		parms.push_back(Child);
-	}
-	return parms;
-}
-
-std::vector<UProperty*> UFunction::GetReturnType() {
-	std::vector<UProperty*> parms;
-	for (UProperty* Child = (UProperty*)Children; Child; Child = (UProperty*)Child->Next)
-	{
-		if (Child->PropertyFlags & 0x400) // Return
-			parms.push_back(Child);
-	}
-
-	return parms;
-}
-
-
 // UObject =======================================================================
 
 const char* UObject::GetName() const
@@ -277,7 +253,7 @@ std::vector<UObject*> UObject::FindAll(char* InStr, bool IncludeSubclasses)
 
 // FFunction =======================================================================
 
-void FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params)
+void FFunction::GeneratePyParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params)
 {
 	unsigned int currentIndex = 0;
 	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
@@ -302,7 +278,7 @@ void FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, P
 	}
 }
 
-py::object FFunction::GetReturn(PropertyHelper* params)
+py::object FFunction::GetPyReturn(PropertyHelper* params)
 {
 	std::deque<py::object> ReturnObjects{};
 	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
@@ -329,12 +305,12 @@ py::object FFunction::PyCall(py::args args, py::kwargs kwargs)
 
 	char params[1000] = "";
 	memset(params, 0, 1000);
-	GenerateParams(std::move(args), std::move(kwargs), (PropertyHelper*)params);
+	GeneratePyParams(std::move(args), std::move(kwargs), (PropertyHelper*)params);
 	LOG(INTERNAL, "made params");
 
 	this->CallWithParams(params);
 
-	py::object ret = this->GetReturn((PropertyHelper*)params);
+	py::object ret = this->GetPyReturn((PropertyHelper*)params);
 	memset(params, 0, 1000);
 
 	return ret;

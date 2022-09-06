@@ -310,9 +310,6 @@ public:
 	unsigned short		ParamsSize;
 	unsigned long		ReturnValueOffset;
 	void*				Func;
-
-	std::vector<UProperty*> GetParameters();
-	std::vector<UProperty*> GetReturnType();
 };
 
 // 0x0004 (0x0084 - 0x0080)
@@ -513,19 +510,47 @@ struct FFunction
 	UFunction *func;
 
 private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
-	py::object GetReturn(PropertyHelper* params);
-
+	/**
+	 * @brief Calls this function, given a pointer to it's params struct.
+	 *
+	 * @param params A pointer to this function's params struct.
+	 */
 	void CallWithParams(void* params);
 
+	/**
+	 * @brief Checks that there are no more required params for a function call.
+	 *
+	 * @param prop The next unparsed paramater property object.
+	 */
+	static void CheckNoMoreParams(UProperty* prop) {
+		while (prop != nullptr) {
+			if ((prop->PropertyFlags & 0x180) == 0x80) {  // Param but not Optional
+				throw std::runtime_error("Too few parameters to function call!");
+			}
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+	}
+
+	/**
+	 * @brief Tail recursive function to set all args in a function's params struct.
+	 *
+	 * @tparam T0 The type of the first arg, which this call will set.
+	 * @tparam Ts The types of the remaining args.
+	 * @param params A pointer to the params struct.
+	 * @param prop The next unparsed paramater property object.
+	 * @param arg0 This argument.
+	 * @param args The remaining arguments.
+	 */
 	template <typename T0, typename... Ts>
 	static void SetParam(void* params,
 						 UProperty* prop,
 						 typename PropInfo<T0>::type arg0,
 						 typename PropInfo<Ts>::type... args) {
+		// Find the next param property
 		while (prop != nullptr && (prop->PropertyFlags & 0x80) == 0) {  // Param
 			prop = reinterpret_cast<UProperty*>(prop->Next);
 		}
+
 		if (prop == nullptr) {
 			throw std::runtime_error("Too many parameters to function call!");
 		}
@@ -539,20 +564,38 @@ private:
 		auto next = reinterpret_cast<UProperty*>(prop->Next);
 
 		if constexpr (sizeof...(Ts) > 0) {
-			this->SetParam<Ts...>(params, next, args...);
+			SetParam<Ts...>(params, next, args...);
 		} else {
-			while (next != nullptr) {
-				if ((next->PropertyFlags & 0x180) != 0x80) {  // Param but not Optional
-					throw std::runtime_error("Too few parameters to function call!");
-				}
-				next = reinterpret_cast<UProperty*>(next->Next);
-			}
+			CheckNoMoreParams(next);
 		}
 	}
 
-public:
-	py::object PyCall(py::args args, py::kwargs kwargs);
+	/**
+	 * @brief Generates a params struct from python args
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @param params The params struct to fill.
+	 */
+	void GeneratePyParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
 
+	/**
+	 * @brief Get the python return value from a params struct.
+	 *
+	 * @param params The params struct to grab the return from.
+	 * @return The function's return value.
+	 */
+	py::object GetPyReturn(PropertyHelper* params);
+
+public:
+	/**
+	 * @brief Calls this function.
+	 *
+	 * @tparam R The return type. May be void.
+	 * @tparam Ts The types of the arguments.
+	 * @param args The arguments
+	 * @return The function's return
+	 */
 	template <typename R, typename... Ts>
 	typename PropInfo<R>::type Call(typename PropInfo<Ts>::type... args) {
 		uint8_t params[1000];
@@ -560,7 +603,12 @@ public:
 
 		UProperty* prop = reinterpret_cast<UProperty*>(this->func->Children);
 
-		this->SetParam<Ts...>(params, prop, args...);
+		if constexpr(sizeof...(Ts) > 0) {
+			this->SetParam<Ts...>(params, prop, args...);
+		} else {
+			this->CheckNoMoreParams(prop);
+		}
+
 		this->CallWithParams(params);
 
 		if constexpr(!std::is_void<R>::value) {
@@ -573,6 +621,15 @@ public:
 			throw std::runtime_error("Couldn't find return param!");
 		}
 	}
+
+	/**
+	 * @brief Calls this function, given python args.
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @return The function's return.
+	 */
+	py::object PyCall(py::args args, py::kwargs kwargs);
 };
 
 struct FOutParmRec
@@ -751,134 +808,10 @@ struct FArray {
 	void SetPyItem(size_t idx, py::object val);
 };
 
-// Class Engine.UIRoot
-// 0x000C (0x003C - 0x0048)
-class UUIRoot : public UObject
-{
-public:
-	TArray<struct FString>                             BadCapsLocContexts;                                       // 0x003C(0x000C) (Config, NeedCtorLink)
+// TEMP - remove once we can remove uconsole from ue4 too
+class UConsole : public UObject {};
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("UIRoot");
-		return ptr;
-	}
-
-	static struct FString SafeCaps(const struct FString& StringToCap);
-	static FScriptInterface GetOnlinePlayerInterfaceEx();
-	static FScriptInterface GetOnlinePlayerInterface();
-	static FScriptInterface GetOnlineGameInterface();
-	static bool GetDataStoreStringValue(const struct FString& InDataStoreMarkup, class ULocalPlayer* OwnerPlayer, struct FString* OutStringValue);
-	static bool GetDataStoreFieldValue(const struct FString& InDataStoreMarkup, class ULocalPlayer* OwnerPlayer, struct FUIProviderFieldValue* OutFieldValue);
-	static bool SetDataStoreStringValue(const struct FString& InDataStoreMarkup, const struct FString& InStringValue, class ULocalPlayer* OwnerPlayer);
-	static bool SetDataStoreFieldValue(const struct FString& InDataStoreMarkup, class ULocalPlayer* OwnerPlayer, struct FUIProviderFieldValue* InFieldValue);
-	static class UUIDataStore* StaticResolveDataStore(const struct FName& DataStoreTag, class ULocalPlayer* InPlayerOwner);
-	static class UGameUISceneClient* GetSceneClient();
-	static class UUIInteraction* GetCurrentUIController();
-	static unsigned char GetInputPlatformType(class ULocalPlayer* OwningPlayer);
-};
-
-// Class Engine.Interaction
-// 0x0030 (0x0048 - 0x0078)
-class UInteraction : public UUIRoot
-{
-public:
-	struct FScriptDelegate                             __OnReceivedNativeInputKey__Delegate;                     // 0x0048(0x000C) (NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedNativeInputAxis__Delegate;                    // 0x0054(0x000C) (NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedNativeInputChar__Delegate;                    // 0x0060(0x000C) (NeedCtorLink)
-	struct FScriptDelegate                             __OnInitialize__Delegate;                                 // 0x006C(0x000C) (NeedCtorLink)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Interaction");
-		return ptr;
-	}
-
-
-	void NotifyPlayerRemoved(int PlayerIndex, class ULocalPlayer* RemovedPlayer);
-	void NotifyPlayerAdded(int PlayerIndex, class ULocalPlayer* AddedPlayer);
-	void NotifyGameSessionEnded();
-	void Initialized();
-	void OnInitialize();
-	void Init();
-	void PostRender(class UCanvas* Canvas);
-	void Tick(float DeltaTime);
-	bool OnReceivedNativeInputChar(int ControllerId, const struct FString& Unicode);
-	bool OnReceivedNativeInputAxis(int ControllerId, const struct FName& Key, float Delta, float DeltaTime, bool bGamepad);
-	bool OnReceivedNativeInputKey(int ControllerId, const struct FName& Key, unsigned char EventType, float AmountDepressed, bool bGamepad);
-};
-
-// ScriptStruct Engine.Console.AutoCompleteNode
-// 0x001C
-struct FAutoCompleteNode
-{
-	int                                                IndexChar;                                                // 0x0000(0x0004)
-	TArray<int>                                        AutoCompleteListIndices;                                  // 0x0004(0x000C) (AlwaysInit, NeedCtorLink)
-	TArray<struct FPointer>                            ChildNodes;                                               // 0x0010(0x000C) (AlwaysInit, NeedCtorLink)
-};
-
-
-// Class Engine.Console
-// 0x0158 (0x0078 - 0x01D0)
-class UConsole : public UInteraction
-{
-public:
-	class ULocalPlayer*                                ConsoleTargetPlayer;                                      // 0x0078(0x0004)
-	class UTexture2D*                                  DefaultTexture_Black;                                     // 0x007C(0x0004)
-	class UTexture2D*                                  DefaultTexture_White;                                     // 0x0080(0x0004)
-	struct FName                                       ConsoleKey;                                               // 0x0084(0x0008) (Config, GlobalConfig)
-	struct FName                                       TypeKey;                                                  // 0x008C(0x0008) (Config, GlobalConfig)
-	int                                                MaxScrollbackSize;                                        // 0x0094(0x0004) (Config, GlobalConfig)
-	TArray<struct FString>                             Scrollback;                                               // 0x0098(0x000C) (NeedCtorLink)
-	int                                                SBHead;                                                   // 0x00A4(0x0004)
-	int                                                SBPos;                                                    // 0x00A8(0x0004)
-	int                                                HistoryTop;                                               // 0x00AC(0x0004) (Config)
-	int                                                HistoryBot;                                               // 0x00B0(0x0004) (Config)
-	int                                                HistoryCur;                                               // 0x00B4(0x0004) (Config)
-	struct FString                                     History[0x10];                                            // 0x00B8(0x000C) (Config, NeedCtorLink)
-	unsigned long                                      bNavigatingHistory : 1;                                   // 0x0178(0x0004) (Transient)
-	unsigned long                                      bCaptureKeyInput : 1;                                     // 0x0178(0x0004) (Transient)
-	unsigned long                                      bCtrl : 1;                                                // 0x0178(0x0004)
-	unsigned long                                      bEnableUI : 1;                                            // 0x0178(0x0004) (Config)
-	unsigned long                                      bAutoCompleteLocked : 1;                                  // 0x0178(0x0004) (Transient)
-	unsigned long                                      bRequireCtrlToNavigateAutoComplete : 1;                   // 0x0178(0x0004) (Config)
-	unsigned long                                      bIsRuntimeAutoCompleteUpToDate : 1;                       // 0x0178(0x0004) (Transient)
-	struct FString                                     TypedStr;                                                 // 0x017C(0x000C) (NeedCtorLink)
-	int                                                TypedStrPos;                                              // 0x0188(0x0004)
-	TArray<struct FAutoCompleteCommand>                ManualAutoCompleteList;                                   // 0x018C(0x000C) (Config, NeedCtorLink)
-	TArray<struct FAutoCompleteCommand>                AutoCompleteList;                                         // 0x0198(0x000C) (Transient, NeedCtorLink)
-	int                                                AutoCompleteIndex;                                        // 0x01A4(0x0004) (Transient)
-	struct FAutoCompleteNode                           AutoCompleteTree;                                         // 0x01A8(0x001C) (Native, Transient)
-	TArray<int>                                        AutoCompleteIndices;                                      // 0x01C4(0x000C) (Transient, NeedCtorLink)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Console");
-		return ptr;
-	}
-
-
-	void UpdateCompleteIndices();
-	void BuildRuntimeAutoCompleteList(bool bForce);
-	void AppendInputText(const struct FString& Text);
-	bool ProcessControlKey(const struct FName& Key, unsigned char Event);
-	void FlushPlayerInput();
-	bool InputChar(int ControllerId, const struct FString& Unicode);
-	bool InputKey(int ControllerId, const struct FName& Key, unsigned char Event, float AmountDepressed, bool bGamepad);
-	void PostRender_Console(class UCanvas* Canvas);
-	void StartTyping(const struct FString& Text);
-	void OutputText(const struct FString& Text);
-	void OutputTextLine(const struct FString& Text);
-	void ClearOutput();
-	void ConsoleCommand(const struct FString& Command);
-	void ShippingConsoleCommand(const struct FString& Command);
-	void PurgeCommandFromHistory(const struct FString& Command);
-	void SetCursorPos(int Position);
-	void SetInputText(const struct FString& Text);
-	void Initialized();
-};
-
-typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);
+typedef void*(__thiscall* tMalloc)(void***, unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);
 
 

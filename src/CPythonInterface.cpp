@@ -253,20 +253,29 @@ bool CPythonInterface::RemoveConsoleCommand(const std::string& ConsoleCommand) {
 #endif
 
 #ifndef UE4
-void AddToConsoleLog(UConsole* console, FString input)
+void AddToConsoleLog(UConsole* console, FString* input)
 {
-
-	int prev = (console->HistoryTop - 1) % 16;
-	if (!console->History[prev].Data || wcscmp(input.AsString(), console->History[prev].AsString()))
+	auto history_top = console->GetProperty<UIntProperty>("HistoryTop");
+	auto prev_str = console->GetProperty<UStrProperty>("History", (history_top - 1) % 16);
+	if (prev_str == nullptr || wcscmp(input->AsString(), prev_str->AsString()))
 	{
-		console->PurgeCommandFromHistory(input);
-		console->History[console->HistoryTop] = input;
-		console->HistoryTop = (console->HistoryTop + 1) % 16;
-		if ((console->HistoryBot == -1) || console->HistoryBot == console->HistoryTop)
-			console->HistoryBot = (console->HistoryBot + 1) % 16;
+		console->GetProperty<UFunction>("PurgeCommandFromHistory").Call<void, UStrProperty>(input);
+
+		// May have been modified
+		history_top = console->GetProperty<UIntProperty>("HistoryTop");
+		console->SetProperty<UStrProperty>("History", input, history_top);
+
+		history_top = (history_top + 1) % 16;
+		console->SetProperty<UIntProperty>("HistoryTop", history_top);
+
+		auto history_bot = console->GetProperty<UIntProperty>("HistoryBot");
+		if ((history_bot == -1) || history_bot == history_top) {
+			console->SetProperty<UIntProperty>("HistoryBot", (history_bot + 1) % 16);
+		}
 	}
-	console->HistoryCur = console->HistoryTop;
-	console->SaveConfig();
+
+	console->SetProperty<UIntProperty>("HistoryCur", history_top);
+	console->GetProperty<UFunction>("SaveConfig").Call<void>();
 }
 #endif
 
@@ -280,19 +289,19 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 	{
 		auto z = Util::Narrow(input);
 		const char* narrow = z.c_str();
-		AddToConsoleLog((UConsole*)caller, *command);
+		AddToConsoleLog((UConsole*)caller, command);
 		LOG(CONSOLE, ">>> %s <<<", narrow);
 		UnrealSDK::Python->DoString(narrow + 3);
 	}
 	else if (wcsncmp(L"pyexec ", input, 7) == 0)
 	{
 		const char* narrow = Util::Narrow(input).c_str();
-		AddToConsoleLog((UConsole*)caller, *command);
+		AddToConsoleLog((UConsole*)caller, command);
 		LOG(CONSOLE, ">>> %s <<<", narrow);
 		UnrealSDK::Python->DoFile(narrow + 7);
 	}
 	else {
-		caller->GetProperty<UFunction>("ConsoleCommand")Call<void, UStrProperty>(command);
+		caller->GetProperty<UFunction>("ConsoleCommand").Call<void, UStrProperty>(command);
 	}
 	return false;
 }
