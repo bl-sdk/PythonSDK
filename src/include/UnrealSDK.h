@@ -56,6 +56,7 @@ namespace UnrealSDK
 	typedef char*(__thiscall *tFNameInitOld)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName,
 	                                         int Unk1);
 	typedef void (__thiscall *tFNameInitNew)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName);
+	typedef void (__thiscall *tFNameInitChar)(FName* Out, char* Src, int InNumber, int FindType);
 
 	typedef FName (*UE4FNameInit)(const wchar_t* Name, int32_t InNumber, int FindType);
 	typedef void* (*UE4GlobalLogSingleton)();
@@ -65,6 +66,7 @@ namespace UnrealSDK
 	typedef void* (__thiscall* tRealloc)(void*, unsigned long, unsigned int);
 
 	extern void* pFNameInit;
+	extern tFNameInitChar pFNameInitChar;
 	extern tProcessEvent pProcessEvent;
 	extern tCallFunction pCallFunction;
 	extern tFrameStep pFrameStep;

@@ -18,6 +18,7 @@ namespace UnrealSDK
 		MemorySignature GMalloc{};
 		MemorySignature Realloc{};
 		MemorySignature FNameInit{};
+		MemorySignature FNameInitChar{};
 		MemorySignature GetDefaultObject{};
 		MemorySignature SetCommand{};
 		MemorySignature StaticExec{};
@@ -35,6 +36,9 @@ namespace UnrealSDK
 			GMalloc = SignatureMap["GMalloc"];
 			Realloc = SignatureMap["Realloc"];
 			FNameInit = SignatureMap["FNameInit"];
+			if (SignatureMap.count("FNameInitChar")) {
+				FNameInitChar = SignatureMap["FNameInitChar"];
+			}
 			GetDefaultObject = SignatureMap["GetDefaultObject"];
 			SetCommand = SignatureMap["SetCommand"];
 			if (SignatureMap.count("StaticExec")) StaticExec = SignatureMap["StaticExec"];

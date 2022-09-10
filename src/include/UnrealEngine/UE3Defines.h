@@ -151,10 +151,13 @@ public:
 	{
 		Index = 0;
 		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion < 0) {
+			UnrealSDK::pFNameInitChar(this, (char*)FindName.c_str(), 0, 1);
+		} else if (UnrealSDK::EngineVersion <= 8630) {
 			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
-		else
+		} else {
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1);
+		}
 		LOG(INTERNAL, "Made FName; Index: %d, Number: %d, Name: %s", Index, Number, GetName());
 	}
 
@@ -162,11 +165,13 @@ public:
 	{
 		Index = 0;
 		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1,
-				0);
-		else
+		if (UnrealSDK::EngineVersion < 0) {
+			UnrealSDK::pFNameInitChar(this, (char*)FindName.c_str(), number, 1);
+		} else if (UnrealSDK::EngineVersion <= 8630) {
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1, 0);
+		} else {
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1);
+		}
 	}
 
 

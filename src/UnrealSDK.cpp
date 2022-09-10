@@ -29,6 +29,7 @@ namespace UnrealSDK
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
 	void* pFNameInit;
+	tFNameInitChar pFNameInitChar;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
@@ -328,6 +329,11 @@ namespace UnrealSDK
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
+
+		if (Signatures::FNameInitChar.Length > 0) {
+			pFNameInitChar = reinterpret_cast<tFNameInitChar>(sigscan.Scan(Signatures::FNameInitChar));
+			LOG(MISC, "[Internal] FName::Init char = 0x%p", pFNameInitChar);
+		}
 
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
