@@ -29,17 +29,17 @@ std::string UObject::GetFullName()
 	return output;
 }
 
-UObject* UObject::Load(UClass* ClassToLoad, const char* ObjectFullName)
-{
-	return UObject::GObjects()->Get(0)->DynamicLoadObject(FString(ObjectFullName), ClassToLoad, true);
-}
+UObject* UObject::FindObject(struct FString& ObjectName, class UClass* ObjectClass) {
+	static FFunction func;
+	static bool found_func = false;
+	if (!found_func) {
+		// Use gEngine as a random object to find the function on
+		// It should never get GC'd, so we can cache as an optimization
+		func = UnrealSDK::gEngine->GetProperty<UFunction>("FindObject");
+		found_func = true;
+	}
 
-UObject* UObject::Load(const char* ClassName, const char* ObjectFullName)
-{
-	UClass* classToLoad = FindClass(ClassName);
-	if (classToLoad)
-		return Load(classToLoad, ObjectFullName);
-	return nullptr;
+	return func.Call<UObjectProperty, UStrProperty, UClassProperty>(&ObjectName, ObjectClass);
 }
 
 #if UE4

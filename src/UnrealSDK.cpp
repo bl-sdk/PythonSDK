@@ -531,8 +531,9 @@ SET_CONSOLE_KEY_DONE:
 	void InitializeGameVersions()
 	{
 		#ifndef UE4
-			EngineVersion = UObject::GetEngineVersion();
-			ChangelistNumber = UObject::GetBuildChangelistNumber();
+			// Use gEngine as a random object, these functions exist on uobject
+			EngineVersion = gEngine->GetProperty<UFunction>("GetEngineVersion").Call<UIntProperty>();
+			ChangelistNumber = gEngine->GetProperty<UFunction>("GetBuildChangelistNumber").Call<UIntProperty>();
 			LOG(MISC, "[Internal] Engine Version = %d, Build Changelist = %d", EngineVersion, ChangelistNumber);
 		#else
 			//! THIS MAGICALLY BROKE :)

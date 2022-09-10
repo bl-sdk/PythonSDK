@@ -130,11 +130,7 @@ public:
 	 */
 	void SetPyProperty(const std::string& name, py::object val);
 
-	static int GetBuildChangelistNumber();
-	static int GetEngineVersion();
-	static class UObject* FindObject(const struct FString& ObjectName, class UClass* ObjectClass);
-	static class UObject* DynamicLoadObject(const struct FString& ObjectName, class UClass* ObjectClass, bool MayFail);
-	void SaveConfig();
+	static UObject* FindObject(struct FString& ObjectName, class UClass* ObjectClass);
 	// Virtual Functions
 	virtual void VirtualFunction00() {};																			// 0x005838A0 (0x00)
 	virtual void VirtualFunction01() {};																			// 0x005FC030 (0x04)

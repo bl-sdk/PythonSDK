@@ -155,12 +155,6 @@ class UObject {
 		return nullptr;
 	}
 
-	static class UObject* DynamicLoadObject(const class FString& ObjectName, class UClass* ObjectClass, bool MayFail) {
-		// TODO: Implement UE4 DynamicLoadObject
-		// See: https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FSoftObjectPtr/index.html
-
-		return nullptr;
-	}
 	void DumpObject();
 
 	static class UObject* FindObject(const class FString& ObjectName, class UClass* ObjectClass);

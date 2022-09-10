@@ -115,10 +115,6 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	      py::return_value_policy::reference);
 	m.def("FindObject", [](UClass* Class, char* ObjectFullName) { return UObject::Find(Class, ObjectFullName); },
 	      py::return_value_policy::reference);
-	m.def("LoadObject", [](char* ClassName, char* ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); },
-	      py::return_value_policy::reference);
-	m.def("LoadObject", [](UClass* Class, char* ObjectFullName) { return UObject::Load(Class, ObjectFullName); },
-	      py::return_value_policy::reference);
 	//m.def("LoadTexture", &UnrealSDK::LoadTexture, py::return_value_policy::reference);
 	m.def("ConstructObject", &UnrealSDK::ConstructObject, "Construct Objects", py::arg("Class"),
 	      py::arg("Outer") = UnrealSDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1,
