@@ -63,9 +63,17 @@ static std::map<std::string, MemorySignature> bl2_signatures{{
 	}},
 	{
 	"FNameInit", {
+		// 55  8b  ec  6a  ff  68  ??  ??  ??  ??  ??  ??  00  00  00  00  50  81  ec  9c  0c
 		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x50\x81\xEC\x9C\x0C",
 		"xxxxxx??????xxxxxxxxx",
 		21
+	}},
+	{
+	"FNameInitChar", {
+		// 55  8B  EC  83  EC  08  53  8B  D9  89  5D  ??
+		"\x55\x8B\xEC\x83\xEC\x08\x53\x8B\xD9\x89\x5D\x00",
+		"xxxxxxxxxxx?",
+		12
 	}},
 	{
 	"GetDefaultObject", {
@@ -91,6 +99,7 @@ static std::map<std::string, MemorySignature> tps_signatures{ {
 	{"LoadPackage", bl2_signatures["LoadPackage"]},
 	{"GMalloc", bl2_signatures["GMalloc"]},
 	{"FNameInit", bl2_signatures["FNameInit"]},
+	{"FNameInitChar", bl2_signatures["FNameInitChar"]},
 	{"GetDefaultObject", bl2_signatures["GetDefaultObject"]},
 } };
 
@@ -193,7 +202,7 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 		41
 	}},
 	{
-	"StaticExec", { 
+	"StaticExec", {
 		"\xE8\x00\x00\x00\x00\x3C\x01\x0F\x84\x00\x00\x00\x00\x48\x8B\x0D\x00\x00\x00\x00",
 		"x????xxxx????xxx????",
 		20

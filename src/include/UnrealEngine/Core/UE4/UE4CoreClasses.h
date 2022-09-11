@@ -8,8 +8,8 @@
 #pragma pack(push, 0x4)
 #endif
 
+#include "PropertyHelper.h"
 #include "pydef.h"
-#include "UE4CoreStructs.h"
 #include "UnrealEngine/UE4Defines.h"
 
 class UStruct;
@@ -23,77 +23,66 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 
-struct FHelper {
-public:
-	struct FStruct GetStructProperty(class UProperty* Prop, int idx);
-	class FString* GetStrProperty(class UProperty* Prop, int idx);
-	class UObject* GetObjectProperty(class UProperty* Prop, int idx);
-	class UClass* GetClassProperty(class UProperty* Prop, int idx);
-	struct FName* GetNameProperty(class UProperty* Prop, int idx);
-	class UComponent* GetComponentProperty(UProperty* Prop, int idx);
-
-	int GetIntProperty(class UProperty* Prop, int idx);
-
-	class FScriptInterface* GetInterfaceProperty(class UProperty* Prop, int idx);
-	float GetFloatProperty(class UProperty* Prop, int idx);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty* Prop, int idx);
-	unsigned char GetByteProperty(class UProperty* Prop, int idx);
-	bool GetBoolProperty(class UProperty* Prop, int idx);
-	void* GetPropertyAddress(class UProperty* Prop, int idx);
-	struct FArray GetArrayProperty(class UProperty* Prop, int idx);
-	py::object GetProperty(class UProperty* Prop);
-
-#ifdef UE4
-	py::object GetMapProperty(class UProperty* Prop, int idx);
-	class UObject* GetWeakObjectProperty(class UProperty* Prop, int idx);
-
-	py::object GetSetProperty(class UProperty* Prop, int idx);
-	const wchar_t* GetTextProperty(class UProperty* Prop, int idx);
-	py::object GetSoftClassProperty(class UProperty* Prop, int idx);
-	py::object GetSoftObjectProperty(class UProperty* Prop, int idx);
-	py::object GetEnumProperty(class UProperty* Prop, int idx);
-
-	void SetEnumProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetTextProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetSoftObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetWeakObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt16Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt32Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetUInt64Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt64Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt16Property(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInt8Property(class UProperty* Prop, int idx, const py::object& Val);
-#endif
-
-	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetClassProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetNameProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetIntProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetByteProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetBoolProperty(class UProperty* boolProp, int idx, const py::object& Val);
-	void SetArrayProperty(class UProperty* boolProp, int idx, const py::object& Val);
-
-	void SetProperty(class UProperty* Prop, const py::object& val);
-
-};
-
 
 // Class CoreUObject.Object
 // 0x0028
-class UObject : FHelper
-{
-public:
+class UObject {
+   private:
+	/**
+	 * @brief Dummy function which creates a vftable, to offset the remaining fields correctly.
+	 */
+	virtual void Dummy(){};
+
+   public:
 	int32_t                                            ObjectFlags;                                              // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            InternalIndex;                                            // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UClass* Class;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	FName                                              Name;                                                     // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UObject* Outer;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this)->WriteProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
 
 	static inline FChunkedFixedUObjectArray* GObjects()
 	{
@@ -115,10 +104,6 @@ public:
 	static std::vector<UObject*> FindObjectsContaining(const std::string& StringLookup);
 	static UClass* FindClass(const char* ClassName, const bool Lookup = false);
 
-	pybind11::object GetProperty(std::string PropName);
-
-	struct FFunction GetFunction(std::string& PropName);
-
 	template<typename T>
 	static T* GetObjectCasted(std::size_t index)
 	{
@@ -135,27 +120,13 @@ public:
 		return ptr;
 	}
 
-	inline void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent) {
-		return GetVFunction<void(*)(UObject*, FPropertyChangedEvent& PropertyChangedEvent)>(this, 28)(this, *PropertyChangedEvent);
+	inline void PostEditChangeProperty(uint8_t* PropertyChangedEvent) {
+		return GetVFunction<void(*)(UObject*, uint8_t& PropertyChangedEvent)>(this, 28)(this, *PropertyChangedEvent);
 	}
 
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
-	}
-
-	static UObject* FindObject(const std::string& name) {
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
-			UObject* obj = UObject::GObjects()->Get(i);
-			if (obj == nullptr) continue;
-
-			if (!strcmp(obj->GetFullName().c_str(), name.c_str())) {
-				return static_cast<UObject*>(obj);
-			}
-
-		}
-
-		return nullptr;
 	}
 
 	static UObject* FindObjectClassless(const std::string& objName) {
@@ -170,40 +141,12 @@ public:
 		return nullptr;
 	}
 
-	static class UObject* DynamicLoadObject(const class FString& ObjectName, class UClass* ObjectClass, bool MayFail) {
-		// TODO: Implement UE4 DynamicLoadObject
-		// See: https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FSoftObjectPtr/index.html
-
-		return nullptr;
-	}
 	void DumpObject();
 
-	void SetProperty(std::string& PropName, const py::object& Val);
-
-	virtual void Dummy() {};
-	static class UObject* FindObject(const class FString& ObjectName, class UClass* ObjectClass);
+	static class UObject* FindObject(class FString& ObjectName, class UClass* ObjectClass);
 
 	void ExecuteUbergraph(int EntryPoint);
 };
-
-struct FPointer
-{
-	uintptr_t Dummy;
-};
-
-struct FFunction
-{
-	UObject* obj;
-	UFunction* func;
-
-private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
-
-public:
-	py::object GetReturn(FHelper* params);
-	py::object Call(py::args args, py::kwargs kwargs);
-};
-
 
 
 struct FOutParmRec
@@ -283,8 +226,7 @@ public:
 		return ptr;
 	}
 
-
-	UObject* FindChildByName(FName InName) const
+	UField* FindChildByName(FName InName) const
 	{
 		const UStruct* thisField = this;
 		while (thisField)
@@ -296,6 +238,27 @@ public:
 		}
 
 		return NULL;
+	}
+
+	/**
+	 * @brief Finds a child property, and validates that it's of the expected type.
+	 * @note Throws exceptions if the child is not found of of an invalid type.
+	 *
+	 * @tparam T The expected property type.
+	 * @param name The name of the property.
+	 * @return The found property object.
+	 */
+	template <typename T>
+	T* FindAndValidateProperty(const std::string& name) {
+		auto prop = this->FindChildByName(FName(name));
+		if (prop == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (prop->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+		return reinterpret_cast<T*>(prop);
 	}
 };
 
@@ -311,43 +274,143 @@ public:
 		base = b;
 	}
 
-	pybind11::object GetProperty(const std::string& PropName) const;
-	void SetProperty(std::string& PropName, py::object value) const;
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0);
+	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
 	py::str Repr() const;
 };
 
 struct FArray {
-	TArray <char>* arr;
+   private:
+	/**
+	 * @brief Validates that an array access is of the correct type.
+	 *
+	 * @tparam T The property type.
+	 */
+	template <typename T>
+	void ValidateType() {
+		if (this->type == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (this->type->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)this->type->Class->Name);
+		}
+	}
+
+	/**
+	 * @brief Validates that an array access is to a valid index.
+	 *
+	 * @param idx The index to check.
+	 */
+	void ValidateIndex(size_t idx);
+
+   public:
+	TArray<uint8_t>* arr;
 	UProperty* type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char>* array, UProperty* s);
-
-	py::object GetItem(unsigned int i) const;
-	void SetItem(unsigned int I, py::object Obj) const;
-	long GetAddress() const;
+	FArray(TArray<uint8_t>* array, UProperty* s);
 
 	void Clear();
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();
 	int Length();
-};
 
-// Class CoreUObject.Interface
-// 0x0000 (0x0028 - 0x0028)
-class UInterface : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.Interface");
-		return ptr;
+	/**
+	 * @brief Gets the item at the given index.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetItem(size_t idx) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		return reinterpret_cast<PropertyHelper*>(this->arr->Data)
+			->ReadProperty<T>(reinterpret_cast<T*>(this->type), idx);
 	}
 
+	/**
+	 * @brief Sets an item in the array.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to set the value at.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetItem(size_t idx, typename PropInfo<T>::type val) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		return reinterpret_cast<PropertyHelper*>(this->arr->Data)
+			->WriteProperty<T>(reinterpret_cast<T*>(this->type), idx, val);
+	}
+
+	/**
+	 * @brief Gets the python value for an item in the array.
+	 *
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	py::object GetPyItem(size_t idx);
+
+	/**
+	 * @brief Sets an in the array from a python object.
+	 *
+	 * @param idx The index to set the value at.
+	 * @param val The value to set.
+	 */
+	void SetPyItem(size_t idx, py::object val);
 };
 
+template<typename T>
+struct FSoftObject {
+	T* object;
+	std::string asset_path;
+};
 
 // Class CoreUObject.Package
 // 0x0068 (0x0090 - 0x0028)
@@ -359,38 +422,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.Package");
-		return ptr;
-	}
-
-};
-
-
-
-// Class CoreUObject.GCObjectReferencer
-// 0x0038 (0x0060 - 0x0028)
-class UGCObjectReferencer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x38];                                      // 0x0028(0x0038) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.GCObjectReferencer");
-		return ptr;
-	}
-
-};
-
-// Class CoreUObject.TextBuffer
-// 0x0028 (0x0050 - 0x0028)
-class UTextBuffer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0028(0x0028) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.TextBuffer");
 		return ptr;
 	}
 
@@ -463,31 +494,8 @@ public:
 		FunctionName = func;
 	}
 
-	/* An FScriptDelegate won't be bound if:
-		- Object is nullptr
-		- Object doesn't have a function by the name of `FunctionName`
-	*/
-	inline bool IsBound() const {
-		if (FunctionName.IsValid()) {
-			UObject* objPtr = Object.Get();
-			if (objPtr != nullptr) {
-				std::string funcName = std::string(FunctionName.GetName());
-				return (objPtr->GetFunction(funcName).func != nullptr);
-			}
-		}
-		return false;
-	}
-	/* Return a string representation of the given FScriptDelegate */
-	inline std::string ToString() const {
-		if (IsBound()) {
-			UObject* objPtr = Object.Get();
-			std::string funcName = std::string(FunctionName.GetName());
-			std::string fullName = objPtr->GetFunction(funcName).func->GetFullName();
-			return fullName; // Get the function and then return the full name
-		}
-
-		return "<UNBOUND>"; // Return "<UNBOUND>" if the FScriptDelegate isn't actually bound to anything
-	};
+	bool IsBound() const;
+	std::string ToString() const;
 };
 
 
@@ -506,8 +514,8 @@ public:
 	uint32_t ClassUnique : 31;
 	uint32_t bCooked : 1;
 
-	EClassFlags ClassFlags;
-	EClassCastFlags ClassCastFlags;
+	uint32_t ClassFlags;
+	uint64_t ClassCastFlags;
 
 	UClass* ClassWithin;
 	UObject* ClassGeneratedBy;
@@ -520,17 +528,6 @@ public:
 
 	unsigned char UnknownData01[0xB6];
 
-	/*
-	unsigned long		bCooked : 1;
-	FPointer			ClassAddReferencedObjects;
-	EClassCastFlags		ClassCastFlags;
-	FName				ClassConfigName;
-	FPointer			ClassConstructor;
-	UObject* ClassDefaultObject;
-	EClassFlags		ClassFlags;
-	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-	*/
-
 	UObject* CreateDefaultObject()
 	{
 		return UnrealSDK::pGetDefaultObject(this, 0);
@@ -541,21 +538,6 @@ public:
 		static auto ptr = UObject::FindClass("Class CoreUObject.Class");
 		return ptr;
 	}
-
-	UObject* FindChildByName(FName InName) const
-	{
-		const UStruct* thisField = this;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
-				if (Child->Name == InName)
-					return Child;
-			thisField = thisField->SuperField;
-		}
-
-		return NULL;
-	}
-
 
 	std::vector<UProperty*> GetProperties() const {
 		const auto size = sizeof(UClass);
@@ -585,53 +567,6 @@ public:
 		}
 		return propertyList;
 	}
-};
-
-
-// Class CoreUObject.DelegateFunction
-// 0x0000 (0x00B8 - 0x00B8)
-class UDelegateFunction : public UFunction
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.DelegateFunction");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.DynamicClass
-// 0x0068 (0x0268 - 0x0200)
-class UDynamicClass : public UClass
-{
-public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0200(0x0068) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.DynamicClass");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.PackageMap
-// 0x00B8 (0x00E0 - 0x0028)
-class UPackageMap : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xB8];                                      // 0x0028(0x00B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.PackageMap");
-		return ptr;
-	}
-
 };
 
 
@@ -669,10 +604,9 @@ class UProperty : public UField
 public:
 	int						ArrayDim;
 	int						ElementSize;
-	EPropertyFlags			PropertyFlags;
-	unsigned short			RepIndex;
-
-	ELifetimeCondition BlueprintReplicationCondition;
+	uint64_t			PropertyFlags;
+	uint16_t			RepIndex;
+	uint8_t				BlueprintReplicationCondition;
 
 	// In memory variables (generated during Link()).
 	int		Offset_Internal;
@@ -712,86 +646,6 @@ public:
 		return ptr;
 	}
 
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderClass
-// 0x01B8 (0x03B8 - 0x0200)
-class ULinkerPlaceholderClass : public UClass
-{
-public:
-	unsigned char                                      UnknownData00[0x1B8];                                     // 0x0200(0x01B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderClass");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderExportObject
-// 0x00C8 (0x00F0 - 0x0028)
-class ULinkerPlaceholderExportObject : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xC8];                                      // 0x0028(0x00C8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderExportObject");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.LinkerPlaceholderFunction
-// 0x01B8 (0x0270 - 0x00B8)
-class ULinkerPlaceholderFunction : public UFunction
-{
-public:
-	unsigned char                                      UnknownData00[0x1B8];                                     // 0x00B8(0x01B8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.LinkerPlaceholderFunction");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.MetaData
-// 0x00F0 (0x0118 - 0x0028)
-class UMetaData : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xF0];                                      // 0x0028(0x00F0) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.MetaData");
-		return ptr;
-	}
-
-};
-
-
-// Class CoreUObject.ObjectRedirector
-// 0x0008 (0x0030 - 0x0028)
-class UObjectRedirector : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.ObjectRedirector");
-		return ptr;
-	}
 
 };
 
@@ -1292,329 +1146,196 @@ public:
 };
 
 
-class UHandlerComponentFactory : public UObject
-{
-public:
+// Class Engine.Console
+// 0x0108 (0x0130 - 0x0028)
+class UConsole : public UObject {
+   public:
+	uint8_t _UnknownData00[0x10];
+	UObject* _ConsoleTargetPlayer;      // DO NOT USE - Use GetProperty instead
+	UObject* _DefaultTexture_Black;     // DO NOT USE - Use GetProperty instead
+	UObject* _DefaultTexture_White;     // DO NOT USE - Use GetProperty instead
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class PacketHandler.HandlerComponentFactory");
-		return ptr;
+	TArray<FString> Scrollback;
+	int SBHead;
+	int SBPos;
+
+	TArray<FString> _HistoryBuffer;     // DO NOT USE - Use GetProperty instead
+	uint8_t _UnknownData02[0xA0];
+
+	UObject* ConsoleSettings;
+
+	uint8_t _UnknownData03[0x10];
+
+	void OutputTextLine(const FString& Text) {
+		// TODO: Figure out why this is causing a buffer overflow after it reaches the max
+		// Possibly it happens because the FStrings aren't being deconstructed after being removed?
+
+		/*
+
+		// UE3 SDK is capable of calling this function through UE itself, UE4 isn't :/
+
+		// If we are full, delete the first line
+		if (Scrollback.Num() > ConsoleSettings->MaxScrollbackSize - 1)
+		{
+			Scrollback.RemoveAt(0, 1);
+			SBHead = Scrollback.Num() - 1;
+		}
+		else
+		{
+			SBHead += 1;
+		}
+
+		// Add the line
+		Scrollback.Add(Text);
+		*/
 	}
 
+	void OutputTextCpp(wchar_t* text) {
+		if (wcsstr(text, L"\n")) {
+			std::wstring s = text;
+			// https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+			size_t last = 0;
+			size_t next = 0;
+
+			while ((next = s.find(L"\n", last)) != std::string::npos) {
+				OutputTextLine(FString((wchar_t*)(s.substr(last, next - last).c_str())));
+				last = next + 1;
+			}
+			OutputTextLine(FString((wchar_t*)(s.substr(last).c_str())));
+		} else {
+			OutputTextLine(FString(text));
+		}
+	}
 };
 
 
-// Class SlateCore.FontBulkData
-// 0x0098 (0x00C0 - 0x0028)
-class UFontBulkData : public UObject
+struct FFunction
 {
-public:
-	unsigned char                                      UnknownData00[0x98];                                      // 0x0028(0x0098) MISSED OFFSET
+	UObject* obj;
+	UFunction* func;
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontBulkData");
-		return ptr;
+private:
+	/**
+	 * @brief Calls this function, given a pointer to it's params struct.
+	 *
+	 * @param params A pointer to this function's params struct.
+	 */
+	void CallWithParams(void* params);
+
+	/**
+	 * @brief Checks that there are no more required params for a function call.
+	 *
+	 * @param prop The next unparsed paramater property object.
+	 */
+	static void CheckNoMoreParams(UProperty* prop) {
+		while (prop != nullptr) {
+			if ((prop->PropertyFlags & 0x180) == 0x80) {  // Param but not Optional
+				throw std::runtime_error("Too few parameters to function call!");
+			}
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
 	}
 
-};
+	/**
+	 * @brief Tail recursive function to set all args in a function's params struct.
+	 *
+	 * @tparam T0 The type of the first arg, which this call will set.
+	 * @tparam Ts The types of the remaining args.
+	 * @param params A pointer to the params struct.
+	 * @param prop The next unparsed paramater property object.
+	 * @param arg0 This argument.
+	 * @param args The remaining arguments.
+	 */
+	template <typename T0, typename... Ts>
+	static void SetParam(void* params,
+						 UProperty* prop,
+						 typename PropInfo<T0>::type arg0,
+						 typename PropInfo<Ts>::type... args) {
+		// Find the next param property
+		while (prop != nullptr && (prop->PropertyFlags & 0x80) == 0) {  // Param
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
 
+		if (prop == nullptr) {
+			throw std::runtime_error("Too many parameters to function call!");
+		}
+		if (prop->Class->Name != FName(PropInfo<T0>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
 
-// Class SlateCore.FontFaceInterface
-// 0x0000 (0x0028 - 0x0028)
-class UFontFaceInterface : public UInterface
-{
-public:
+		reinterpret_cast<PropertyHelper*>(params)->WriteProperty<T0>(reinterpret_cast<T0*>(prop), 0,
+																	 arg0);
+		auto next = reinterpret_cast<UProperty*>(prop->Next);
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontFaceInterface");
-		return ptr;
+		if constexpr (sizeof...(Ts) > 0) {
+			SetParam<Ts...>(params, next, args...);
+		} else {
+			CheckNoMoreParams(next);
+		}
 	}
 
-};
+	/**
+	 * @brief Generates a params struct from python args
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @param params The params struct to fill.
+	 */
+	void GeneratePyParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
 
+	/**
+	 * @brief Get the python return value from a params struct.
+	 *
+	 * @param params The params struct to grab the return from.
+	 * @return The function's return value.
+	 */
+	py::object GetPyReturn(PropertyHelper* params);
 
-// Class SlateCore.FontProviderInterface
-// 0x0000 (0x0028 - 0x0028)
-class UFontProviderInterface : public UInterface
-{
 public:
+	/**
+	 * @brief Calls this function.
+	 *
+	 * @tparam R The return type. May be void.
+	 * @tparam Ts The types of the arguments.
+	 * @param args The arguments
+	 * @return The function's return
+	 */
+	template <typename R, typename... Ts>
+	typename PropInfo<R>::type Call(typename PropInfo<Ts>::type... args) {
+		uint8_t params[1000];
+		memset(params, 0, sizeof(params));
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.FontProviderInterface");
-		return ptr;
+		UProperty* prop = reinterpret_cast<UProperty*>(this->func->Children);
+
+		if constexpr(sizeof...(Ts) > 0) {
+			this->SetParam<Ts...>(params, prop, args...);
+		} else {
+			this->CheckNoMoreParams(prop);
+		}
+
+		this->CallWithParams(params);
+
+		if constexpr(!std::is_void<R>::value) {
+			while (prop != nullptr) {
+				if (prop->PropertyFlags & 0x400) {  // Return
+					return reinterpret_cast<PropertyHelper*>(params)->ReadProperty<R>(reinterpret_cast<R*>(prop), 0);
+				}
+				prop = reinterpret_cast<UProperty*>(prop->Next);
+			}
+			throw std::runtime_error("Couldn't find return param!");
+		}
 	}
 
+	/**
+	 * @brief Calls this function, given python args.
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @return The function's return.
+	 */
+	py::object PyCall(py::args args, py::kwargs kwargs);
 };
-
-
-// Class SlateCore.SlateTypes
-// 0x0000 (0x0028 - 0x0028)
-class USlateTypes : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateTypes");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleAsset
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleAsset : public UObject
-{
-public:
-	class USlateWidgetStyleContainerBase* CustomStyle;                                              // 0x0028(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleAsset");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleContainerBase
-// 0x0008 (0x0030 - 0x0028)
-class USlateWidgetStyleContainerBase : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerBase");
-		return ptr;
-	}
-
-};
-
-
-// Class SlateCore.SlateWidgetStyleContainerInterface
-// 0x0000 (0x0028 - 0x0028)
-class USlateWidgetStyleContainerInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class SlateCore.SlateWidgetStyleContainerInterface");
-		return ptr;
-	}
-
-};
-
-
-class UInputCoreTypes : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class InputCore.InputCoreTypes");
-		return ptr;
-	}
-
-};
-
-class UButtonWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FButtonStyle                                ButtonStyle;                                              // 0x0030(0x0278) (Edit, BlueprintVisible)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ButtonWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.CheckBoxWidgetStyle
-// 0x0580 (0x05B0 - 0x0030)
-class UCheckBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FCheckBoxStyle                              CheckBoxStyle;                                            // 0x0030(0x0580) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.CheckBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ComboBoxWidgetStyle
-// 0x03D8 (0x0408 - 0x0030)
-class UComboBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FComboBoxStyle                              ComboBoxStyle;                                            // 0x0030(0x03D8) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ComboBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ComboButtonWidgetStyle
-// 0x03A0 (0x03D0 - 0x0030)
-class UComboButtonWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FComboButtonStyle                           ComboButtonStyle;                                         // 0x0030(0x03A0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ComboButtonWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.EditableTextBoxWidgetStyle
-// 0x07F0 (0x0820 - 0x0030)
-class UEditableTextBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FEditableTextBoxStyle                       EditableTextBoxStyle;                                     // 0x0030(0x07F0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.EditableTextBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.EditableTextWidgetStyle
-// 0x0218 (0x0248 - 0x0030)
-class UEditableTextWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FEditableTextStyle                          EditableTextStyle;                                        // 0x0030(0x0218) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.EditableTextWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ProgressWidgetStyle
-// 0x01A0 (0x01D0 - 0x0030)
-class UProgressWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FProgressBarStyle                           ProgressBarStyle;                                         // 0x0030(0x01A0) (Edit, BlueprintVisible)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ProgressWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ScrollBarWidgetStyle
-// 0x04D0 (0x0500 - 0x0030)
-class UScrollBarWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FScrollBarStyle                             ScrollBarStyle;                                           // 0x0030(0x04D0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ScrollBarWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.ScrollBoxWidgetStyle
-// 0x0228 (0x0258 - 0x0030)
-class UScrollBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FScrollBoxStyle                             ScrollBoxStyle;                                           // 0x0030(0x0228) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.ScrollBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.SlateSettings
-// 0x0008 (0x0030 - 0x0028)
-class USlateSettings : public UObject
-{
-public:
-	bool                                               bExplicitCanvasChildZOrder;                               // 0x0028(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.SlateSettings");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.SpinBoxWidgetStyle
-// 0x02E8 (0x0318 - 0x0030)
-class USpinBoxWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FSpinBoxStyle                               SpinBoxStyle;                                             // 0x0030(0x02E8) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.SpinBoxWidgetStyle");
-		return ptr;
-	}
-
-};
-
-
-// Class Slate.TextBlockWidgetStyle
-// 0x01E0 (0x0210 - 0x0030)
-class UTextBlockWidgetStyle : public USlateWidgetStyleContainerBase
-{
-public:
-	struct FTextBlockStyle                             TextBlockStyle;                                           // 0x0030(0x01E0) (Edit)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Slate.TextBlockWidgetStyle");
-		return ptr;
-	}
-
-};
-
 
 
 typedef void* (__thiscall* tMalloc)(unsigned long, unsigned int);

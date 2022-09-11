@@ -57,4 +57,14 @@ void Export_pystes_gamedefines(py::module_ &m)
 		.def("__repr__", &FScriptDelegate::ToString)
 #endif
 		;
+
+#ifdef UE4
+	py::class_< FSoftObject<UObject> >(m, "FSoftObject")
+		.def_readwrite("object", &FSoftObject<UObject>::object)
+		.def_readwrite("asset_path", &FSoftObject<UObject>::asset_path);
+
+	py::class_< FSoftObject<UClass> >(m, "FSoftClass")
+		.def_readwrite("object", &FSoftObject<UClass>::object)
+		.def_readwrite("asset_path", &FSoftObject<UClass>::asset_path);
+#endif
 }

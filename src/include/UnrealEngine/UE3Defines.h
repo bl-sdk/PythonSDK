@@ -151,10 +151,13 @@ public:
 	{
 		Index = 0;
 		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion < 0) {
+			UnrealSDK::pFNameInitChar(this, (char*)FindName.c_str(), 0, 1);
+		} else if (UnrealSDK::EngineVersion <= 8630) {
 			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
-		else
+		} else {
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1);
+		}
 		LOG(INTERNAL, "Made FName; Index: %d, Number: %d, Name: %s", Index, Number, GetName());
 	}
 
@@ -162,11 +165,13 @@ public:
 	{
 		Index = 0;
 		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1,
-				0);
-		else
+		if (UnrealSDK::EngineVersion < 0) {
+			UnrealSDK::pFNameInitChar(this, (char*)FindName.c_str(), number, 1);
+		} else if (UnrealSDK::EngineVersion <= 8630) {
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1, 0);
+		} else {
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1);
+		}
 	}
 
 
@@ -185,6 +190,21 @@ public:
 	bool operator ==(const FName& A) const
 	{
 		return Index == A.Index;
+	}
+
+	bool operator!=(const FName& other) const { return !FName::operator==(other); }
+
+	operator std::string() {
+		if (Index < 0 || Index > Names()->Count) {
+			return nullptr;
+		}
+
+		std::string str = Names()->Get(Index)->GetAnsiName();
+		if (Number != 0) {
+			str += "_" + std::to_string(Number - 1);
+		}
+
+		return str;
 	}
 };
 

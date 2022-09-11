@@ -86,7 +86,6 @@ namespace py = pybind11;
 PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 {
 	Export_pystes_gamedefines(m);
-	Export_pystes_Core_structs(m);
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 
@@ -115,10 +114,6 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("FindObject", [](char* ClassName, char* ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); },
 	      py::return_value_policy::reference);
 	m.def("FindObject", [](UClass* Class, char* ObjectFullName) { return UObject::Find(Class, ObjectFullName); },
-	      py::return_value_policy::reference);
-	m.def("LoadObject", [](char* ClassName, char* ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); },
-	      py::return_value_policy::reference);
-	m.def("LoadObject", [](UClass* Class, char* ObjectFullName) { return UObject::Load(Class, ObjectFullName); },
 	      py::return_value_policy::reference);
 	//m.def("LoadTexture", &UnrealSDK::LoadTexture, py::return_value_policy::reference);
 	m.def("ConstructObject", &UnrealSDK::ConstructObject, "Construct Objects", py::arg("Class"),
@@ -254,48 +249,55 @@ bool CPythonInterface::RemoveConsoleCommand(const std::string& ConsoleCommand) {
 #endif
 
 #ifndef UE4
-void AddToConsoleLog(UConsole* console, FString input)
+void AddToConsoleLog(UConsole* console, FString* input)
 {
-
-	int prev = (console->HistoryTop - 1) % 16;
-	if (!console->History[prev].Data || wcscmp(input.AsString(), console->History[prev].AsString()))
+	auto history_top = console->GetProperty<UIntProperty>("HistoryTop");
+	auto prev_str = console->GetProperty<UStrProperty>("History", (history_top - 1) % 16);
+	if (prev_str == nullptr || wcscmp(input->AsString(), prev_str->AsString()))
 	{
-		console->PurgeCommandFromHistory(input);
-		console->History[console->HistoryTop] = input;
-		console->HistoryTop = (console->HistoryTop + 1) % 16;
-		if ((console->HistoryBot == -1) || console->HistoryBot == console->HistoryTop)
-			console->HistoryBot = (console->HistoryBot + 1) % 16;
+		console->GetProperty<UFunction>("PurgeCommandFromHistory").Call<void, UStrProperty>(input);
+
+		// May have been modified
+		history_top = console->GetProperty<UIntProperty>("HistoryTop");
+		console->SetProperty<UStrProperty>("History", input, history_top);
+
+		history_top = (history_top + 1) % 16;
+		console->SetProperty<UIntProperty>("HistoryTop", history_top);
+
+		auto history_bot = console->GetProperty<UIntProperty>("HistoryBot");
+		if ((history_bot == -1) || history_bot == history_top) {
+			console->SetProperty<UIntProperty>("HistoryBot", (history_bot + 1) % 16);
+		}
 	}
-	console->HistoryCur = console->HistoryTop;
-	console->SaveConfig();
+
+	console->SetProperty<UIntProperty>("HistoryCur", history_top);
+	console->GetProperty<UFunction>("SaveConfig").Call<void>();
 }
 #endif
 
 #ifndef UE4
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-	FString* command = ((FHelper *)params->base)->GetStrProperty(
-		(UProperty *)params->structType->FindChildByName(FName("command")),
-		0
-	);
+	FString* command = params->GetProperty<UStrProperty>("command");
+
 	const wchar_t* input = command->AsString();
 	if (wcsncmp(L"py ", input, 3) == 0)
 	{
 		auto z = Util::Narrow(input);
 		const char* narrow = z.c_str();
-		AddToConsoleLog((UConsole*)caller, *command);
+		AddToConsoleLog((UConsole*)caller, command);
 		LOG(CONSOLE, ">>> %s <<<", narrow);
 		UnrealSDK::Python->DoString(narrow + 3);
 	}
 	else if (wcsncmp(L"pyexec ", input, 7) == 0)
 	{
 		const char* narrow = Util::Narrow(input).c_str();
-		AddToConsoleLog((UConsole*)caller, *command);
+		AddToConsoleLog((UConsole*)caller, command);
 		LOG(CONSOLE, ">>> %s <<<", narrow);
 		UnrealSDK::Python->DoFile(narrow + 7);
 	}
 	else {
-		((UConsole*)caller)->ConsoleCommand(*command);
+		caller->GetProperty<UFunction>("ConsoleCommand").Call<void, UStrProperty>(command);
 	}
 	return false;
 }

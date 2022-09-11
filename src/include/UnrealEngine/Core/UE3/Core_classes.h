@@ -13,7 +13,7 @@
 #pragma pack ( push, 0x4 )
 #endif
 
-#include "UnrealEngine/Core/UE3/Core_structs.h"
+#include "PropertyHelper.h"
 
 /*
 # ========================================================================================= #
@@ -44,53 +44,17 @@
 # ========================================================================================= #
 */
 
-struct FHelper {
-public:
-	void* GetPropertyAddress(class UProperty* Prop, int idx);
-	py::object GetProperty(class UProperty* Prop);
-
-	struct FStruct GetStructProperty(class UProperty *Prop, int idx);
-	struct FString* GetStrProperty(class UProperty *Prop, int idx);
-	class UObject* GetObjectProperty(class UProperty *Prop, int idx);
-	class UComponent* GetComponentProperty(class UProperty *Prop, int idx);
-	class UClass* GetClassProperty(class UProperty *Prop, int idx);
-	struct FName* GetNameProperty(class UProperty *Prop, int idx);
-	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop, int idx);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop, int idx);
-	float GetFloatProperty(class UProperty *Prop, int idx);
-	int GetIntProperty(class UProperty *Prop, int idx);
-	unsigned char GetByteProperty(class UProperty *Prop, int idx);
-	bool GetBoolProperty(class UProperty *Prop, int idx);
-	struct FArray GetArrayProperty(class UProperty *Prop, int idx);
-
-	void SetProperty(class UProperty* Prop, const py::object& Val);
-
-	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetClassProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetNameProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetIntProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetByteProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetBoolProperty(class UProperty* Prop, int idx, const py::object& Val);
-	void SetArrayProperty(class UProperty* Prop, int idx, const py::object& Val);
-};
-
 // 0x003C
-class UObject : FHelper
+class UObject
 {
 public:
 	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
-	struct FPointer                                    HashNext;                                         		// 0x0004 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
-	struct FQWord                                      ObjectFlags;                                      		// 0x0008 (0x0008) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
-	struct FPointer                                    HashOuterNext;                                    		// 0x0010 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
-	struct FPointer                                    StateFrame;                                       		// 0x0014 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
+	void*                                              HashNext;                                         		// 0x0004 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
+	uint64_t                                           ObjectFlags;                                      		// 0x0008 (0x0008) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
+	void*                                              HashOuterNext;                                    		// 0x0010 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
+	void*                                              StateFrame;                                       		// 0x0014 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	class UObject*                                     Linker;                                           		// 0x0018 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
-	struct FPointer                                    LinkerIndex;                                      		// 0x001C (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
+	void*                                              LinkerIndex;                                      		// 0x001C (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	int                                                ObjectInternalInteger;                            		// 0x0020 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	int                                                InternalIndex;											// 0x0024 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	class UObject*                                     Outer;                                            		// 0x0028 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
@@ -120,340 +84,54 @@ public:
 	static UClass* StaticClass();
 	static std::vector<UObject*> FindAll(char* InStr, bool IncludeSubclasses);
 
-	py::object GetProperty(std::string PropName);
-	void SetProperty(std::string& PropName, const py::object& Val);
-	struct FFunction GetFunction(std::string& PropName);
-	//struct FScriptArray GetArrayProperty(std::string& PropName);
-	//struct FScriptMap GetMapProperty(std::string& PropName);
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param idx The index of the property to get, if it's a fixed array.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name, size_t idx = 0) {
+		return reinterpret_cast<PropertyHelper*>(this)->ReadProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), idx);
+	}
 
-	bool IsRelevantForDebugging(class UObject* Source);
-	class UObject* GetGlobalDebugTarget();
-	void SetGlobalDebugTarget(class UObject* Target);
-	void LogContentDebug(const struct FString& Message);
-	static struct FString GetLanguage();
-	int GetRandomOptionSumFrequency(TArray<float>* FreqList);
-	static int GetBuildChangelistNumber();
-	static int GetEngineVersion();
-	void GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int* Hour, int* Min, int* Sec, int* MSec);
-	struct FString TimeStamp();
-	struct FVector TransformVectorByRotation(const struct FRotator& SourceRotation, const struct FVector& SourceVector, bool bInverse);
-	struct FName GetPackageName();
-	bool IsPendingKill();
-	float ByteToFloat(unsigned char inputByte, bool bSigned);
-	unsigned char FloatToByte(float inputFloat, bool bSigned);
-	static float UnwindHeading(float A);
-	static float FindDeltaAngle(float A1, float A2);
-	static float GetHeadingAngle(const struct FVector& Dir);
-	static void GetAngularDegreesFromRadians(struct FVector2D* OutFOV);
-	static void GetAngularFromDotDist(const struct FVector2D& DotDist, struct FVector2D* OutAngDist);
-	static bool GetAngularDistance(const struct FVector& Direction, const struct FVector& AxisX, const struct FVector& AxisY, const struct FVector& AxisZ, struct FVector2D* OutAngularDist);
-	static bool GetDotDistance(const struct FVector& Direction, const struct FVector& AxisX, const struct FVector& AxisY, const struct FVector& AxisZ, struct FVector2D* OutDotDist);
-	static struct FVector PointProjectToPlane(const struct FVector& Point, const struct FVector& A, const struct FVector& B, const struct FVector& C);
-	float PointDistToPlane(const struct FVector& Point, const struct FRotator& Orientation, const struct FVector& Origin, struct FVector* out_ClosestPoint);
-	float PointDistToSegment(const struct FVector& Point, const struct FVector& StartPoint, const struct FVector& EndPoint, struct FVector* OutClosestPoint);
-	float PointDistToLine(const struct FVector& Point, const struct FVector& Line, const struct FVector& Origin, struct FVector* OutClosestPoint);
-	static bool GetPerObjectConfigSections(class UClass* SearchClass, class UObject* ObjectOuter, int MaxResults, TArray<struct FString>* out_SectionNames);
-	static void StaticSaveConfig();
-	void SaveConfig();
-	struct FString GetAttributeModiferDescriptor(const struct FName& AttributeName);
-	float GetAttributeValueByName(const struct FName& AttributeName);
-	bool RemoveModifier(class UAttributeModifier* mod, const struct FName& AttributeName, bool bSuppressNotify);
-	bool AddModifier(class UAttributeModifier* mod, const struct FName& AttributeName, bool bSuppressNotify);
-	static class UObject* FindObject(const struct FString& ObjectName, class UClass* ObjectClass);
-	static class UObject* DynamicLoadObject(const struct FString& ObjectName, class UClass* ObjectClass, bool MayFail);
-	static struct FName GetEnum(class UObject* E, int I);
-	void Disable(const struct FName& ProbeFunc);
-	void Enable(const struct FName& ProbeFunc);
-	void ContinuedState();
-	void PausedState();
-	void PoppedState();
-	void PushedState();
-	void EndState(const struct FName& NextStateName);
-	void BeginState(const struct FName& PreviousStateName);
-	void BreakPoint(class UObject* SomeObject);
-	void PrintScriptStack();
-	void DumpStateStack();
-	void PopState(bool bPopAll);
-	void PushState(const struct FName& NewState, const struct FName& NewLabel);
-	struct FName GetStateName();
-	bool IsChildState(const struct FName& TestState, const struct FName& TestParentState);
-	bool IsInState(const struct FName& TestState, bool bTestStateStack);
-	void GotoState(const struct FName& NewState, const struct FName& Label, bool bForceEvents, bool bKeepStack);
-	static bool IsUTracing();
-	static void SetUTracing(bool bShouldUTrace);
-	static struct FName GetFuncName();
-	static void DebugBreak(int UserFlags, unsigned char DebuggerType);
-	static struct FString GetScriptTrace();
-	static void ScriptTrace();
-	static struct FString ParseLocalizedPropertyPath(const struct FString& PathName);
-	static struct FString Localize(const struct FString& SectionName, const struct FString& KeyName, const struct FString& PackageName);
-	static void LogIndentedInternal(const struct FString& S, const struct FName& LogTag, int IndentationLevelChange);
-	static void WarnInternal(const struct FString& S);
-	static void LogInternal(const struct FString& S, const struct FName& Tag);
-	static struct FString GetStringForNameBasedObjectPath(const struct FNameBasedObjectPath& ObjectPath);
-	static void SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObjectPath* ObjectPath);
-	bool FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag);
-	float FlagTimeRemaining(struct FFlag* theFlag);
-	float FlagTimeSinceRaised(struct FFlag* theFlag);
-	void FlagSetValue(bool bNewValue, bool bForceTimeStamp, struct FFlag* theFlag);
-	bool FlagIsLowered(struct FFlag* theFlag);
-	bool FlagIsRaised(struct FFlag* theFlag);
-	bool FlagIsFalse(struct FFlag* theFlag);
-	bool FlagIsTrue(struct FFlag* theFlag);
-	void FlagSetTrueTimed(float Duration, struct FFlag* theFlag);
-	float SmartVectTimeRemaining(struct FSmartVector* theSV);
-	float SmartVectTimeSinceSet(struct FSmartVector* theSV);
-	bool SmartVectGetVector(struct FSmartVector* theSV, struct FVector* OutVector);
-	bool SmartVectIsSet(struct FSmartVector* theSV);
-	void SmartVectSetVectorTimed(const struct FVector& InVector, float Duration, struct FSmartVector* theSV);
-	struct FVector SmartVectValue(struct FSmartVector* theSV);
-	void SmartVectReset(struct FSmartVector* theSV);
-	void SmartVectSetVector(const struct FVector& InVector, bool bUpdateTime, struct FSmartVector* theSV);
-	static struct FLinearColor Subtract_LinearColorLinearColor(const struct FLinearColor& A, const struct FLinearColor& B);
-	static struct FLinearColor Multiply_LinearColorFloat(const struct FLinearColor& LC, float Mult);
-	static struct FLinearColor ColorToLinearColor(const struct FColor& OldColor);
-	static struct FLinearColor MakeLinearColor(float R, float G, float B, float A);
-	static struct FString GetHTMLColor(struct FColor* C);
-	static struct FColor LerpColor(const struct FColor& A, const struct FColor& B, float Alpha);
-	static struct FColor MakeColor(unsigned char R, unsigned char G, unsigned char B, unsigned char A);
-	static struct FColor Add_ColorColor(const struct FColor& A, const struct FColor& B);
-	static struct FColor Multiply_ColorFloat(const struct FColor& A, float B);
-	static struct FColor Multiply_FloatColor(float A, const struct FColor& B);
-	static struct FColor Subtract_ColorColor(const struct FColor& A, const struct FColor& B);
-	struct FVector2D EvalInterpCurveVector2D(const struct FInterpCurveVector2D& Vector2DCurve, float InVal);
-	struct FVector EvalInterpCurveVector(const struct FInterpCurveVector& VectorCurve, float InVal);
-	float EvalInterpCurveFloat(const struct FInterpCurveFloat& FloatCurve, float InVal);
-	static struct FVector2D vect2d(float InX, float InY);
-	static float GetMappedRangeValue(const struct FVector2D& InputRange, const struct FVector2D& OutputRange, float Value);
-	static float GetRangePctByValue(const struct FVector2D& Range, float Value);
-	static float GetRangeValueByPct(const struct FVector2D& Range, float Pct);
-	static struct FVector2D SubtractEqual_Vector2DVector2D(const struct FVector2D& B, struct FVector2D* A);
-	static struct FVector2D AddEqual_Vector2DVector2D(const struct FVector2D& B, struct FVector2D* A);
-	static struct FVector2D DivideEqual_Vector2DFloat(float B, struct FVector2D* A);
-	static struct FVector2D MultiplyEqual_Vector2DFloat(float B, struct FVector2D* A);
-	static struct FVector2D Divide_Vector2DFloat(const struct FVector2D& A, float B);
-	static struct FVector2D Multiply_Vector2DFloat(const struct FVector2D& A, float B);
-	static struct FVector2D Subtract_Vector2DVector2D(const struct FVector2D& A, const struct FVector2D& B);
-	static struct FVector2D Add_Vector2DVector2D(const struct FVector2D& A, const struct FVector2D& B);
-	static struct FQuat Subtract_QuatQuat(const struct FQuat& A, const struct FQuat& B);
-	static struct FQuat Add_QuatQuat(const struct FQuat& A, const struct FQuat& B);
-	static struct FQuat QuatSlerp(const struct FQuat& A, const struct FQuat& B, float Alpha, bool bShortestPath);
-	static struct FRotator QuatToRotator(const struct FQuat& A);
-	static struct FQuat QuatFromRotator(const struct FRotator& A);
-	static struct FQuat QuatFromAxisAndAngle(const struct FVector& Axis, float Angle);
-	static struct FQuat QuatFindBetween(const struct FVector& A, const struct FVector& B);
-	static struct FVector QuatRotateVector(const struct FQuat& A, const struct FVector& B);
-	static struct FQuat QuatInvert(const struct FQuat& A);
-	static float QuatDot(const struct FQuat& A, const struct FQuat& B);
-	static struct FQuat QuatProduct(const struct FQuat& A, const struct FQuat& B);
-	static struct FVector MatrixGetAxis(const struct FMatrix& TM, unsigned char Axis);
-	static struct FVector MatrixGetOrigin(const struct FMatrix& TM);
-	static struct FRotator MatrixGetRotator(const struct FMatrix& TM);
-	static struct FMatrix MakeRotationMatrix(const struct FRotator& Rotation);
-	static struct FMatrix MakeRotationTranslationMatrix(const struct FVector& Translation, const struct FRotator& Rotation);
-	static struct FVector InverseTransformNormal(const struct FMatrix& TM, const struct FVector& A);
-	static struct FVector TransformNormal(const struct FMatrix& TM, const struct FVector& A);
-	static struct FVector InverseTransformVector(const struct FMatrix& TM, const struct FVector& A);
-	static struct FVector TransformVector(const struct FMatrix& TM, const struct FVector& A);
-	static struct FMatrix Multiply_MatrixMatrix(const struct FMatrix& A, const struct FMatrix& B);
-	static bool NotEqual_NameName(const struct FName& A, const struct FName& B);
-	static bool EqualEqual_NameName(const struct FName& A, const struct FName& B);
-	FScriptInterface QueryInterface(class UClass* InterfaceClass);
-	bool IsA(const struct FName& ClassName);
-	static bool ClassIsChildOf(class UClass* TestClass, class UClass* ParentClass);
-	static bool NotEqual_InterfaceInterface(const FScriptInterface& A, const FScriptInterface& B);
-	static bool EqualEqual_InterfaceInterface(const FScriptInterface& A, const FScriptInterface& B);
-	static bool NotEqual_ObjectObject(class UObject* A, class UObject* B);
-	static bool EqualEqual_ObjectObject(class UObject* A, class UObject* B);
-	static struct FString GuidToString(struct FGuid* G);
-	static struct FString PathName(class UObject* CheckObject);
-	static TArray<struct FString> SplitString(const struct FString& Source, const struct FString& Delimiter, bool bCullEmpty);
-	static void ParseStringIntoArray(const struct FString& BaseString, const struct FString& delim, bool bCullEmpty, TArray<struct FString>* Pieces);
-	static void JoinArray(TArray<struct FString> StringArray, const struct FString& delim, bool bIgnoreBlanks, struct FString* out_Result);
-	static struct FString GetRightMost(const struct FString& Text);
-	static struct FString Split(const struct FString& Text, const struct FString& SplitStr, bool bOmitSplitStr);
-	static int StringHash(const struct FString& S);
-	static struct FString Repl(const struct FString& Src, const struct FString& Match, const struct FString& With, bool bCaseSensitive);
-	static int Asc(const struct FString& S);
-	static struct FString Chr(int I);
-	static struct FString Locs(const struct FString& S);
-	static struct FString Caps(const struct FString& S);
-	static struct FString Right(const struct FString& S, int I);
-	static struct FString Left(const struct FString& S, int I);
-	static struct FString Mid(const struct FString& S, int I, int J);
-	static int InStr(const struct FString& S, const struct FString& T, bool bSearchFromRight, bool bIgnoreCase, int StartPos);
-	static int Len(const struct FString& S);
-	static struct FString SubtractEqual_StrStr(const struct FString& B, struct FString* A);
-	static struct FString AtEqual_StrStr(const struct FString& B, struct FString* A);
-	static struct FString ConcatEqual_StrStr(const struct FString& B, struct FString* A);
-	static bool ComplementEqual_StrStr(const struct FString& A, const struct FString& B);
-	static bool NotEqual_StrStr(const struct FString& A, const struct FString& B);
-	static bool EqualEqual_StrStr(const struct FString& A, const struct FString& B);
-	static bool GreaterEqual_StrStr(const struct FString& A, const struct FString& B);
-	static bool LessEqual_StrStr(const struct FString& A, const struct FString& B);
-	static bool Greater_StrStr(const struct FString& A, const struct FString& B);
-	static bool Less_StrStr(const struct FString& A, const struct FString& B);
-	static struct FString At_StrStr(const struct FString& A, const struct FString& B);
-	static struct FString Concat_StrStr(const struct FString& A, const struct FString& B);
-	static struct FRotator MakeRotator(int Pitch, int Yaw, int Roll);
-	static bool SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int MinLimit, float InterpolationSpeed, int* out_DeltaViewAxis);
-	static int ClampRotAxisFromRange(int Current, int Min, int Max);
-	static int ClampRotAxisFromBase(int Current, int Center, int MaxDelta);
-	static void ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_DeltaViewAxis);
-	static float RSize(const struct FRotator& R);
-	static float RDiff(const struct FRotator& A, const struct FRotator& B);
-	static int NormalizeRotAxis(int Angle);
-	static struct FRotator RInterpTo(const struct FRotator& Current, const struct FRotator& Target, float DeltaTime, float InterpSpeed, bool bConstantInterpSpeed);
-	static struct FRotator RTransform(const struct FRotator& R, const struct FRotator& RBasis);
-	static struct FRotator RLerp(const struct FRotator& A, const struct FRotator& B, float Alpha, bool bShortestPath);
-	static struct FRotator Normalize(const struct FRotator& Rot);
-	static struct FRotator OrthoRotation(const struct FVector& X, const struct FVector& Y, const struct FVector& Z);
-	static struct FRotator RotRand(bool bRoll);
-	static struct FVector GetRotatorAxis(const struct FRotator& A, int Axis);
-	static void GetUnAxes(const struct FRotator& A, struct FVector* X, struct FVector* Y, struct FVector* Z);
-	static void GetAxes(const struct FRotator& A, struct FVector* X, struct FVector* Y, struct FVector* Z);
-	static bool ClockwiseFrom_IntInt(int A, int B);
-	static struct FRotator SubtractEqual_RotatorRotator(const struct FRotator& B, struct FRotator* A);
-	static struct FRotator AddEqual_RotatorRotator(const struct FRotator& B, struct FRotator* A);
-	static struct FRotator Subtract_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
-	static struct FRotator Add_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
-	static struct FRotator DivideEqual_RotatorFloat(float B, struct FRotator* A);
-	static struct FRotator MultiplyEqual_RotatorFloat(float B, struct FRotator* A);
-	static struct FRotator Divide_RotatorFloat(const struct FRotator& A, float B);
-	static struct FRotator Multiply_FloatRotator(float A, const struct FRotator& B);
-	static struct FRotator Multiply_RotatorFloat(const struct FRotator& A, float B);
-	static bool NotEqual_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
-	static bool EqualEqual_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
-	bool InCylinder(const struct FVector& Origin, const struct FRotator& Dir, float Width, const struct FVector& A, bool bIgnoreZ);
-	static float NoZDot(const struct FVector& A, const struct FVector& B);
-	static struct FVector ClampLength(const struct FVector& V, float MaxLength);
-	static struct FVector VInterpTo(const struct FVector& Current, const struct FVector& Target, float DeltaTime, float InterpSpeed);
-	static bool IsZero(const struct FVector& A);
-	static struct FVector ProjectOnTo(const struct FVector& X, const struct FVector& Y);
-	static struct FVector MirrorVectorByNormal(const struct FVector& InVect, const struct FVector& InNormal);
-	static struct FVector VRandCone2(const struct FVector& Dir, float HorizontalConeHalfAngleRadians, float VerticalConeHalfAngleRadians);
-	static struct FVector VRandCone(const struct FVector& Dir, float ConeHalfAngleRadians);
-	static struct FVector VRand();
-	static struct FVector VLerp(const struct FVector& A, const struct FVector& B, float Alpha);
-	static struct FVector Normal(const struct FVector& A);
-	static float VSizeSq2D(const struct FVector& A);
-	static float VSizeSq(const struct FVector& A);
-	static float VSize2D(const struct FVector& A);
-	static float VSize(const struct FVector& A);
-	static struct FVector SubtractEqual_VectorVector(const struct FVector& B, struct FVector* A);
-	static struct FVector AddEqual_VectorVector(const struct FVector& B, struct FVector* A);
-	static struct FVector DivideEqual_VectorFloat(float B, struct FVector* A);
-	static struct FVector MultiplyEqual_VectorVector(const struct FVector& B, struct FVector* A);
-	static struct FVector MultiplyEqual_VectorFloat(float B, struct FVector* A);
-	static struct FVector Cross_VectorVector(const struct FVector& A, const struct FVector& B);
-	static float Dot_VectorVector(const struct FVector& A, const struct FVector& B);
-	static bool NotEqual_VectorVector(const struct FVector& A, const struct FVector& B);
-	static bool EqualEqual_VectorVector(const struct FVector& A, const struct FVector& B);
-	static struct FVector GreaterGreater_VectorRotator(const struct FVector& A, const struct FRotator& B);
-	static struct FVector LessLess_VectorRotator(const struct FVector& A, const struct FRotator& B);
-	static struct FVector Subtract_VectorVector(const struct FVector& A, const struct FVector& B);
-	static struct FVector Add_VectorVector(const struct FVector& A, const struct FVector& B);
-	static struct FVector Divide_VectorFloat(const struct FVector& A, float B);
-	static struct FVector Multiply_VectorVector(const struct FVector& A, const struct FVector& B);
-	static struct FVector Multiply_FloatVector(float A, const struct FVector& B);
-	static struct FVector Multiply_VectorFloat(const struct FVector& A, float B);
-	static struct FVector Subtract_PreVector(const struct FVector& A);
-	static float SmoothInterp(float DeltaTime, float InterpSpeed, float deltaDist, float overallDist);
-	static float FInterpConstantTo(float Current, float Target, float DeltaTime, float InterpSpeed);
-	static float FInterpTo(float Current, float Target, float DeltaTime, float InterpSpeed);
-	static float FPctByRange(float Value, float InMin, float InMax);
-	static float RandRange(float InMin, float InMax);
-	static float FInterpEaseInOut(float A, float B, float Alpha, float Exp);
-	static float FInterpEaseOut(float A, float B, float Alpha, float Exp);
-	static float FInterpEaseIn(float A, float B, float Alpha, float Exp);
-	static float FCubicInterp(float P0, float T0, float P1, float T1, float A);
-	static int FCeil(float A);
-	static int FFloor(float A);
-	static int Round(float A);
-	static float Lerp(float A, float B, float Alpha);
-	static float FClamp(float V, float A, float B);
-	static float FMax(float A, float B);
-	static float FMin(float A, float B);
-	static float FRand();
-	static float Square(float A);
-	static float Sqrt(float A);
-	static float Loge(float A);
-	static float Exp(float A);
-	static float Atan2(float A, float B);
-	static float Atan(float A);
-	static float Tan(float A);
-	static float Acos(float A);
-	static float Cos(float A);
-	static float Asin(float A);
-	static float Sin(float A);
-	static float Abs(float A);
-	static float SubtractEqual_FloatFloat(float B, float* A);
-	static float AddEqual_FloatFloat(float B, float* A);
-	static float DivideEqual_FloatFloat(float B, float* A);
-	static float MultiplyEqual_FloatFloat(float B, float* A);
-	static bool NotEqual_FloatFloat(float A, float B);
-	static bool ComplementEqual_FloatFloat(float A, float B);
-	static bool EqualEqual_FloatFloat(float A, float B);
-	static bool GreaterEqual_FloatFloat(float A, float B);
-	static bool LessEqual_FloatFloat(float A, float B);
-	static bool Greater_FloatFloat(float A, float B);
-	static bool Less_FloatFloat(float A, float B);
-	static float Subtract_FloatFloat(float A, float B);
-	static float Add_FloatFloat(float A, float B);
-	static float Percent_FloatFloat(float A, float B);
-	static float Divide_FloatFloat(float A, float B);
-	static float Multiply_FloatFloat(float A, float B);
-	static float MultiplyMultiply_FloatFloat(float Base, float Exp);
-	static float Subtract_PreFloat(float A);
-	static struct FString ToHex(int A);
-	static int Clamp(int V, int A, int B);
-	static int Max(int A, int B);
-	static int Min(int A, int B);
-	static int Rand(int Max);
-	static int SubtractSubtract_Int(int* A);
-	static int AddAdd_Int(int* A);
-	static int SubtractSubtract_PreInt(int* A);
-	static int AddAdd_PreInt(int* A);
-	static int SubtractEqual_IntInt(int B, int* A);
-	static int AddEqual_IntInt(int B, int* A);
-	static int DivideEqual_IntFloat(float B, int* A);
-	static int MultiplyEqual_IntFloat(float B, int* A);
-	static int Or_IntInt(int A, int B);
-	static int Xor_IntInt(int A, int B);
-	static int And_IntInt(int A, int B);
-	static bool NotEqual_IntInt(int A, int B);
-	static bool EqualEqual_IntInt(int A, int B);
-	static bool GreaterEqual_IntInt(int A, int B);
-	static bool LessEqual_IntInt(int A, int B);
-	static bool Greater_IntInt(int A, int B);
-	static bool Less_IntInt(int A, int B);
-	static int GreaterGreaterGreater_IntInt(int A, int B);
-	static int GreaterGreater_IntInt(int A, int B);
-	static int LessLess_IntInt(int A, int B);
-	static int Subtract_IntInt(int A, int B);
-	static int Add_IntInt(int A, int B);
-	static int Percent_IntInt(int A, int B);
-	static int Divide_IntInt(int A, int B);
-	static int Multiply_IntInt(int A, int B);
-	static int Subtract_PreInt(int A);
-	static int Complement_PreInt(int A);
-	static unsigned char SubtractSubtract_Byte(unsigned char* A);
-	static unsigned char AddAdd_Byte(unsigned char* A);
-	static unsigned char SubtractSubtract_PreByte(unsigned char* A);
-	static unsigned char AddAdd_PreByte(unsigned char* A);
-	static unsigned char SubtractEqual_ByteByte(unsigned char B, unsigned char* A);
-	static unsigned char AddEqual_ByteByte(unsigned char B, unsigned char* A);
-	static unsigned char DivideEqual_ByteByte(unsigned char B, unsigned char* A);
-	static unsigned char MultiplyEqual_ByteFloat(float B, unsigned char* A);
-	static unsigned char MultiplyEqual_ByteByte(unsigned char B, unsigned char* A);
-	static bool OrOr_BoolBool(bool A, bool B);
-	static bool XorXor_BoolBool(bool A, bool B);
-	static bool AndAnd_BoolBool(bool A, bool B);
-	static bool NotEqual_BoolBool(bool A, bool B);
-	static bool EqualEqual_BoolBool(bool A, bool B);
-	static bool Not_PreBool(bool A);
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to set.
+	 * @param val The value to write.
+	 * @param idx The index of the property to set, if it's a fixed array.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val, size_t idx = 0) {
+		return reinterpret_cast<PropertyHelper*>(this)->WriteProperty<T>(
+			this->Class->FindAndValidateProperty<T>(name), idx, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
+	static UObject* FindObject(struct FString& ObjectName, class UClass* ObjectClass);
 	// Virtual Functions
-
 	virtual void VirtualFunction00() {};																			// 0x005838A0 (0x00)
 	virtual void VirtualFunction01() {};																			// 0x005FC030 (0x04)
 	virtual void VirtualFunction02() {};																			// 0x005953C0 (0x08)
@@ -473,7 +151,7 @@ public:
 	virtual void VirtualFunction16() {};																			// 0x00F90510 (0x40)
 	virtual void VirtualFunction17() {};																			// 0x00C6EB60 (0x44)
 	virtual void VirtualFunction18() {};																			// 0x009CBC30 (0x48)
-	virtual void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent) {};							// 0x00AEAFA0 (0x4C)
+	virtual void PostEditChangeProperty(void* PropertyChangedEvent) {};							// 0x00AEAFA0 (0x4C)
 	virtual void VirtualFunction20() {};																			// 0x00A28430 (0x50)
 	virtual void VirtualFunction21() {};																			// 0x00601380 (0x54)
 	virtual void VirtualFunction22() {};																			// 0x0048AE50 (0x58)
@@ -537,72 +215,6 @@ struct FScriptInterface
 	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 };
 
-
-// 0x0024 (0x0060 - 0x003C)
-class UTextBuffer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x24];                            		// 0x003C (0x0024) MISSED OFFSET
-};
-
-// 0x0004 (0x0040 - 0x003C)
-class USubsystem : public UObject
-{
-public:
-	struct FPointer                                    VfTable_FExec;                                    		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-};
-
-// 0x0084 (0x00C0 - 0x003C)
-class UPackageMap : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x84];                            		// 0x003C (0x0084) MISSED OFFSET
-};
-
-// 0x000C (0x0048 - 0x003C)
-class UObjectSerializer : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xC];                             		// 0x003C (0x000C) MISSED OFFSET
-};
-
-// 0x0004 (0x0040 - 0x003C)
-class UObjectRedirector : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x003C (0x0004) MISSED OFFSET
-};
-
-// 0x003C (0x0078 - 0x003C)
-class UMetaData : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x3C];                            		// 0x003C (0x003C) MISSED OFFSET
-};
-
-// 0x0534 (0x0570 - 0x003C)
-class ULinker : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x534];                           		// 0x003C (0x0534) MISSED OFFSET
-};
-
-// 0x00A8 (0x0618 - 0x0570)
-class ULinkerSave : public ULinker
-{
-public:
-	unsigned char                                      UnknownData00[0xA8];                            		// 0x0570 (0x00A8) MISSED OFFSET
-};
-
-// 0x05C4 (0x0B34 - 0x0570)
-/*
-class ULinkerLoad : public ULinker
-{
-public:
-	unsigned char                                      UnknownData00[0x5C4];                           		// 0x0570 (0x05C4) MISSED OFFSET
-};
-*/
-
 // 0x0000 (0x003C - 0x003C)
 class UInterface : public UObject {
 
@@ -614,32 +226,6 @@ public:
 	class UField* Next;                                             		// NOT AUTO-GENERATED PROPERTY
 };
 
-#ifdef UE4
-class UProperty : public UField
-{
-public:
-	int						ArrayDim;
-	int						ElementSize;
-	EPropertyFlags			PropertyFlags;
-	unsigned short			RepIndex;
-
-	ELifetimeCondition BlueprintReplicationCondition;
-
-	// In memory variables (generated during Link()).
-	int		Offset_Internal;
-
-	FName		RepNotifyFunc;
-
-	/** In memory only: Linked list of properties from most-derived to base **/
-	UProperty* PropertyLinkNext;
-	/** In memory only: Linked list of object reference properties from most-derived to base **/
-	UProperty* NextRef;
-	/** In memory only: Linked list of properties requiring destruction. Note this does not include things that will be destroyed byt he native destructor **/
-	UProperty* DestructorLinkNext;
-	/** In memory only: Linked list of properties requiring post constructor initialization.**/
-	UProperty* PostConstructLinkNext;
-};
-#else
 // 0x0040 (0x0080 - 0x0040)
 class UProperty : public UField
 {
@@ -652,28 +238,18 @@ public:
 	UProperty* PropertyLinkNext;
 	unsigned char		UnknownData01[0x18];
 };
-#endif
 
 // 0x004C (0x008C - 0x0040)
 class UStruct : public UField
 {
 public:
-
-#ifndef UE4
 	unsigned char			UnknownData00[0x8];
-#endif
 
 	class UStruct*			SuperField;
 	class UField*			Children;
 
-#ifdef UE4
-	int						PropertySize;
-	int						MinAlignment;
-	char					UnknownData01[0x40];
-#else
 	unsigned short			PropertySize;
 	char					UnknownData01[0x3A];
-#endif
 
 	UObject* FindChildByName(FName InName) const
 	{
@@ -688,6 +264,27 @@ public:
 
 		return NULL;
 	}
+
+	/**
+	 * @brief Finds a child property, and validates that it's of the expected type.
+	 * @note Throws exceptions if the child is not found of of an invalid type.
+	 *
+	 * @tparam T The expected property type.
+	 * @param name The name of the property.
+	 * @return The found property object.
+	 */
+	template <typename T>
+	T* FindAndValidateProperty(const std::string& name) {
+		auto prop = this->FindChildByName(FName(name));
+		if (prop == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (prop->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+		return reinterpret_cast<T*>(prop);
+	}
 };
 
 // 0x001C (0x00A8 - 0x008C)
@@ -700,18 +297,6 @@ public:
 class UFunction : public UStruct
 {
 public:
-#ifdef UE4
-	int												FunctionFlags;
-	short                                           RepOffset;
-	char                                            NumParams;
-	short                                           ParamsSize;
-	short											ReturnValueOffset;
-	short											RPCResponseId;
-	class UProperty*								FirstPropertyToInit;
-	class UFunction*								EventGraphFunction;
-	int												EventGraphCallOffset;
-	void* Func;
-#else
 	unsigned long		FunctionFlags;
 	unsigned short		iNative;
 	unsigned short		RepOffset;
@@ -721,10 +306,6 @@ public:
 	unsigned short		ParamsSize;
 	unsigned long		ReturnValueOffset;
 	void*				Func;
-#endif
-
-	std::vector<UProperty*> GetParameters();
-	std::vector<UProperty*> GetReturnType();
 };
 
 // 0x0004 (0x0084 - 0x0080)
@@ -870,34 +451,6 @@ public:
 	unsigned char                                      UnknownData00[0xC];                             		// 0x0040 (0x000C) MISSED OFFSET
 };
 
-// 0x0034 (0x0070 - 0x003C)
-class UFactory : public UObject
-{
-public:
-	class UClass*                                      SupportedClass;                                   		// 0x003C (0x0004) [0x0000000000000000]
-	class UClass*                                      ContextClass;                                     		// 0x0040 (0x0004) [0x0000000000000000]
-	struct FString                                     Description;                                      		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FString >                           Formats;                                          		// 0x0050 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bCreateNew : 1;                                   		// 0x005C (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bEditAfterNew : 1;                                		// 0x005C (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      bEditorImport : 1;                                		// 0x005C (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      bText : 1;                                        		// 0x005C (0x0004) [0x0000000000000000] [0x00000008]
-	int                                                AutoPriority;                                     		// 0x0060 (0x0004) [0x0000000000000000]
-	TArray< struct FString >                           ValidGameNames;                                   		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-};
-
-// 0x0000 (0x0070 - 0x0070)
-class UTextBufferFactory : public UFactory {};
-
-// 0x0028 (0x0064 - 0x003C)
-class UExporter : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x003C (0x0004) MISSED OFFSET
-	TArray< struct FString >                           FormatExtension;                                  		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FString >                           FormatDescription;                                		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[0xC];                             		// 0x0058 (0x000C) MISSED OFFSET
-};
 
 // 0x000C (0x0048 - 0x003C)
 class UComponent : public UObject
@@ -905,64 +458,6 @@ class UComponent : public UObject
 public:
 	class UClass*                                      TemplateOwnerClass;                               		// 0x003C (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	struct FName                                       TemplateName;                                     		// 0x0040 (0x0008) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-};
-
-// 0x0008 (0x0050 - 0x0048)
-class UDistributionVector : public UComponent
-{
-public:
-	struct FPointer                                    VfTable_FCurveEdInterface;                        		// 0x0048 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	unsigned long                                      bCanBeBaked : 1;                                  		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bIsDirty : 1;                                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000002]
-
-public:
-	struct FVector GetVectorValue(float F, int LastExtreme);
-};
-
-// 0x0008 (0x0050 - 0x0048)
-class UDistributionFloat : public UComponent
-{
-public:
-	struct FPointer                                    VfTable_FCurveEdInterface;                        		// 0x0048 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	unsigned long                                      bCanBeBaked : 1;                                  		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bIsDirty : 1;                                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000002]
-
-public:
-	float GetFloatValue(float F);
-};
-
-// 0x0040 (0x007C - 0x003C)
-class UCommandlet : public UObject
-{
-public:
-	struct FString                                     HelpDescription;                                  		// 0x003C (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	struct FString                                     HelpUsage;                                        		// 0x0048 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	struct FString                                     HelpWebLink;                                      		// 0x0054 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	TArray< struct FString >                           HelpParamNames;                                   		// 0x0060 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	TArray< struct FString >                           HelpParamDescriptions;                            		// 0x006C (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	unsigned long                                      IsServer : 1;                                     		// 0x0078 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      IsClient : 1;                                     		// 0x0078 (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      IsEditor : 1;                                     		// 0x0078 (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      LogToConsole : 1;                                 		// 0x0078 (0x0004) [0x0000000000000000] [0x00000008]
-	unsigned long                                      ShowErrorCount : 1;                               		// 0x0078 (0x0004) [0x0000000000000000] [0x00000010]
-
-public:
-	int Main(struct FString Params);
-};
-
-// 0x0000 (0x007C - 0x007C)
-class UHelpCommandlet : public UCommandlet
-{
-public:
-	int Main(struct FString Params);
-};
-
-// 0x0008 (0x0044 - 0x003C)
-class UAttributeModifier : public UObject
-{
-public:
-	unsigned char                                      Type;                                             		// 0x003C (0x0001) [0x0000000000000000]
-	float                                              Value;                                            		// 0x0040 (0x0004) [0x0000000000000000]
 };
 
 // 0x0044 (0x00D0 - 0x008C)
@@ -980,19 +475,15 @@ public:
 };
 
 // 0x0100 (0x01D0 - 0x00D0)
-#ifdef UE4
-class UClass : public UStruct
-#else
-class UClass : public UState
-#endif
 
+class UClass : public UState
 {
 public:
 	unsigned long		bCooked : 1;
-	FPointer			ClassAddReferencedObjects;
+	void*				ClassAddReferencedObjects;
 	unsigned long		ClassCastFlags;
 	FName				ClassConfigName;
-	FPointer			ClassConstructor;
+	void*				ClassConstructor;
 	UObject				*ClassDefaultObject;
 	unsigned int		ClassFlags;
 	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
@@ -1015,11 +506,126 @@ struct FFunction
 	UFunction *func;
 
 private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	/**
+	 * @brief Calls this function, given a pointer to it's params struct.
+	 *
+	 * @param params A pointer to this function's params struct.
+	 */
+	void CallWithParams(void* params);
+
+	/**
+	 * @brief Checks that there are no more required params for a function call.
+	 *
+	 * @param prop The next unparsed paramater property object.
+	 */
+	static void CheckNoMoreParams(UProperty* prop) {
+		while (prop != nullptr) {
+			if ((prop->PropertyFlags & 0x180) == 0x80) {  // Param but not Optional
+				throw std::runtime_error("Too few parameters to function call!");
+			}
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+	}
+
+	/**
+	 * @brief Tail recursive function to set all args in a function's params struct.
+	 *
+	 * @tparam T0 The type of the first arg, which this call will set.
+	 * @tparam Ts The types of the remaining args.
+	 * @param params A pointer to the params struct.
+	 * @param prop The next unparsed paramater property object.
+	 * @param arg0 This argument.
+	 * @param args The remaining arguments.
+	 */
+	template <typename T0, typename... Ts>
+	static void SetParam(void* params,
+						 UProperty* prop,
+						 typename PropInfo<T0>::type arg0,
+						 typename PropInfo<Ts>::type... args) {
+		// Find the next param property
+		while (prop != nullptr && (prop->PropertyFlags & 0x80) == 0) {  // Param
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+
+		if (prop == nullptr) {
+			throw std::runtime_error("Too many parameters to function call!");
+		}
+		if (prop->Class->Name != FName(PropInfo<T0>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+
+		reinterpret_cast<PropertyHelper*>(params)->WriteProperty<T0>(reinterpret_cast<T0*>(prop), 0,
+																	 arg0);
+		auto next = reinterpret_cast<UProperty*>(prop->Next);
+
+		if constexpr (sizeof...(Ts) > 0) {
+			SetParam<Ts...>(params, next, args...);
+		} else {
+			CheckNoMoreParams(next);
+		}
+	}
+
+	/**
+	 * @brief Generates a params struct from python args
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @param params The params struct to fill.
+	 */
+	void GeneratePyParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
+
+	/**
+	 * @brief Get the python return value from a params struct.
+	 *
+	 * @param params The params struct to grab the return from.
+	 * @return The function's return value.
+	 */
+	py::object GetPyReturn(PropertyHelper* params);
 
 public:
-	py::object GetReturn(FHelper* params);
-	py::object Call(py::args args, py::kwargs kwargs);
+	/**
+	 * @brief Calls this function.
+	 *
+	 * @tparam R The return type. May be void.
+	 * @tparam Ts The types of the arguments.
+	 * @param args The arguments
+	 * @return The function's return
+	 */
+	template <typename R, typename... Ts>
+	typename PropInfo<R>::type Call(typename PropInfo<Ts>::type... args) {
+		uint8_t params[1000];
+		memset(params, 0, sizeof(params));
+
+		UProperty* prop = reinterpret_cast<UProperty*>(this->func->Children);
+
+		if constexpr(sizeof...(Ts) > 0) {
+			this->SetParam<Ts...>(params, prop, args...);
+		} else {
+			this->CheckNoMoreParams(prop);
+		}
+
+		this->CallWithParams(params);
+
+		if constexpr(!std::is_void<R>::value) {
+			while (prop != nullptr) {
+				if (prop->PropertyFlags & 0x400) {  // Return
+					return reinterpret_cast<PropertyHelper*>(params)->ReadProperty<R>(reinterpret_cast<R*>(prop), 0);
+				}
+				prop = reinterpret_cast<UProperty*>(prop->Next);
+			}
+			throw std::runtime_error("Couldn't find return param!");
+		}
+	}
+
+	/**
+	 * @brief Calls this function, given python args.
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @return The function's return.
+	 */
+	py::object PyCall(py::args args, py::kwargs kwargs);
 };
 
 struct FOutParmRec
@@ -1062,29 +668,146 @@ struct FStruct
 		base = b;
 	}
 
-	pybind11::object GetProperty(const std::string& PropName) const;
-	void SetProperty(std::string& PropName, py::object value) const;
+
+	/**
+	 * @brief Gets a property on the object.
+	 * @note Always gets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to get.
+	 * @param idx The index of the property to get, if it's a fixed array.
+	 * @return The property's value.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetProperty(const std::string& name, size_t idx = 0) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->ReadProperty<T>(this->structType->FindAndValidateProperty<T>(name), idx);
+	}
+
+	/**
+	 * @brief Sets an object property's value.
+	 * @note Always sets the first index of fixed arrays.
+	 *
+	 * @tparam T The property type.
+	 * @param name The name of the property to set.
+	 * @param val The value to write.
+	 * @param idx The index of the property to set, if it's a fixed array.
+	 */
+	template <typename T>
+	void SetProperty(const std::string& name, typename PropInfo<T>::type val, size_t idx = 0) {
+		return reinterpret_cast<PropertyHelper*>(this->base)
+			->WriteProperty<T>(this->structType->FindAndValidateProperty<T>(name), idx, val);
+	}
+
+	/**
+	 * @brief Gets the python value for a property on the object.
+	 *
+	 * @param name The name of the property to get.
+	 * @return The property's value.
+	 */
+	py::object GetPyProperty(const std::string& name);
+
+	/**
+	 * @brief Sets an object property's value from a python object.
+	 *
+	 * @param name The name of the property to set.
+	 * @param val The value to set.
+	 */
+	void SetPyProperty(const std::string& name, py::object val);
+
 	py::str Repr() const;
 };
 
 struct FArray {
-	TArray <char> *arr;
-	UProperty *type;
+   private:
+	/**
+	 * @brief Validates that an array access is of the correct type.
+	 *
+	 * @tparam T The property type.
+	 */
+	template <typename T>
+	void ValidateType() {
+		if (this->type == nullptr) {
+			throw std::invalid_argument("Couldn't find property");
+		}
+		if (this->type->Class->Name != FName(PropInfo<T>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)this->type->Class->Name);
+		}
+	}
+
+	/**
+	 * @brief Validates that an array access is to a valid index.
+	 *
+	 * @param idx The index to check.
+	 */
+	void ValidateIndex(size_t idx);
+
+   public:
+	TArray<uint8_t>* arr;
+	UProperty* type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char>* array, UProperty* s);
+	FArray(TArray<uint8_t>* array, UProperty* s);
 
-	py::object GetItem(unsigned int i) const;
-	void SetItem(unsigned int I, py::object Obj) const;
-	long GetAddress() const;
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();
 	void Clear();
 	int Length();
+
+	/**
+	 * @brief Gets the item at the given index.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	template <typename T>
+	typename PropInfo<T>::type GetItem(size_t idx) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		auto item = this->arr->Data + (idx * this->type->ElementSize);
+		return reinterpret_cast<PropertyHelper*>(item)->ReadProperty<T>(reinterpret_cast<T*>(this->type), 0);
+	}
+
+	/**
+	 * @brief Sets an item in the array.
+	 *
+	 * @tparam T The property type.
+	 * @param idx The index to set the value at.
+	 * @param val The value to write.
+	 */
+	template <typename T>
+	void SetItem(size_t idx, typename PropInfo<T>::type val) {
+		this->ValidateType<T>();
+		this->ValidateIndex(idx);
+		auto item = this->arr->Data + (idx * this->type->ElementSize);
+		return reinterpret_cast<PropertyHelper*>(item)
+			->WriteProperty<T>(reinterpret_cast<T*>(this->type), 0, val);
+	}
+
+	/**
+	 * @brief Gets the python value for an item in the array.
+	 *
+	 * @param idx The index to get.
+	 * @return The object at the given index.
+	 */
+	py::object GetPyItem(size_t idx);
+
+	/**
+	 * @brief Sets an in the array from a python object.
+	 *
+	 * @param idx The index to set the value at.
+	 * @param val The value to set.
+	 */
+	void SetPyItem(size_t idx, py::object val);
 };
 
-typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);
+// TEMP - remove once we can remove uconsole from ue4 too
+class UConsole : public UObject {};
+
+typedef void*(__thiscall* tMalloc)(void***, unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);
 
 

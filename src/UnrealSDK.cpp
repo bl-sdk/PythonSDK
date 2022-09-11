@@ -29,6 +29,7 @@ namespace UnrealSDK
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
 	void* pFNameInit;
+	tFNameInitChar pFNameInitChar;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
@@ -329,6 +330,11 @@ namespace UnrealSDK
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
 
+		if (Signatures::FNameInitChar.Length > 0) {
+			pFNameInitChar = reinterpret_cast<tFNameInitChar>(sigscan.Scan(Signatures::FNameInitChar));
+			LOG(MISC, "[Internal] FName::Init char = 0x%p", pFNameInitChar);
+		}
+
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
 
@@ -445,44 +451,78 @@ namespace UnrealSDK
 
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
+		if (gEngine == nullptr) {
+			LOG(ERROR, "gEngine was null when trying to set console key!");
+			goto SET_CONSOLE_KEY_DONE;
+		}
+
+		auto tilde = FName("Tilde");
 
 #ifndef UE4
 		// Set console key to Tilde if not already set
-		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
-		auto eng = static_cast<UEngine*>(gEngine);
+		gameConsole = reinterpret_cast<UConsole*>(UObject::Find(
+			ObjectMap["ConsoleObjectType"].c_str(),
+									ObjectMap["ConsoleObjectName"].c_str()));
+		auto viewport = gEngine->GetProperty<UObjectProperty>("GameViewport");
 
-		if (gameConsole == nullptr && gEngine && static_cast<UEngine *>(gEngine)->GameViewport)
-			gameConsole = eng->GameViewport->ViewportConsole;
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
-			gameConsole->ConsoleKey = FName("Tilde");
+		if (gameConsole == nullptr && viewport) {
+			gameConsole = reinterpret_cast<UConsole*>(viewport->GetProperty<UObjectProperty>("ViewportConsole"));
+		}
+		if (gameConsole == nullptr) {
+			LOG(ERROR, "Couldn't find console!");
+			goto SET_CONSOLE_KEY_DONE;
+		}
+
+		auto consoleKey = *gameConsole->GetProperty<UNameProperty>("ConsoleKey");
+		if (consoleKey == FName("None") || consoleKey == FName("Undefine")) {
+			gameConsole->SetProperty<UNameProperty>("ConsoleKey", &tilde);
+		}
 
 #else
-		auto consoleClass = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
-		gameConsole = static_cast<UConsole*>(UnrealSDK::pStaticConstructObject(consoleClass->Class, consoleClass->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0));
-		auto eng = static_cast<UEngine*>(gEngine);
 
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
-		if (eng && gameConsole == nullptr && eng->GameViewport)  gameConsole = eng->GameViewport->ViewportConsole;
+		auto viewport = gEngine->GetProperty<UObjectProperty>("GameViewport");
+		if (viewport == nullptr) {
+			LOG(ERROR, "Couldn't find game viewport!");
+			goto SET_CONSOLE_KEY_DONE;
+		}
+
+		if (gameConsole == nullptr) {
+			gameConsole = reinterpret_cast<UConsole*>(viewport->GetProperty<UObjectProperty>("ViewportConsole"));
+		}
+		if (gameConsole == nullptr) {
+			auto consoleClass = UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str());
+			gameConsole = reinterpret_cast<UConsole*>(UnrealSDK::pStaticConstructObject(consoleClass->Class, consoleClass->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0));
+
+			viewport->SetProperty<UObjectProperty>("ViewportConsole", gameConsole);
+		}
+		if (gameConsole == nullptr) {
+			LOG(ERROR, "Couldn't find console!");
+			goto SET_CONSOLE_KEY_DONE;
+		}
 
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
-		if (eng && eng->GameViewport && gameConsole) {
-			gameConsole->ConsoleTargetPlayer = eng->GameViewport->World->OwningGameInstance->LocalPlayers(0);
-			FName n = FName(std::string("Tilde"));
+		gameConsole->SetProperty<UObjectProperty>(
+			"ConsoleTargetPlayer", viewport->GetProperty<UObjectProperty>("World")
+									   ->GetProperty<UObjectProperty>("OwningGameInstance")
+									   ->GetProperty<UArrayProperty>("LocalPlayers")
+									   .GetItem<UObjectProperty>(0));
 
-			// This is probably a costly call to do, but its also kinda the best option imo
-			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings", false)) {
-				UInputSettings* pc = static_cast<UInputSettings*>(obj);
-				pc->ConsoleKey.KeyName = n;
+		// This is probably a costly call to do, but its also kinda the best option imo
+		for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings", false)) {
+			obj->GetProperty<UStructProperty>("ConsoleKey").SetProperty<UNameProperty>("KeyName", &tilde);
 
-				// This'll remove any extra ConsoleKeys that get set (generally via internal ini files or something)
-				if(pc->ConsoleKeys.Count > 0) pc->ConsoleKeys.Count -= 1;
+			// This'll remove any extra ConsoleKeys that get set (generally via internal ini files or something)
+			auto keysArray = obj->GetProperty<UArrayProperty>("ConsoleKeys");
+			if (keysArray.arr->Count > 0) {
+				keysArray.arr->Count--;
 			}
-			eng->GameViewport->ViewportConsole = gameConsole;
 		}
 #endif
 
+SET_CONSOLE_KEY_DONE:
 		InitializePython();
 		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
@@ -491,8 +531,9 @@ namespace UnrealSDK
 	void InitializeGameVersions()
 	{
 		#ifndef UE4
-			EngineVersion = UObject::GetEngineVersion();
-			ChangelistNumber = UObject::GetBuildChangelistNumber();
+			// Use gEngine as a random object, these functions exist on uobject
+			EngineVersion = gEngine->GetProperty<UFunction>("GetEngineVersion").Call<UIntProperty>();
+			ChangelistNumber = gEngine->GetProperty<UFunction>("GetBuildChangelistNumber").Call<UIntProperty>();
 			LOG(MISC, "[Internal] Engine Version = %d, Build Changelist = %d", EngineVersion, ChangelistNumber);
 		#else
 			//! THIS MAGICALLY BROKE :)
@@ -565,7 +606,7 @@ namespace UnrealSDK
 
 			#ifdef UE4
 			else if (strncmp(cName, "BlueprintGeneratedClass", 23) == 0) {
-				ClassMap[Object->GetFullName()] = static_cast<UBlueprintGeneratedClass*>(Object);
+				ClassMap[Object->GetFullName()] = static_cast<UClass*>(Object);
 			}
 			#endif
 
@@ -631,24 +672,18 @@ namespace UnrealSDK
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
 				UObject* Object = UObject::GObjects()->Get(i);
-				if (Object->GetPackageObject() == result)
-					#ifdef UE4
+				if (Object->GetPackageObject() == result) {
 					Object->ObjectFlags |= 0x4000;
-					#else
-					Object->ObjectFlags.A |= 0x4000;
-					#endif
+				}
 			}
 		}
 	};
 
 	void KeepAlive(UObject* Obj)
 	{
-		for (UObject* outer = Obj; outer; outer = outer->Outer)
-			#ifdef UE4
+		for (UObject* outer = Obj; outer; outer = outer->Outer) {
 			outer->ObjectFlags |= 0x4000;
-			#else
-			outer->ObjectFlags.A |= 0x4000;
-			#endif
+		}
 	}
 
 	#ifndef UE4
