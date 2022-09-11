@@ -1,12 +1,10 @@
-#pragma once
-#include "stdafx.h"
-#include "MemorySignature.h"
-#include "CSigScan.h"
-#include "Util.h"
-#include "Exceptions.h"
+#include <stdafx.h>
 
-#include <cstring>
-#include <Psapi.h>
+#include "CSigScan.h"
+#include "Exceptions.h"
+#include "MemorySignature.h"
+#include "Util.h"
+
 // Based off CSigScan from AlliedModders
 
 CSigScan::CSigScan(const wchar_t* moduleName = NULL)
@@ -34,28 +32,21 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 	}
 
 	IMAGE_DOS_HEADER* dos = (IMAGE_DOS_HEADER*)mem.AllocationBase;
-	IMAGE_NT_HEADERS* pe = (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew);
-
-	LOG(MISC, "Module Handle: %X", m_moduleHandle);
-	LOG(MISC, "Base Address: 0x%X", mem.BaseAddress);
-	LOG(MISC, "IMAGE_DOS_HEADER: 0x%X", dos);
-	LOG(MISC, "NEW EXE HEADER: 0x%X", dos->e_lfanew);
-	LOG(MISC, "PE HEADER POINTER: 0x%X", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
-	LOG(MISC, "Module Base: 0x%x", m_pModuleBase);
-
-#ifdef UE4
-	m_moduleLen = 0x21000000;
-#else
+	IMAGE_NT_HEADERS* pe = (IMAGE_NT_HEADERS*)((uintptr_t)dos + (uintptr_t)dos->e_lfanew);
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
-#endif
 
-	LOG(MISC, "Module Length: %x", m_moduleLen);
-
+	LOG(MISC, "Module Handle: %p", m_moduleHandle);
+	LOG(MISC, "Base Address: %p", mem.BaseAddress);
+	LOG(MISC, "IMAGE_DOS_HEADER: %p", dos);
+	LOG(MISC, "NEW EXE HEADER: %p", dos->e_lfanew);
+	LOG(MISC, "PE HEADER POINTER: %p", pe);
+	LOG(MISC, "Module Base: %p", m_pModuleBase);
+	LOG(MISC, "Module Length: %p", m_moduleLen);
 }
 
 void* CSigScan::Scan(const MemorySignature& sigStruct)
 {
-	return Scan(sigStruct.Sig, sigStruct.Mask, sigStruct.Length);
+	return Scan(reinterpret_cast<const char*>(sigStruct.Sig), sigStruct.Mask, sigStruct.Length);
 }
 
 void* CSigScan::Scan(const char* sig, const char* mask)
