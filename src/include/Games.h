@@ -9,6 +9,9 @@ namespace UnrealSDK {
 //       Realloc probably doesn't for example
 
 struct game_data {
+#ifdef _DEBUG
+	const std::string _name;
+#endif
 	const MemorySignature GObjects;
 	const MemorySignature GNames;
 	const MemorySignature ProcessEvent;
@@ -27,11 +30,13 @@ struct game_data {
 	const MemorySignature FNameInitChar;
 #endif
 	const MemorySignature GetDefaultObject;
-#if UE3
-	const MemorySignature SetCommand;
-#endif
 #if UE4
 	const MemorySignature StaticExec;
+#endif
+#if UE3
+	const MemorySignature SetCommand;
+	const MemorySignature ArrayLimit;
+	const MemorySignature ArrayLimitMessage;
 #endif
 
 	const std::string ConsoleObjectType;

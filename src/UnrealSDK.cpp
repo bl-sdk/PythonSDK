@@ -241,6 +241,28 @@ namespace UnrealSDK
 		logAllCalls = Enabled;
 	}
 
+	/**
+	 * @brief Prepare a memory region to be hex edited, enabling read/write access.
+	 *
+	 * @param region A pointer to the region to edit.
+	 * @param len The minimum length of the region to edit.
+	 * @return True if successful, false if given a null pointer or the windows API calls fail.
+	 */
+	static bool EnableHexEdits(uint8_t* region, size_t len) {
+		if (region == nullptr) {
+			LOG(MISC, "Couldn't find signature, assuming already edited");
+			return false;
+		}
+
+		DWORD oldProtect = 0;
+		if (!VirtualProtectEx(GetCurrentProcess(), region, len, PAGE_EXECUTE_READWRITE,
+							  &oldProtect)) {
+			LOG(ERROR, "WINAPI Error enabling edits: %d", GetLastError());
+			return false;
+		}
+		return true;
+	}
+
 	void HookGame()
 	{
 		TCHAR szExePath[2048];
@@ -360,30 +382,31 @@ namespace UnrealSDK
 		// TODO: Add these sigs
 #endif
 
-		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
-			try
-			{
-				void* SetCommand = sigscan.Scan(game_data->SetCommand);
-				if (SetCommand == nullptr) {
-					LOG(MISC, "Couldn't find set command signature, assuming already edited");
-				} else {
-					DWORD near out = 0;
-					if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
-					{
-						LOG(ERROR, "WINAPI Error when enabling 'SET' commands: %d", GetLastError());
-					}
-					else
-					{
-						static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
-					}
-					LOG(MISC, "Enabled SET commands");
-				}
-			}
-			catch (std::exception e)
-			{
-				LOG(ERROR, "Exception when enabling 'SET' commands: %d", e.what());
-			}
-		#endif
+// When generated properly, UE4 games don't actually have the SET command in them :(
+// May need to tweak this for games which do?
+#ifdef UE3
+		LOG(MISC, "Hex editing set command");
+		uint8_t* setCommand = static_cast<uint8_t*>(sigscan.Scan(game_data->SetCommand));
+		if (EnableHexEdits(setCommand, 7)) {
+			setCommand[5] = 0x90;
+			setCommand[6] = 0x90;
+		}
+
+		LOG(MISC, "Hex editing array limit");
+		uint8_t* arrayLimit = static_cast<uint8_t*>(sigscan.Scan(game_data->ArrayLimit));
+		if (EnableHexEdits(arrayLimit, 1)) {
+			arrayLimit[0] = 0xEB;
+		}
+
+		LOG(MISC, "Hex editing array limit message");
+		uint8_t* arrayLimitMsg = static_cast<uint8_t*>(sigscan.Scan(game_data->ArrayLimitMessage));
+		if (EnableHexEdits(arrayLimit, 2)) {
+			// Convert both 8C to 85 and 7C to 75
+			// This converts a JL (than 100) to a JNZ - can't do a regular jump since one sig has
+			//  the near flag, and the two have different offsets we can't hardcode
+			arrayLimitMsg[1] = (arrayLimitMsg[1] & 0xF0) | 0x05;
+		}
+#endif
 
 		LogAllCalls(false);
 
@@ -454,8 +477,7 @@ namespace UnrealSDK
 #ifndef UE4
 		// Set console key to Tilde if not already set
 		gameConsole = reinterpret_cast<UConsole*>(UObject::Find(
-			ObjectMap["ConsoleObjectType"].c_str(),
-									ObjectMap["ConsoleObjectName"].c_str()));
+			game_data->ConsoleObjectType.c_str(), game_data->ConsoleObjectName.c_str()));
 		auto viewport = gEngine->GetProperty<UObjectProperty>("GameViewport");
 
 		if (gameConsole == nullptr && viewport) {

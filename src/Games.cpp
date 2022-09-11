@@ -10,6 +10,9 @@ using game_data_map = std::unordered_map<std::string, struct game_data>;
 #if UE3
 
 static struct game_data bl2_data = {
+#ifdef _DEBUG
+	"BL2",
+#endif
 	// GObjects
 	make_sig("\x00\x00\x00\x00\x8B\x04\xB1\x8B\x40\x08", "????xxxxxx"),
 	// GNames
@@ -46,9 +49,14 @@ static struct game_data bl2_data = {
 	// GetDefaultObject
 	make_sig("\x55\x8B\xEC\x56\x8B\xF1\x83\xBE\x00\x01\x00\x00\x00\x57\x0F\x85",
 			 "xxxxxxxx?xxxxxxx"),
-	// SetCommand
-	make_sig("\xFF\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D", "xxxxxxxxxxx"),
 	// StaticExec (Not in UE3)
+	// SetCommand
+	make_sig("\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D", "xxxxxxxxxx"),
+	// ArrayLimit
+	make_sig("\x7E\x05\xB9\x64\x00\x00\x00\x3B\xF9\x0F\x8D", "xxxxxxxxxxx"),
+	// ArrayLimitMessage
+	make_sig("\x0F\x8C\x7B\x00\x00\x00\x8B\x8D\x9C\xEE\xFF\xFF\x83\xC0\x9D\x50",
+			 "xxxxxxxxxxxxxxxx"),
 
 	// =========================================================================
 
@@ -68,9 +76,10 @@ static struct game_data bl2_data = {
 	"Engine.Console.Initialized",
 };
 
-static struct game_data tps_aodk_data =
-	{
-		// clang-format off
+static struct game_data tps_aodk_data = {
+#ifdef _DEBUG
+	"TPS/AoDK",
+#endif
 	bl2_data.GObjects,
 	// GNames
 	make_sig("\x00\x00\x00\x00\x8B\x04\xB1\x5E\x5D\xC3\x8B\x15", "????xxxxxxxx"),
@@ -84,8 +93,11 @@ static struct game_data tps_aodk_data =
 	bl2_data.FNameInit,
 	bl2_data.FNameInitChar,
 	bl2_data.GetDefaultObject,
-	bl2_data.SetCommand,
 	// StaticExec (Not in UE3)
+	bl2_data.SetCommand,
+	bl2_data.ArrayLimit,
+	// ArrayLimitMessage
+	make_sig("\x00\x7C\x7B\x8B\x8D\x94\xEE\xFF\xFF", "?xxxxxxxx"),
 	bl2_data.ConsoleObjectType,
 	bl2_data.ConsoleObjectName,
 	bl2_data.EngineObjectType,
@@ -93,8 +105,7 @@ static struct game_data tps_aodk_data =
 	bl2_data.EngineFullName,
 	bl2_data.PostRenderFunction,
 	bl2_data.StartupSDK,
-		// clang-format on
-}
+};
 
 static game_data_map game_map = {
 	{"Borderlands2", bl2_data},
@@ -105,6 +116,9 @@ static game_data_map game_map = {
 #elif UE4
 
 static struct game_data bl3_data = {
+#ifdef _DEBUG
+	"BL3",
+#endif
 	// GObjects
 	make_sig("\x48\x8d\x0d\x00\x00\x00\x00\xc6\x05\x00\x00\x00\x00\x01\xe8\x00\x00\x00\x00\xc6\x05",
 			 "xxx????xx????xx????xx"),
@@ -139,10 +153,12 @@ static struct game_data bl3_data = {
 		"\x48\x85\xD2\x0F\x84\x00\x00\x00\x00\x4C\x8B\xDC\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8B"
 		"\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x84\x24\x00\x00\x00\x00\x48\x8B\xC2",
 		"xxxxx????xxxxxxx????xxx????xxxxxxx????xxx"),
-	// SetCommand (not in UE4)
 	// StaticExec
 	make_sig("\xE8\x00\x00\x00\x00\x3C\x01\x0F\x84\x00\x00\x00\x00\x48\x8B\x0D\x00\x00\x00\x00",
 			 "x????xxxx????xxx????"),
+	// SetCommand (not in UE4)
+	// ArrayLimit (not in UE4)
+	// ArrayLimitMessage (not in UE4)
 
 	// =========================================================================
 
@@ -163,6 +179,9 @@ static struct game_data bl3_data = {
 };
 
 static struct game_data wl_data = {
+#ifdef _DEBUG
+	"WL",
+#endif
 	// clang-format off
 	bl3_data.GObjects,
 	bl3_data.GNames,
@@ -170,14 +189,16 @@ static struct game_data wl_data = {
 	bl3_data.CallFunction,
 	bl3_data.FrameStep,
 	bl3_data.StaticConstructor,
-	// LoadPackage (not in UE3)
+	// LoadPackage (not in UE4)
 	bl3_data.GMalloc,
 	bl3_data.Realloc,
 	bl3_data.FNameInit,
-	// FNameInitChar (not in UE3)
+	// FNameInitChar (not in UE4)
 	bl3_data.GetDefaultObject,
-	// SetCommand (not in UE3)
 	bl3_data.StaticExec,
+	// SetCommand (not in UE4)
+	// ArrayLimit (not in UE4)
+	// ArrayLimitMessage (not in UE4)
 	bl3_data.ConsoleObjectType,
 	bl3_data.ConsoleObjectName,
 	bl3_data.EngineObjectType,
