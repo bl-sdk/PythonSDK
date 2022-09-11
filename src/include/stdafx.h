@@ -22,30 +22,44 @@
 #endif
 #endif
 
-
-#include <SDKDDKVer.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/embed.h>
 #include <pybind11/stl.h>
 #include <Python.h>
 
 #include <windows.h>
+#include <Psapi.h>
+#include <ShlObj.h>
+#include <Shlwapi.h>
+#pragma comment (lib, "Shlwapi.lib")
+
+#include <SDKDDKVer.h>
+
+#include <charconv>
 #include <cstdio>
 #include <cstdlib>
+#include <functional>
 #include <iostream>
-#include <ShlObj.h>
-#include <string>
 #include <map>
 #include <regex>
+#include <string>
 #include <typeinfo>
-#include <charconv>
+#include <unordered_map>
+
+#include <cstdint>
+using std::int8_t;
+using std::int16_t;
+using std::int32_t;
+using std::int64_t;
+using std::uint8_t;
+using std::uint16_t;
+using std::uint32_t;
+using std::uint64_t;
 
 #include "UnrealSDK.h"
 
 #include "MinHook.h"
 
-#include <Shlwapi.h>
-#pragma comment (lib, "Shlwapi.lib")
 
 namespace UnrealSDK
 {
@@ -61,8 +75,6 @@ namespace UnrealSDK
 #include "logging.h"
 
 #include "TypeMap.h"
-
-#include "Games.h"
 
 namespace pybind11
 {

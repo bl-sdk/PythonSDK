@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "CSigScan.h"
 #include "Exceptions.h"
-#include "Signatures.h"
 #include "CHookManager.h"
 #include "Util.h"
 #include <utility>
@@ -10,6 +9,7 @@
 #include "Exports.h"
 #include "gamedefines.h"
 #include "AntiDebug.h"
+#include "Games.h"
 
 #include <fstream>
 
@@ -59,7 +59,7 @@ namespace UnrealSDK
 	tProcessEvent oProcessEvent = nullptr;
 	tCallFunction oCallFunction = nullptr;
 
-	std::map<std::string, std::string> ObjectMap = {};
+	struct game_data game_data;
 
 	std::map<std::string, UClass*> ClassMap = {};
 
@@ -241,6 +241,28 @@ namespace UnrealSDK
 		logAllCalls = Enabled;
 	}
 
+	/**
+	 * @brief Prepare a memory region to be hex edited, enabling read/write access.
+	 *
+	 * @param region A pointer to the region to edit.
+	 * @param len The minimum length of the region to edit.
+	 * @return True if successful, false if given a null pointer or the windows API calls fail.
+	 */
+	static bool EnableHexEdits(uint8_t* region, size_t len) {
+		if (region == nullptr) {
+			LOG(MISC, "Couldn't find signature, assuming already edited");
+			return false;
+		}
+
+		DWORD oldProtect = 0;
+		if (!VirtualProtectEx(GetCurrentProcess(), region, len, PAGE_EXECUTE_READWRITE,
+							  &oldProtect)) {
+			LOG(ERROR, "WINAPI Error enabling edits: %d", GetLastError());
+			return false;
+		}
+		return true;
+	}
+
 	void HookGame()
 	{
 		TCHAR szExePath[2048];
@@ -263,21 +285,16 @@ namespace UnrealSDK
 		std::string exeName = str.substr(slash, dot - slash);
 		LOG(MISC, "Found EXE name as '%s.exe'", exeName.c_str());
 
-		ObjectMap = game_object_map[exeName];
-		LOG(MISC, "Loaded object map");
 		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
+		game_data = get_game_data(exeName);
 
-		scanner = sigscan;
-
-		LOG(MISC, "Loading Sigs...");
-		Signatures::InitSignatures(exeName);
-		LOG(MISC, "Sigs Loaded");
+		LOG(MISC, "Loaded game data");
 
 #ifdef UE4
 			// UE4 has a different setup & patterns for the GNames / GObjects, they're now chunked up and not just a standard TArray<UObject*>*
 
 			LOG(MISC, "Initializing UE4 SDK...");
-			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
+			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), game_data.GObjects.Sig, game_data.GObjects.Mask);
 			auto x = (FUObjectArray*)(addy + *(signed long*)(addy + 0x3) + 0x7);
 
 			pGObjects = (void*)(&(x->ObjObjects));
@@ -285,112 +302,111 @@ namespace UnrealSDK
 			LOG(MISC, "[Internal] FUObjectArray = 0x%p", x);
 			LOG(MISC, "[Internal] GObjects = 0x%p", x->ObjObjects.Objects);
 
-			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
+			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), game_data.GNames.Sig, game_data.GNames.Mask);
 			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(signed long*)(addy2 + 0xB) + 0xF));
 			pGNames = (void***)(y);
 
 			LOG(MISC, "[Internal] GNames = 0x%p", (void***)(y->Objects) );
 
 
-			pFNameInit = reinterpret_cast<UE4FNameInit>(sigscan.Scan(Signatures::FNameInit));
+			pFNameInit = reinterpret_cast<UE4FNameInit>(sigscan.Scan(game_data.FNameInit));
 			LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
 
-			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticConstructor.Sig, Signatures::StaticConstructor.Mask);
+			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), game_data.StaticConstructor.Sig, game_data.StaticConstructor.Mask);
 			auto z = (addy3 + *(signed long*)(addy3 + 0x1) + 5);
 			pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(z);
 			LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
 
-			auto addy4 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticExec.Sig, Signatures::StaticExec.Mask);
+			auto addy4 = sigscan.FindPattern(GetModuleHandle(NULL), game_data.StaticExec.Sig, game_data.StaticExec.Mask);
 			auto j = (addy4 + *(signed long*)(addy4 + 0x1) + 5);
 			pStaticExec = reinterpret_cast<tStaticExec>(j);
 			LOG(MISC, "[Internal] StaticExec() = 0x%p", pStaticExec);
 
-			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GMalloc.Sig, Signatures::GMalloc.Mask);
+			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), game_data.GMalloc.Sig, game_data.GMalloc.Mask);
 			auto k = (addy5 + *(signed long*)(addy5 + 0x1) + 5);
 			pGMalloc = reinterpret_cast<tMalloc>(k);
 			LOG(MISC, "[Internal] FMemory::MallocExternal() = 0x%p", pGMalloc);
 
-			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::Realloc.Sig, Signatures::Realloc.Mask);
+			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), game_data.Realloc.Sig, game_data.Realloc.Mask);
 			auto m = (addy6 + *(signed long*)(addy6 + 0x1) + 5);
 			pRealloc = reinterpret_cast<tRealloc>(m);
 			LOG(MISC, "[Internal] FMemory::Realloc() = 0x%p", pRealloc);
 #else
-		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
+		void*** tempGObjects = (void***)sigscan.Scan(game_data.GObjects);
 		if (tempGObjects != nullptr) {
 			pGObjects = *tempGObjects;
 			LOG(MISC, "[Internal] GObjects = 0x%p", pGObjects);
 		}
 
-		void*** tempGNames = (void***)sigscan.Scan(Signatures::GNames);
+		void*** tempGNames = (void***)sigscan.Scan(game_data.GNames);
 		if (tempGNames != nullptr) {
 			pGNames = *tempGNames;
 			LOG(MISC, "[Internal] GNames = 0x%p", pGNames);
 		}
 
-		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
+		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(game_data.FNameInit));
 		LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
 
-		if (Signatures::FNameInitChar.Length > 0) {
-			pFNameInitChar = reinterpret_cast<tFNameInitChar>(sigscan.Scan(Signatures::FNameInitChar));
-			LOG(MISC, "[Internal] FName::Init char = 0x%p", pFNameInitChar);
-		}
+		pFNameInitChar = reinterpret_cast<tFNameInitChar>(sigscan.Scan(game_data.FNameInitChar));
+		LOG(MISC, "[Internal] FName::Init char = 0x%p", pFNameInitChar);
 
-		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
+		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(game_data.StaticConstructor));
 		LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
 
-		void* gm = sigscan.Scan(Signatures::GMalloc);
+		void* gm = sigscan.Scan(game_data.GMalloc);
 		if (gm != nullptr) {
-			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
+			pGMalloc = *static_cast<void*****>(sigscan.Scan(game_data.GMalloc));
 			LOG(MISC, "[Internal] GMalloc = 0x%p", pGMalloc);
 		}
 		else
 			pGMalloc = nullptr;
 #endif
 
-		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
+		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(game_data.ProcessEvent));
 		LOG(MISC, "[Internal] UObject::ProcessEvent() = 0x%p", pProcessEvent);
 
-		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(Signatures::CallFunction));
+		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(game_data.CallFunction));
 		LOG(MISC, "[Internal] UObject::CallFunction() = 0x%p", pCallFunction);
 
 
-		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
+		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(game_data.FrameStep));
 		LOG(MISC, "[Internal] FFrame::Step() = 0x%p", pFrameStep);
 
-		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
+		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(game_data.GetDefaultObject));
 		LOG(MISC, "[Internal] GetDefaultObject = 0x%p", pGetDefaultObject);
 
 #ifndef UE4
-		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
+		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(game_data.LoadPackage));
 		LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
 #else
 		// TODO: Add these sigs
 #endif
 
-		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
-			try
-			{
-				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
-				if (SetCommand == nullptr) {
-					LOG(MISC, "Couldn't find set command signature, assuming already edited");
-				} else {
-					DWORD near out = 0;
-					if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
-					{
-						LOG(ERROR, "WINAPI Error when enabling 'SET' commands: %d", GetLastError());
-					}
-					else
-					{
-						static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
-					}
-					LOG(MISC, "Enabled SET commands");
-				}
-			}
-			catch (std::exception e)
-			{
-				LOG(ERROR, "Exception when enabling 'SET' commands: %d", e.what());
-			}
-		#endif
+// When generated properly, UE4 games don't actually have the SET command in them :(
+// May need to tweak this for games which do?
+#ifdef UE3
+		LOG(MISC, "Hex editing set command");
+		uint8_t* setCommand = static_cast<uint8_t*>(sigscan.Scan(game_data.SetCommand));
+		if (EnableHexEdits(setCommand, 7)) {
+			setCommand[5] = 0x90;
+			setCommand[6] = 0x90;
+		}
+
+		LOG(MISC, "Hex editing array limit");
+		uint8_t* arrayLimit = static_cast<uint8_t*>(sigscan.Scan(game_data.ArrayLimit));
+		if (EnableHexEdits(arrayLimit, 1)) {
+			arrayLimit[0] = 0xEB;
+		}
+
+		LOG(MISC, "Hex editing array limit message");
+		uint8_t* arrayLimitMsg = static_cast<uint8_t*>(sigscan.Scan(game_data.ArrayLimitMessage));
+		if (EnableHexEdits(arrayLimit, 2)) {
+			// Convert both 8C to 85 and 7C to 75
+			// This converts a JL (than 100) to a JNZ - can't do a regular jump since one sig has
+			//  the near flag, and the two have different offsets we can't hardcode
+			arrayLimitMsg[1] = (arrayLimitMsg[1] & 0xF0) | 0x05;
+		}
+#endif
 
 		LogAllCalls(false);
 
@@ -461,8 +477,7 @@ namespace UnrealSDK
 #ifndef UE4
 		// Set console key to Tilde if not already set
 		gameConsole = reinterpret_cast<UConsole*>(UObject::Find(
-			ObjectMap["ConsoleObjectType"].c_str(),
-									ObjectMap["ConsoleObjectName"].c_str()));
+			game_data.ConsoleObjectType.c_str(), game_data.ConsoleObjectName.c_str()));
 		auto viewport = gEngine->GetProperty<UObjectProperty>("GameViewport");
 
 		if (gameConsole == nullptr && viewport) {
@@ -492,7 +507,7 @@ namespace UnrealSDK
 			gameConsole = reinterpret_cast<UConsole*>(viewport->GetProperty<UObjectProperty>("ViewportConsole"));
 		}
 		if (gameConsole == nullptr) {
-			auto consoleClass = UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str());
+			auto consoleClass = UObject::Find(game_data.ConsoleObjectType.c_str(), game_data.ConsoleObjectName.c_str());
 			gameConsole = reinterpret_cast<UConsole*>(UnrealSDK::pStaticConstructObject(consoleClass->Class, consoleClass->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0));
 
 			viewport->SetProperty<UObjectProperty>("ViewportConsole", gameConsole);
@@ -610,7 +625,7 @@ SET_CONSOLE_KEY_DONE:
 			}
 			#endif
 
-			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
+			if (!strcmp(Object->GetFullName().c_str(), game_data.EngineFullName.c_str()))
 				gEngine = Object;
 
 			file << Object->GetFullName() << "\n";
@@ -640,7 +655,7 @@ SET_CONSOLE_KEY_DONE:
 		InitializeGameVersions();
 
 		gHookManager->Remove(Function->GetObjectName(), "StartupSDK");
-		gHookManager->Register(ObjectMap["PostRenderFunction"], "GetCanvas", getCanvasPostRender);
+		gHookManager->Register(game_data.PostRenderFunction, "GetCanvas", getCanvasPostRender);
 
 		return true;
 	}
@@ -650,7 +665,7 @@ SET_CONSOLE_KEY_DONE:
 		gHookManager = new CHookManager("EngineHooks");
 		HookGame();
 
-		gHookManager->Register(ObjectMap["StartupSDK"], "StartupSDK", GameReady);
+		gHookManager->Register(game_data.StartupSDK, "StartupSDK", GameReady);
 	}
 
 	// This is called when the process is closing
@@ -715,7 +730,7 @@ SET_CONSOLE_KEY_DONE:
 
 	UObject* GetEngine()
 	{
-		if (!gEngine) gEngine = UObject::Find(ObjectMap["EngineObjectType"].c_str(), ObjectMap["EngineObjectName"].c_str());
+		if (!gEngine) gEngine = UObject::Find(game_data.EngineObjectType.c_str(), game_data.EngineObjectName.c_str());
 		return gEngine;
 	}
 

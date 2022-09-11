@@ -1,234 +1,58 @@
 #pragma once
 
-#include "stdafx.h"
-#include <map>
+#include <stdafx.h>
 #include "MemorySignature.h"
 
-#pragma region Borderlands 2 / TPS
+namespace UnrealSDK {
 
-static std::map<std::string, MemorySignature> bl2_signatures{{
-	{
-	"GNames", {
-		"\x00\x00\x00\x00\x83\x3C\x81\x00\x74\x5C",
-		"????xxxxxx",
-		10
-	}},
-	{
-	"GObjects", {
-		"\x00\x00\x00\x00\x8B\x04\xB1\x8B\x40\x08",
-		"????xxxxxx",
-		10
-	}},
-	{
-	"SetCommand", {
-		"\xFF\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
-		"xxxxxxxxxxx",
-		11
-	}},
-	{
-	"ProcessEvent", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x50\xA1\x00\x00\x00\x00\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\xF1\x89\x75\xEC",
-		"xxxxxx????xx????xxxxx????xxxxxxxxxxxxxx????xxxxx",
-		48
-	}},
-	{
-	"CallFunction", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\x00\x00\x00\x00\xA1\x00\x00\x00\x00\x33\xC5\x89\x45\xF0\x53\x56\x57\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x7D\x10\x8B\x45\x0C",
-		"xxxxxx????xx????xxx????x????xxxxxxxxxxxxxx????xxxxxx",
-		52
-	}},
-	{
-	"FrameStep", {
-		"\x55\x8B\xEC\x8B\x41\x18\x0F\xB6\x10",
-		"xxxxxxxxx",
-		9
-	}},
-	{
-	"StaticConstructor", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x10\x53\x56\x57\xA1\x00\x00\x00\x00\x33\xC5\x50\x8D\x45\xF4\x64\xA3\x00\x00\x00\x00\x8B\x7D\x08\x8A\x87",
-		"xxxxxx????xx????xxxxxxxx????xxxxxxxx????xxxxx",
-		45
-	}},
-	{
-	"LoadPackage", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x68\xA1\x00\x00\x00\x00\x33\xC5\x89\x45\xEC",
-		"xxxxxx????xx????xxxxx????xxxxx",
-		30
-	}},
-	{
-	"GMalloc", {
-		"\x00\x00\x00\x00\xFF\xD7\x83\xC4\x04\x89\x45\xE4",
-		"????xxxxxxxx",
-		12
-	}},
-	{
-	"FNameInit", {
-		// 55  8b  ec  6a  ff  68  ??  ??  ??  ??  ??  ??  00  00  00  00  50  81  ec  9c  0c
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x50\x81\xEC\x9C\x0C",
-		"xxxxxx??????xxxxxxxxx",
-		21
-	}},
-	{
-	"FNameInitChar", {
-		// 55  8B  EC  83  EC  08  53  8B  D9  89  5D  ??
-		"\x55\x8B\xEC\x83\xEC\x08\x53\x8B\xD9\x89\x5D\x00",
-		"xxxxxxxxxxx?",
-		12
-	}},
-	{
-	"GetDefaultObject", {
-		"\x55\x8B\xEC\x56\x8B\xF1\x83\xBE\x00\x01\x00\x00\x00\x57\x0F\x85",
-		"xxxxxxxx?xxxxxxx",
-		16
-	}}
-}};
+// TODO: Check what all actually depends on ue3/4 - these are just based on what sigs existed
+//       Realloc probably doesn't for example
 
-static std::map<std::string, MemorySignature> tps_signatures{ {
-	{
-	"GNames", {
-		"\x00\x00\x00\x00\x8B\x04\xB1\x5E\x5D\xC3\x8B\x15",
-		"????xxxxxxxx",
-		12
-	}},
-	{"GObjects", bl2_signatures["GObjects"]},
-	{"SetCommand", bl2_signatures["SetCommand"]},
-	{"ProcessEvent", bl2_signatures["ProcessEvent"]},
-	{"CallFunction", bl2_signatures["CallFunction"]},
-	{"FrameStep", bl2_signatures["FrameStep"]},
-	{"StaticConstructor", bl2_signatures["StaticConstructor"]},
-	{"LoadPackage", bl2_signatures["LoadPackage"]},
-	{"GMalloc", bl2_signatures["GMalloc"]},
-	{"FNameInit", bl2_signatures["FNameInit"]},
-	{"FNameInitChar", bl2_signatures["FNameInitChar"]},
-	{"GetDefaultObject", bl2_signatures["GetDefaultObject"]},
-} };
+struct game_data {
+#ifdef _DEBUG
+	std::string _name;
+#endif
+	MemorySignature GObjects;
+	MemorySignature GNames;
+	MemorySignature ProcessEvent;
+	MemorySignature CallFunction;
+	MemorySignature FrameStep;
+	MemorySignature StaticConstructor;
+#if UE3
+	MemorySignature LoadPackage;
+#endif
+	MemorySignature GMalloc;
+#if UE4
+	MemorySignature Realloc;
+#endif
+	MemorySignature FNameInit;
+#if UE3
+	MemorySignature FNameInitChar;
+#endif
+	MemorySignature GetDefaultObject;
+#if UE4
+	MemorySignature StaticExec;
+#endif
+#if UE3
+	MemorySignature SetCommand;
+	MemorySignature ArrayLimit;
+	MemorySignature ArrayLimitMessage;
+#endif
 
-static std::map<std::string, std::string> bl2_object_map {
-	{"ConsoleObjectType", "WillowConsole"},
-	{"ConsoleObjectName", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0"},
-	{"EngineObjectType", "WillowGameEngine"},
-	{"EngineObjectName", "Transient.WillowGameEngine"},
-	{"EngineFullName", "WillowGameEngine Transient.WillowGameEngine"},
-	{"PostRenderFunction", "WillowGame.WillowGameViewportClient.PostRender"},
-	{"StartupSDK", "Engine.Console.Initialized"}
+	std::string ConsoleObjectType;
+	std::string ConsoleObjectName;
+	std::string EngineObjectType;
+	std::string EngineObjectName;
+	std::string EngineFullName;
+	std::string PostRenderFunction;
+	std::string StartupSDK;
 };
 
-#pragma endregion
+/**
+ * @brief Get the game data struct for the current game.
+ *
+ * @return A game data struct.
+ */
+const struct game_data get_game_data(const std::string& exe_name);
 
-#pragma region Borderlands 3
-
-// TODO: Update these signs / possibly the object map...
-
-static std::map<std::string, MemorySignature> bl3_signatures{ {
-	{
-	"GNames", {
-		"\xE8\x00\x00\x00\x00\x48\x00\x00\x48\x89\x1D\x00\x00\x00\x00\x48\x8B\x5C\x24\x00\x48\x83\xC4\x28\xC3\x00\xDB\x48\x89\x1D\x00\x00\x00\x00\x00\x00\x48\x8B\x5C\x24\x00\x48\x83\xC4\x00\xC3",
-		"x????x??xxx????xxxx?xxxxx?xxxx??????xxxx?xxx?x",
-		46
-	}},
-	{
-	"NewObject", { //NewObject(UObject* Outer = (UObject*)GetTransientPackage())
-		"\x48\x85\xD2\x0F\x84\xC9\x01\x00\x00\x4C\x8B\xDC\x57\x48\x81\xEC",
-		"xxxxxxxx?xxxxxxx",
-		16
-	}},
-	{
-	"GMalloc", {
-		"\xE8\x00\x00\x00\x00\x4C\x63\x7B\x40",
-		"x????xxxx",
-		9
-	}},
-	{
-	"Realloc", {
-		"\xE8\x00\x00\x00\x00\x48\x89\x07\x33\xC9",
-		"x????xxxxx",
-		10
-	}},
-	{
-	"GObjects", {
-		// 48  8D  0D ??  ??  ??  ??  C6  05  ??  ??  ?? ??   01  E8 ??  ??   ?? ??   C6  05
-		"\x48\x8d\x0d\x00\x00\x00\x00\xc6\x05\x00\x00\x00\x00\x01\xe8\x00\x00\x00\x00\xc6\x05",
-		"xxx????xx????xx????xx",
-		21
-	}},
-
-	{
-	"FNameInit", {
-		// 40  53  48  83  EC  30  C7  44  24  ??  ??  ??  ??  ??
-		"\x40\x53\x48\x83\xEC\x30\xC7\x44\x24\x00\x00\x00\x00\x00",
-		"xxxxxxxxx?????",
-		14
-	}},
-	{
-	"SetCommand", {
-		"\xFF\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
-		"xxxxxxxxxxx",
-		11
-	}},
-	{
-	"ProcessEvent", {
-		"\x40\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x81\xec\xf0\x00\x00\x00",
-		"xxxxxxxxxxxxxxxxxxx",
-		19
-	}},
-	{
-	"CallFunction", {
-		"\x40\x55\x53\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x81\xec\x28\x01\x00\x00\x48\x8d\x6c\x24\x30",
-		"xxxxxxxxxxxxxxxxxxxxxxxxx",
-		25
-	}},
-	{
-	"FrameStep", {
-		"\x48\x8B\x41\x20\x4C\x8B\xD2\x48\x8B\xD1",
-		"xxxxxxxxxx",
-		10
-	}},
-	{
-	"StaticConstructor", {
-		"\xE8\x00\x00\x00\x00\x41\x89\x3E\x4D\x8D\x46\x04",
-		"x????xxxxxxx",
-		12
-	}},
-	{
-	"LoadPackage", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x64\xA1\x00\x00\x00\x00\x50\x83\xEC\x68\xA1\x00\x00\x00\x00\x33\xC5\x89\x45\xEC",
-		"xxxxxx????xx????xxxxx????xxxxx",
-		30
-	}},
-	{ // TODO: Fix this signature, it seems to not entirely work
-	"GetDefaultObject", {
-		"\x48\x85\xD2\x0F\x84\x00\x00\x00\x00\x4C\x8B\xDC\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x84\x24\x00\x00\x00\x00\x48\x8B\xC2",
-		"xxxxx????xxxxxxx????xxx????xxxxxxx????xxx",
-		41
-	}},
-	{
-	"StaticExec", {
-		"\xE8\x00\x00\x00\x00\x3C\x01\x0F\x84\x00\x00\x00\x00\x48\x8B\x0D\x00\x00\x00\x00",
-		"x????xxxx????xxx????",
-		20
-	}}
-}};
-
-static std::map<std::string, std::string> bl3_object_map{
-	{"ConsoleObjectType", "Console"},
-	{"ConsoleObjectName", "/Script/Engine.Default__Console"},
-	{"EngineObjectType", "/Script/OakGame.OakGameEngine"},
-	{"EngineObjectName", "/Engine/Transient.OakGameEngine"},
-	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine"},
-	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"},
-	{"StartupSDK", "/Script/OakGame.MenuMapMenuFlow.Start"} // This function is used in BL3 near the map start up
-};
-
-#pragma endregion
-
-static std::map<std::string, std::map<std::string, std::string>> game_object_map{
-	{"Borderlands2", bl2_object_map},
-	{"BorderlandsPreSequel", bl2_object_map},
-	{"Borderlands3", bl3_object_map},
-};
-
-static std::map<std::string, std::map<std::string, MemorySignature>> game_signature_map{
-	{"Borderlands2", bl2_signatures},
-	{"BorderlandsPreSequel", tps_signatures},
-	{"Borderlands3", bl3_signatures}
-};
+}  // namespace UnrealSDK

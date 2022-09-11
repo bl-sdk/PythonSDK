@@ -2,10 +2,8 @@
 #ifndef UnrealSDK_H
 #define UnrealSDK_H
 
-#include <string>
-#include <functional>
 #include "CPythonInterface.h"
-#include <map>
+#include "Games.h"
 
 class UObject;
 class UWorld;
@@ -89,7 +87,7 @@ namespace UnrealSDK
 
 	extern std::map<std::string, UClass *> ClassMap;
 
-	extern std::map<std::string, std::string> ObjectMap;
+	extern struct game_data game_data;
 
 	extern CPythonInterface* Python;
 	extern CHookManager* gHookManager;
