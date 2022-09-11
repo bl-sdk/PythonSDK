@@ -53,12 +53,10 @@ void Export_pystes_Core_classes(py::module_& m)
 		.def_readwrite("NumParams", &UFunction::NumParams)
 		.def_readwrite("ParamsSize", &UFunction::ParamsSize)
 		.def_readwrite("ReturnValueOffset", &UFunction::ReturnValueOffset)
-		.def_readwrite("Func", &UFunction::Func, py::return_value_policy::reference)
-		.def("GetParameters", &UFunction::GetParameters, py::return_value_policy::reference)
-		.def("GetReturnType", &UFunction::GetReturnType, py::return_value_policy::reference);
+		.def_readwrite("Func", &UFunction::Func, py::return_value_policy::reference);
 
 	py::class_< FFunction >(m, "FFunction")
-		.def("__call__", &FFunction::Call, py::return_value_policy::reference)
+		.def("__call__", &FFunction::PyCall, py::return_value_policy::reference)
 		.def_readwrite("obj", &FFunction::obj, py::return_value_policy::reference)
 		.def_readwrite("func", &FFunction::func, py::return_value_policy::reference);
 

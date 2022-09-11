@@ -30,6 +30,7 @@ std::string UObject::GetFullName()
 }
 
 UObject* UObject::FindObject(struct FString& ObjectName, class UClass* ObjectClass) {
+#ifdef UE3
 	static FFunction func;
 	static bool found_func = false;
 	if (!found_func) {
@@ -40,11 +41,8 @@ UObject* UObject::FindObject(struct FString& ObjectName, class UClass* ObjectCla
 	}
 
 	return func.Call<UObjectProperty, UStrProperty, UClassProperty>(&ObjectName, ObjectClass);
-}
-
-#if UE4
-UObject* UObject::FindObject(const class FString& ObjectName, class UClass* ObjectClass) {
-	static UObject* fn = nullptr;
+#else
+	// TODO: replace with StaticFindObject
 	std::string obj;
 	std::wstring x;
 	x.append(Util::Widen(ObjectClass->GetName()));
@@ -56,10 +54,19 @@ UObject* UObject::FindObject(const class FString& ObjectName, class UClass* Obje
 	}
 
 	std::string objName = Util::Narrow(x);
+	for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
+		UObject* obj = UObject::GObjects()->Get(i);
+		if (obj == nullptr) continue;
 
-	return FindObject(objName);
-}
+		if (!strcmp(obj->GetFullName().c_str(), objName.c_str())) {
+			return static_cast<UObject*>(obj);
+		}
+
+	}
+
+	return nullptr;
 #endif
+}
 
 UObject* UObject::Find(UClass* Class, const char* ObjectFullName)
 {

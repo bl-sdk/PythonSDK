@@ -129,20 +129,6 @@ class UObject {
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
 	}
 
-	static UObject* FindObject(const std::string& name) {
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
-			UObject* obj = UObject::GObjects()->Get(i);
-			if (obj == nullptr) continue;
-
-			if (!strcmp(obj->GetFullName().c_str(), name.c_str())) {
-				return static_cast<UObject*>(obj);
-			}
-
-		}
-
-		return nullptr;
-	}
-
 	static UObject* FindObjectClassless(const std::string& objName) {
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
 			UObject* obj = UObject::GObjects()->Get(i);
@@ -157,36 +143,10 @@ class UObject {
 
 	void DumpObject();
 
-	static class UObject* FindObject(const class FString& ObjectName, class UClass* ObjectClass);
+	static class UObject* FindObject(class FString& ObjectName, class UClass* ObjectClass);
 
 	void ExecuteUbergraph(int EntryPoint);
 };
-
-
-struct FFunction
-{
-	UObject* obj;
-	UFunction* func;
-
-private:
-	void GenerateParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
-
-	template <typename T>
-	UProperty* ValidateParam(UProperty* prop);
-
-	void CallTEMPLATESetParam(void* params, UProperty* prop);
-
-	template <typename T, typename ... Ts>
-	void CallTEMPLATESetParam(void* params, UProperty* prop, T firstArg, Ts... args);
-
-public:
-	py::object GetReturn(PropertyHelper* params);
-	py::object Call(py::args args, py::kwargs kwargs);
-
-	template <typename R, typename ... Ts>
-	typename PropInfo<R>::type CallTEMPLATE(Ts... args);
-};
-
 
 
 struct FOutParmRec
@@ -1247,6 +1207,136 @@ class UConsole : public UObject {
 		}
 	}
 };
+
+
+struct FFunction
+{
+	UObject* obj;
+	UFunction* func;
+
+private:
+	/**
+	 * @brief Calls this function, given a pointer to it's params struct.
+	 *
+	 * @param params A pointer to this function's params struct.
+	 */
+	void CallWithParams(void* params);
+
+	/**
+	 * @brief Checks that there are no more required params for a function call.
+	 *
+	 * @param prop The next unparsed paramater property object.
+	 */
+	static void CheckNoMoreParams(UProperty* prop) {
+		while (prop != nullptr) {
+			if ((prop->PropertyFlags & 0x180) == 0x80) {  // Param but not Optional
+				throw std::runtime_error("Too few parameters to function call!");
+			}
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+	}
+
+	/**
+	 * @brief Tail recursive function to set all args in a function's params struct.
+	 *
+	 * @tparam T0 The type of the first arg, which this call will set.
+	 * @tparam Ts The types of the remaining args.
+	 * @param params A pointer to the params struct.
+	 * @param prop The next unparsed paramater property object.
+	 * @param arg0 This argument.
+	 * @param args The remaining arguments.
+	 */
+	template <typename T0, typename... Ts>
+	static void SetParam(void* params,
+						 UProperty* prop,
+						 typename PropInfo<T0>::type arg0,
+						 typename PropInfo<Ts>::type... args) {
+		// Find the next param property
+		while (prop != nullptr && (prop->PropertyFlags & 0x80) == 0) {  // Param
+			prop = reinterpret_cast<UProperty*>(prop->Next);
+		}
+
+		if (prop == nullptr) {
+			throw std::runtime_error("Too many parameters to function call!");
+		}
+		if (prop->Class->Name != FName(PropInfo<T0>::class_name)) {
+			throw std::invalid_argument("Property was of invalid type " +
+										(std::string)prop->Class->Name);
+		}
+
+		reinterpret_cast<PropertyHelper*>(params)->WriteProperty<T0>(reinterpret_cast<T0*>(prop), 0,
+																	 arg0);
+		auto next = reinterpret_cast<UProperty*>(prop->Next);
+
+		if constexpr (sizeof...(Ts) > 0) {
+			SetParam<Ts...>(params, next, args...);
+		} else {
+			CheckNoMoreParams(next);
+		}
+	}
+
+	/**
+	 * @brief Generates a params struct from python args
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @param params The params struct to fill.
+	 */
+	void GeneratePyParams(const py::args& args, const py::kwargs& kwargs, PropertyHelper* params);
+
+	/**
+	 * @brief Get the python return value from a params struct.
+	 *
+	 * @param params The params struct to grab the return from.
+	 * @return The function's return value.
+	 */
+	py::object GetPyReturn(PropertyHelper* params);
+
+public:
+	/**
+	 * @brief Calls this function.
+	 *
+	 * @tparam R The return type. May be void.
+	 * @tparam Ts The types of the arguments.
+	 * @param args The arguments
+	 * @return The function's return
+	 */
+	template <typename R, typename... Ts>
+	typename PropInfo<R>::type Call(typename PropInfo<Ts>::type... args) {
+		uint8_t params[1000];
+		memset(params, 0, sizeof(params));
+
+		UProperty* prop = reinterpret_cast<UProperty*>(this->func->Children);
+
+		if constexpr(sizeof...(Ts) > 0) {
+			this->SetParam<Ts...>(params, prop, args...);
+		} else {
+			this->CheckNoMoreParams(prop);
+		}
+
+		this->CallWithParams(params);
+
+		if constexpr(!std::is_void<R>::value) {
+			while (prop != nullptr) {
+				if (prop->PropertyFlags & 0x400) {  // Return
+					return reinterpret_cast<PropertyHelper*>(params)->ReadProperty<R>(reinterpret_cast<R*>(prop), 0);
+				}
+				prop = reinterpret_cast<UProperty*>(prop->Next);
+			}
+			throw std::runtime_error("Couldn't find return param!");
+		}
+	}
+
+	/**
+	 * @brief Calls this function, given python args.
+	 *
+	 * @param args The arguments.
+	 * @param kwargs The keyword arguments.
+	 * @return The function's return.
+	 */
+	py::object PyCall(py::args args, py::kwargs kwargs);
+};
+
 
 typedef void* (__thiscall* tMalloc)(unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);
