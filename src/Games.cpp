@@ -216,7 +216,7 @@ static game_data_map game_map = {
 
 #endif
 
-struct game_data get_game_data(std::string exe_name) {
+const struct game_data get_game_data(const std::string& exe_name) {
 	if (game_map.count(exe_name)) {
 		return game_map[exe_name];
 	}

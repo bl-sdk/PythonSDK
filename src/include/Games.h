@@ -10,42 +10,42 @@ namespace UnrealSDK {
 
 struct game_data {
 #ifdef _DEBUG
-	const std::string _name;
+	std::string _name;
 #endif
-	const MemorySignature GObjects;
-	const MemorySignature GNames;
-	const MemorySignature ProcessEvent;
-	const MemorySignature CallFunction;
-	const MemorySignature FrameStep;
-	const MemorySignature StaticConstructor;
+	MemorySignature GObjects;
+	MemorySignature GNames;
+	MemorySignature ProcessEvent;
+	MemorySignature CallFunction;
+	MemorySignature FrameStep;
+	MemorySignature StaticConstructor;
 #if UE3
-	const MemorySignature LoadPackage;
+	MemorySignature LoadPackage;
 #endif
-	const MemorySignature GMalloc;
+	MemorySignature GMalloc;
 #if UE4
-	const MemorySignature Realloc;
+	MemorySignature Realloc;
 #endif
-	const MemorySignature FNameInit;
+	MemorySignature FNameInit;
 #if UE3
-	const MemorySignature FNameInitChar;
+	MemorySignature FNameInitChar;
 #endif
-	const MemorySignature GetDefaultObject;
+	MemorySignature GetDefaultObject;
 #if UE4
-	const MemorySignature StaticExec;
+	MemorySignature StaticExec;
 #endif
 #if UE3
-	const MemorySignature SetCommand;
-	const MemorySignature ArrayLimit;
-	const MemorySignature ArrayLimitMessage;
+	MemorySignature SetCommand;
+	MemorySignature ArrayLimit;
+	MemorySignature ArrayLimitMessage;
 #endif
 
-	const std::string ConsoleObjectType;
-	const std::string ConsoleObjectName;
-	const std::string EngineObjectType;
-	const std::string EngineObjectName;
-	const std::string EngineFullName;
-	const std::string PostRenderFunction;
-	const std::string StartupSDK;
+	std::string ConsoleObjectType;
+	std::string ConsoleObjectName;
+	std::string EngineObjectType;
+	std::string EngineObjectName;
+	std::string EngineFullName;
+	std::string PostRenderFunction;
+	std::string StartupSDK;
 };
 
 /**
@@ -53,6 +53,6 @@ struct game_data {
  *
  * @return A game data struct.
  */
-game_data get_game_data(std::string exe_name);
+const struct game_data get_game_data(const std::string& exe_name);
 
 }  // namespace UnrealSDK

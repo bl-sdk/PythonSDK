@@ -87,7 +87,7 @@ namespace UnrealSDK
 
 	extern std::map<std::string, UClass *> ClassMap;
 
-	extern struct game_data* game_data;
+	extern struct game_data game_data;
 
 	extern CPythonInterface* Python;
 	extern CHookManager* gHookManager;
