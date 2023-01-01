@@ -217,9 +217,14 @@ void UObject::DumpObject()
 		LOG(INFO, "=== %s properties ===", thisField->GetName());
 		for (auto child = thisField->Children; child != nullptr; child = child->Next)
 		{
-			if (child->IsA(FindClass("Property")))
-				LOG(INFO, " %s=%s", child->GetName(),
-					py::cast<std::string>(repr(GetPyProperty(child->GetName()))).c_str());
+			if (child->IsA(FindClass("Property"))) {
+				try {
+					LOG(INFO, " %s=%s", child->GetName(),
+						py::cast<std::string>(repr(GetPyProperty(child->GetName()))).c_str());
+				} catch (...) {
+					LOG(INFO, " %s=<unknown data type>", child->GetName());
+				}
+			}
 		}
 		thisField = thisField->SuperField;
 	}
