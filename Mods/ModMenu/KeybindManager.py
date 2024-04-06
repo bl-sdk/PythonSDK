@@ -53,6 +53,12 @@ class Keybind:
              events.
 
         DefaultKey: The original value of Key. You do not provide this, it is set automatically.
+
+        ControllerKey:
+            This key activates this Keybind if it is pressed whilst the `ControllerModifierKey` is held.
+        ControllerModifierKey:
+            This key must be held to activate the ControllerKey.
+             Can be "None","XboxTypeS_Start" or "XboxTypeS_Back".
     """
     Name: str
     Key: str = "None"
@@ -62,6 +68,9 @@ class Keybind:
     OnPress: Optional[KeybindCallback] = None
 
     DefaultKey: str = field(default=Key, init=False)
+
+    ControllerKey: str = "None"
+    ControllerModifierKey: str = "None"
 
     _list_deprecation_warning: ClassVar[str] = (
         "Using lists for keybinds is deprecated, use 'ModMenu.Keybind' instances instead."
