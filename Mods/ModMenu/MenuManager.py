@@ -10,6 +10,7 @@ from typing import Dict, List, Set, Tuple
 from . import VERSION_MAJOR, VERSION_MINOR
 from . import DeprecationHelper as dh
 from . import KeybindManager, ModObjects
+from . import GamepadBindManager # noqa 401 (I need to import this somewhere, not sure where is proper)
 
 __all__: Tuple[str, ...] = ()
 
@@ -20,6 +21,52 @@ _FAVOURITES_FILE: str = os.path.join(os.path.dirname(os.path.realpath(__file__))
 
 _current_mod_list: List[ModObjects.SDKMod] = []
 _favourite_mods: Set[str] = set()
+
+
+_CONTROLLER_KEY_MAP = {
+    # Normal Navigation
+    "Gamepad_LeftStick_Up": "Up",
+    "Gamepad_LeftStick_Down": "Down",
+    "XboxTypeS_A": "Enter",
+    "XboxTypeS_B": "Escape",
+    "XboxTypeS_LeftTrigger": "PageUp",
+    "XboxTypeS_RightTrigger": "PageDown",
+    # ModMenu Custom Binds
+    "XboxTypes_X": "M",     # Lower-case s, typo I guess
+    "XboxTypeS_X": "M",     # It's right in TPS
+    "XboxTypeS_Y": "Q",
+    # Spares
+    "XboxTypeS_LeftShoulder": None,
+    "XboxTypeS_RightShoulder": None,
+    "XboxTypeS_Back": None,
+    "XboxTypeS_Start": "E"  # Stops this controller button passing through to open the store link
+}
+_CONTROLLER_SPARE_KEYS = [  # Spare buttons that can be rebound to mod SettingInputs
+    "XboxTypeS_A",
+    "XboxTypeS_LeftShoulder",
+    "XboxTypeS_RightShoulder",
+    "XboxTypeS_Back",
+    "XboxTypeS_Start",
+]
+
+_using_controller: bool = False   # Toggles showing controller binds on tooltips
+
+
+def GetTooltipString(key: str) -> str:
+    '''
+    Returns the tooltip string for this key
+    If a controller is enabled and there is a mapped controller button, then this icon is used instead of the keyboard key
+    '''
+    global _using_controller
+    if _using_controller:
+        for k in _CONTROLLER_KEY_MAP:
+            if _CONTROLLER_KEY_MAP[k] == key:
+                # Controller key
+                if k == "XboxTypes_X":
+                    k = "XboxTypeS_X"    # Fuck that typo - The input name is lower case, but the icon name is upper case
+                return "<StringAliasMap:" + k + ">"
+    # Keyboard key
+    return f"[{key}]"
 
 
 def GetOrderedModList() -> List[ModObjects.SDKMod]:
@@ -247,17 +294,8 @@ def _ShopInputKey(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     key = params.ukey
     event = params.uevent
 
-    controller_key_map = {
-        "Gamepad_LeftStick_Up": "Up",
-        "Gamepad_LeftStick_Down": "Down",
-        "XboxTypeS_A": "Enter",
-        "XboxTypeS_B": "Escape",
-        "XboxTypeS_Y": "Q",
-        "XboxTypeS_LeftTrigger": "PageUp",
-        "XboxTypeS_RightTrigger": "PageDown"
-    }
-    if key in controller_key_map:
-        key = controller_key_map[key]
+    if key in _CONTROLLER_KEY_MAP:
+        key = _CONTROLLER_KEY_MAP[key]
 
     if key in ("Escape", "Up", "Down", "W", "S"):
         return True
@@ -319,6 +357,9 @@ def _extOnOfferingChanged(caller: unrealsdk.UObject, function: unrealsdk.UFuncti
     This function is called when the currently selected mod is changed. We use it to update the
      settings input tooltips.
     """
+    global _using_controller
+    _using_controller = caller.WPCOwner.PlayerInput.bUsingGamepad
+
     caller.PlayUISound('VerticalMovement')
 
     try:
@@ -333,22 +374,29 @@ def _extOnOfferingChanged(caller: unrealsdk.UObject, function: unrealsdk.UFuncti
     left_column = ""
     right_column = ""
 
+    keyQ = GetTooltipString("Q")
     if mod == _general_instance:
-        left_column = "[Q] Filter\n"
+        left_column = keyQ + " Filter\n"
     elif mod.Name in _favourite_mods:
-        left_column = "[Q] Unfavourite\n"
+        left_column = keyQ + " Unfavourite\n"
     else:
-        left_column = "[Q] Favourite\n"
+        left_column = keyQ + " Favourite\n"
 
+    spareIndex = 0
     for key, action in mod.SettingsInputs.items():
-        entry = f"[{key}] {action}\n"
+        # Change the controller key dictionary to use the extra settings binds from this mod
+        if spareIndex < len(_CONTROLLER_SPARE_KEYS):
+            _CONTROLLER_KEY_MAP[_CONTROLLER_SPARE_KEYS[spareIndex]] = key
+            spareIndex = spareIndex + 1
+
+        entry = f"{GetTooltipString(key)} {action}\n"
         if on_left_column:
             left_column += entry
         else:
             right_column += entry
         on_left_column = not on_left_column
 
-    caller.SetTooltips(left_column, right_column)
+    caller.SetTooltips(caller.ResolveDataStoreMarkup(left_column), caller.ResolveDataStoreMarkup(right_column))
     return False
 
 
@@ -371,7 +419,7 @@ def _SharedHandleInputKey(caller: unrealsdk.UObject, function: unrealsdk.UFuncti
      the dlc menu when you press "M".
     """
     if (
-        params.ukey == "M"
+        (params.ukey == "M" or params.ukey.upper() == "XBOXTYPES_X")
         and params.uevent == KeybindManager.InputEvent.Released
         and not caller.IsOverlayMenuOpen()
     ):
@@ -389,6 +437,9 @@ def _FrontEndUpdateTooltips(caller: unrealsdk.UObject, function: unrealsdk.UFunc
      from - `SetVariableString` adds a bunch of extra formatting that's awkward to parse though if
      you tried using `GetVariableString`.
     """
+    global _using_controller
+    _using_controller = caller.WPCOwner.PlayerInput.bUsingGamepad
+
     tooltip = caller.TooltipSpacing + caller.SelectTooltip
 
     cancel = caller.CancelString
@@ -415,7 +466,7 @@ def _FrontEndUpdateTooltips(caller: unrealsdk.UObject, function: unrealsdk.UFunc
 
         # Only show on the main menu, not also the pause menu
         if caller.Class.Name == "FrontendGFxMovie":
-            tooltip += caller.TooltipSpacing + "[M] Mods"
+            tooltip += caller.TooltipSpacing + GetTooltipString("M") + " Mods"
 
     if caller.MyFrontendDefinition is not None:
         caller.SetVariableString(
