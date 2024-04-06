@@ -20,6 +20,9 @@ __all__: Tuple[str, ...] = (
 
 _OPTIONS_CATEGORY_NAME = "Options"
 _KEYBINDS_CATEGORY_NAME = "Keybinds"
+_GAMEPADBINDS_CATEGORY_NAME = "Gamepadbinds"
+_GAMEPADBINDS_MODIFIER_KEY = "modifierKey"
+_GAMEPADBINDS_ACTION_KEY = "actionKey"
 _ENABLED_CATEGORY_NAME = "AutoEnable"
 _SETTINGS_FILE_NAME = "settings.json"
 
@@ -68,11 +71,23 @@ def SaveModSettings(mod: ModObjects.SDKMod) -> None:
                 continue
             keybinds_dict[input.Name] = input.Key
         else:
-            dh.PrintWarning(KeybindManager.Keybind._list_deprecation_warning)
+            dh.PrintWarning(f"[{mod.Name}] " + KeybindManager.Keybind._list_deprecation_warning)
             keybinds_dict[input[0]] = input[1]
 
     if len(keybinds_dict) > 0:
         mod_settings[_KEYBINDS_CATEGORY_NAME] = keybinds_dict
+
+    gamepadbinds_dict = {}
+    for input in mod.Keybinds:
+        if isinstance(input, KeybindManager.Keybind):
+            if not input.IsRebindable:
+                continue
+            gamepadbinds_dict[input.Name] = {}
+            gamepadbinds_dict[input.Name][_GAMEPADBINDS_MODIFIER_KEY] = input.ControllerModifierKey
+            gamepadbinds_dict[input.Name][_GAMEPADBINDS_ACTION_KEY] = input.ControllerKey
+
+    if len(gamepadbinds_dict) > 0:
+        mod_settings[_GAMEPADBINDS_CATEGORY_NAME] = gamepadbinds_dict
 
     if mod.SaveEnabledState != ModObjects.EnabledSaveType.NotSaved:
         mod_settings[_ENABLED_CATEGORY_NAME] = mod.IsEnabled
@@ -147,9 +162,16 @@ def LoadModSettings(mod: ModObjects.SDKMod) -> None:
             if input.Name in saved_keybinds:
                 input.Key = saved_keybinds[input.Name]
         else:
-            dh.PrintWarning(KeybindManager.Keybind._list_deprecation_warning)
+            dh.PrintWarning(f"[{mod.Name}] " + KeybindManager.Keybind._list_deprecation_warning)
             if input[0] in saved_keybinds:
                 input[1] = saved_keybinds[input[0]]
+
+    saved_gamepadbinds = settings.get(_GAMEPADBINDS_CATEGORY_NAME, {})
+    for input in mod.Keybinds:
+        if isinstance(input, KeybindManager.Keybind):
+            if input.Name in saved_gamepadbinds:
+                input.ControllerModifierKey = saved_gamepadbinds[input.Name][_GAMEPADBINDS_MODIFIER_KEY]
+                input.ControllerKey = saved_gamepadbinds[input.Name][_GAMEPADBINDS_ACTION_KEY]
 
     if settings.get(_ENABLED_CATEGORY_NAME, False):
         if mod.SaveEnabledState == ModObjects.EnabledSaveType.LoadWithSettings:
